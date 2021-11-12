@@ -1,0 +1,109 @@
+subject <- 'C154'
+sex <- 'female'
+
+obj_list <- readRDS(paste0('original_data/',subject,'_1000kbp_withXYMT.rds')) ## because hacked to include X,Y, this is now as a list of 'obj', where each 'obj' has 1 sample
+names(obj_list) <- gsub(subject,'',gsub('_aligned','',names(obj_list)))
+
+## remove results from previous run
+if(file.exists('refits/purity_ploidy.txt')) file.remove('refits/purity_ploidy.txt')
+
+samples <- names(obj_list)
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# fit purity and ploidy for each sample
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## B1
+refit(obj_list[[1]], samplename=samples[1], sex='female', ploidy=2, purity=0.58, save=T, output_dir=paste0('output/',subject))
+
+## B3: strange, no longer X del, maybe this is from a separate part of the primary?
+refit(obj_list[[2]], samplename=samples[2], sex='female', ploidy=2, purity=0.5, save=T, output_dir=paste0('output/',subject))
+
+## B4:
+refit(obj_list[[3]], samplename=samples[3], sex='female', ploidy=2, purity=0.42, save=T, output_dir=paste0('output/',subject))
+
+## B5:
+refit(obj_list[[4]], samplename=samples[4], sex='female', ploidy=2, purity=0.51, save=T, output_dir=paste0('output/',subject))
+
+## B7:
+refit(obj_list[[5]], samplename=samples[5], sex='female', ploidy=2, purity=0.45, save=T, output_dir=paste0('output/',subject))
+
+## B8: 4q del is not clear
+refit(obj_list[[6]], samplename=samples[6], sex='female', ploidy=2, purity=0.29, save=T, output_dir=paste0('output/',subject))
+
+## B9:
+refit(obj_list[[7]], samplename=samples[7], sex='female', ploidy=2, purity=0.31, save=T, output_dir=paste0('output/',subject))
+
+## L11:
+refit(obj_list[[8]], samplename=samples[8], sex='female', ploidy=2, purity=0.65, save=T, output_dir=paste0('output/',subject))
+
+## L13:
+refit(obj_list[[9]], samplename=samples[9], sex='female', ploidy=2, purity=0.52, save=T, output_dir=paste0('output/',subject))
+
+## L14:
+refit(obj_list[[10]], samplename=samples[10], sex='female', ploidy=2, purity=0.57, save=T, output_dir=paste0('output/',subject))
+
+## L2a: X diploid, weird that L2b is different!
+refit(obj_list[[11]], samplename=samples[11], sex='female', ploidy=2, purity=0.66, save=T, output_dir=paste0('output/',subject))
+
+## L2b: subclonal X del
+refit(obj_list[[12]], samplename=samples[12], sex='female', ploidy=2, purity=0.30, save=T, output_dir=paste0('output/',subject))
+
+## L5
+refit(obj_list[[13]], samplename=samples[13], sex='female', ploidy=2, purity=0.65, save=T, output_dir=paste0('output/',subject))
+
+## N1: X is oddly low, could there be tumor contamination?
+refit(obj_list[[14]], samplename=samples[14], sex='female', ploidy=2, purity=1, save=T, output_dir=paste0('output/',subject))
+
+## P11: clonal X del, 8q dup, 4q del
+refit(obj_list[[15]], samplename=samples[15], sex='female', ploidy=2, purity=0.54, save=T, output_dir=paste0('output/',subject))
+
+## P12 clonal X del, 3 copies of 8q; 4q del
+refit(obj_list[[16]], samplename=samples[16], sex='female', ploidy=2, purity=0.55, save=T, output_dir=paste0('output/',subject))
+
+## P2
+refit(obj_list[[17]], samplename=samples[17], sex='female', ploidy=2, purity=0.25, save=T, output_dir=paste0('output/',subject))
+
+## P3: difficult to fit. P=0.48: X del clonal, but other events subclonal; P=0.4: fits not perfect but rounded give delX, del 4q, dup8q
+refit(obj_list[[18]], samplename=samples[18], sex='female', ploidy=2, purity=0.40, save=T, output_dir=paste0('output/',subject))
+
+## P4
+refit(obj_list[[19]], samplename=samples[19], sex='female', ploidy=2, purity=0.38, save=T, output_dir=paste0('output/',subject))
+
+## P7
+refit(obj_list[[20]], samplename=samples[20], sex='female', ploidy=2, purity=0.40, save=T, output_dir=paste0('output/',subject))
+
+## P8: 4q del, 8q dup, X subclonal deletion
+refit(obj_list[[21]], samplename=samples[21], sex='female', ploidy=2, purity=0.45, save=T, output_dir=paste0('output/',subject))
+
+## P9
+refit(obj_list[[22]], samplename=samples[22], sex='female', ploidy=2, purity=0.32, save=T, output_dir=paste0('output/',subject))
+
+## TD1
+refit(obj_list[[23]], samplename=samples[23], sex='female', ploidy=2, purity=0.64, save=T, output_dir=paste0('output/',subject))
+
+
+
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# process cnv data
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+info <- get_cnv_segments(obj_list, fit_file=paste0('output/',subject,'/purity_ploidy.txt'), sex=sex, min_segment_bins=5,field='meancopy')
+
+mat <- info$mat
+mat <- cbind(sample=rownames(mat), as.data.table(mat))
+write_tsv(mat,paste0('output/',subject,'_cnv_matrix.txt'))
+
+segments <- info$segs
+write_tsv(segments,paste0('output/',subject,'_cnv_segments.txt'))
+
+bins <- info$bins
+write_tsv(bins,paste0('output/',subject,'_cnv_bins.txt'))
+
+
+
+
+

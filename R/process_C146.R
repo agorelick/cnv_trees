@@ -1,0 +1,69 @@
+subject <- 'C146'
+sex <- 'male'
+
+obj_list <- readRDS(paste0('original_data/',subject,'_1000kbp_withXYMT.rds')) ## because hacked to include X,Y, this is now as a list of 'obj', where each 'obj' has 1 sample
+names(obj_list) <- gsub(subject,'',gsub('_aligned','',names(obj_list)))
+
+## remove results from previous run
+if(file.exists('refits/purity_ploidy.txt')) file.remove('refits/purity_ploidy.txt')
+
+samples <- names(obj_list)
+
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# fit purity and ploidy for each sample
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## B1b very difficult because < 1 copies of X and negative Y
+refit(obj_list[[1]], samplename=samples[1], sex='male', ploidy=2, purity=0.54, save=T, output_dir=paste0('output/',subject))
+
+## LN1: 0.5 gives Y=0, X=1, 3p and 4 exactly at 1.
+refit(obj_list[[2]], samplename=samples[2], sex='male', ploidy=2, purity=0.5, save=T, output_dir=paste0('output/',subject))
+
+## LN5: 
+refit(obj_list[[3]], samplename=samples[3], sex='male', ploidy=2, purity=0.55, save=T, output_dir=paste0('output/',subject))
+
+## N1
+refit(obj_list[[4]], samplename=samples[4], sex='male', ploidy=2, purity=1, save=T, output_dir=paste0('output/',subject))
+
+## P1
+refit(obj_list[[5]], samplename=samples[5], sex='male', ploidy=2, purity=0.57, save=T, output_dir=paste0('output/',subject))
+
+## P2
+refit(obj_list[[6]], samplename=samples[6], sex='male', ploidy=2, purity=0.4, save=T, output_dir=paste0('output/',subject))
+
+## P5
+refit(obj_list[[7]], samplename=samples[7], sex='male', ploidy=2, purity=0.37, save=T, output_dir=paste0('output/',subject))
+
+## P7
+refit(obj_list[[8]], samplename=samples[8], sex='male', ploidy=2, purity=0.47, save=T, output_dir=paste0('output/',subject))
+
+## P8
+refit(obj_list[[9]], samplename=samples[9], sex='male', ploidy=2, purity=0.49, save=T, output_dir=paste0('output/',subject))
+
+## TD2
+refit(obj_list[[10]], samplename=samples[10], sex='male', ploidy=2, purity=0.57, save=T, output_dir=paste0('output/',subject))
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# process cnv data
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+info <- get_cnv_segments(obj_list, fit_file=paste0('output/',subject,'/purity_ploidy.txt'), sex=sex, min_segment_bins=5,field='meancopy')
+
+mat <- info$mat
+mat <- cbind(sample=rownames(mat), as.data.table(mat))
+write_tsv(mat,paste0('output/',subject,'_cnv_matrix.txt'))
+
+segments <- info$segs
+write_tsv(segments,paste0('output/',subject,'_cnv_segments.txt'))
+
+bins <- info$bins
+write_tsv(bins,paste0('output/',subject,'_cnv_bins.txt'))
+
+
+
+
+
+
