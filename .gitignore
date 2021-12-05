@@ -1,4 +1,4 @@
-output/
-*.pdf
-*.png
-
+.DS_Store
+*.tmp
+*.swp
+*.xlsx

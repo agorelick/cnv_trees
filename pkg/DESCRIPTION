@@ -1,0 +1,26 @@
+Package: polyG
+Type: Package
+Title: R-library for General Purpose R scripts
+Version: 0.0.0
+Author: Alexander Gorelick
+Maintainer: Alexander Gorelick <agorelick@mgh.harvard.edu>
+Description: Central repository for generic R
+    functions.
+License: Private!
+Depends:
+    R (>= 4.0.0),
+    ACE,
+    adephylo,
+    ape,
+    Biobase,
+    cowplot,
+    data.table,
+    devtools,
+    ggplot2,
+    ggtree,
+    here,
+    magrittr,
+    phangorn,
+    phytools,
+    RColorBrewer
+RoxygenNote: 7.1.2
