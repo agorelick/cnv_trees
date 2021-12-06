@@ -14,7 +14,14 @@ if(!"ggplot2" %in% installed.packages()[,"Package"]) install.packages('ggplot2')
 source(here::here('R/func.R'))
 
 ## create expected output directories
-if(!dir.exists(here('output'))) dir.create(here('output'))
+if(!dir.exists(here('output/C146/fits'))) dir.create(here('output/C146/fits'),recursive=T)
+if(!dir.exists(here('output/C154/fits'))) dir.create(here('output/C154/fits'),recursive=T)
+if(!dir.exists(here('output/C157/fits'))) dir.create(here('output/C157/fits'),recursive=T)
+if(!dir.exists(here('output/C159/fits'))) dir.create(here('output/C159/fits'),recursive=T)
+if(!dir.exists(here('output/C161/fits'))) dir.create(here('output/C161/fits'),recursive=T)
+if(!dir.exists(here('output/C186/fits'))) dir.create(here('output/C186/fits'),recursive=T)
+if(!dir.exists(here('output/E4/fits'))) dir.create(here('output/E4/fits'),recursive=T)
+
 
 ## process raw data from ACE to create CNV segment matrices for each subject
 source(here('R/process_C146.R'))

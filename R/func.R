@@ -24,6 +24,7 @@ rename_samples <- function(obj_list,this.subject) {
 }
 
 process_copynumber_data <- function(obj_list, fit_file, sex, this.subject, min_segment_bins=5, field='intcopy', map_file=here('original_data/sample_info.txt'), R, ncpus) {
+    #browser()
     options(scipen = 99)
     segments <- list()
     bins <- list()
