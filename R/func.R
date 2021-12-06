@@ -401,10 +401,11 @@ cnv_heatmap <- function(mat, seg, distance_matrix, this.subject) {
 
     ## use the copy-number euclidean distance tree for ordering the samples
     tree <- nj(distance_matrix)
+    tree <- phytools::reroot(tree, node.number=grep('^N[0-9]',tree$tip.label))
     p_tree <- ggtree(tree,layout='rect',size=0.5)
     dat <- as.data.frame(p_tree$data)
     dat <- dat[dat$isTip==T,]
-    dat <- dat[order(dat$y,decreasing=T),]
+    dat <- dat[order(dat$y,decreasing=F),]
     mat2$sample <- factor(mat2$sample, levels=dat$label)
 
     ## define color scheme
@@ -629,7 +630,7 @@ refit <- function(object, sex, purity=NA, ploidy, samplename=NA, sampleindex=1, 
         ## return the results
         p
     } else {
-        refits_dir=file.path(output_dir)
+        refits_dir=file.path(output_dir,'fits')
         if(!dir.exists(refits_dir)) dir.create(refits_dir,recursive=T)
 
         ## save the plot for this fit

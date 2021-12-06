@@ -1,7 +1,7 @@
 
 ## set this to the location where the github repo was downloaded
 #setwd('GITHUB-REPO-LOCATION')
-setwd('~/lab_repos/cnv_trees')
+setwd('~/Dropbox/Naxerova lab/Alex/cnv_trees')
 
 ## install any missing required R packages
 if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
