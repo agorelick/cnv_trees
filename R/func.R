@@ -457,13 +457,16 @@ cnv_heatmap <- function(mat, seg, distance_matrix, this.subject) {
     p_heatmap <- ggplot(tmp2) + 
         scale_x_continuous(breaks=c(0,chr2$chr_end), label=c('',as.character(chr2$chr)), expand=c(0,0)) + 
         scale_y_continuous(breaks=1:length(sample_levels),labels=sample_levels,expand=c(0,0),position='right') + 
-        geom_rect(aes(xmin=start,xmax=end,ymin=samplenum-0.5,ymax=samplenum+0.5,fill=copies),color='black',size=0.125) + 
+        geom_rect(aes(xmin=start,xmax=end,ymin=samplenum-0.5,ymax=samplenum+0.5,fill=copies),size=0.125) + 
         geom_point(data=tmp2[subclonal==T],aes(x=midpoint,y=samplenum),pch=16,size=0.3)  +
         geom_text(data=chr3,aes(x=midpoint,label=chr),y=0.25,size=3.5) +
         scale_fill_manual(values=cols,name='Copies',na.value='black') + 
         labs(title=paste(this.subject,'SCNA matrix and euclidean distance tree'),x='\nGenomic position',y='Sample') +
         theme_ang(base_size=12) +
-        theme(axis.text.x=element_blank()) +
+        theme(axis.text.x=element_blank(),axis.line.x=element_blank(),axis.line.y=element_blank(),
+              axis.ticks.x=element_blank(),axis.ticks.y=element_blank()) + 
+        geom_hline(yintercept=0.5+(0:length(sample_levels)),size=0.25) + 
+        geom_vline(xintercept=c(0,chr2$chr_end),size=0.25) +
         coord_cartesian(clip = "off")
     p <- plot_grid(p_tree, p_heatmap, align='h', rel_widths=c(1,6))
     p

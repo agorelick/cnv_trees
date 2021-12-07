@@ -8,7 +8,7 @@ obj_list <- readRDS(here(paste0('original_data/',subject,'_1000kbp_withXYMT.rds'
 obj_list <- rename_samples(obj_list, subject)
 
 ## remove results from previous run
-purity_file=here(paste0('output/',subject,'/purity_ploidy.txt'))
+purity_file=here(paste0('output/',subject,'/fits/purity_ploidy.txt'))
 if(file.exists(purity_file)) file.remove(purity_file)
 
 samples <- names(obj_list)
@@ -51,10 +51,11 @@ refit(obj_list[[9]], samplename=samples[9], sex=sex, ploidy=2, purity=0.61, save
 # process cnv data
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-info <- process_copynumber_data(obj_list, fit_file=here(paste0('output/',subject,'/purity_ploidy.txt')), sex=sex, this.subject=subject, min_segment_bins=5,field='meancopy', R=10000, ncpus=4)
+info <- process_copynumber_data(obj_list, fit_file=here(paste0('output/',subject,'/fits/purity_ploidy.txt')), sex=sex, this.subject=subject, min_segment_bins=5,field='meancopy', R=10000, ncpus=4)
 
 ## make CNV segment heatmap
 p <- cnv_heatmap(info$mat, info$seg, info$distance_matrix, this.subject=subject)
-ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_heatmap.pdf')),width=11,height=9)
+
+ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_heatmap.pdf')),width=11,height=6)
 
 

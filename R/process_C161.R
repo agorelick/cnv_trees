@@ -124,7 +124,7 @@ info <- process_copynumber_data(obj_list, fit_file=here(paste0('output/',subject
 
 ## make CNV segment heatmap
 p <- cnv_heatmap(info$mat, info$seg, info$distance_matrix, this.subject=subject)
-ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_heatmap.pdf')),width=11,height=9)
+ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_heatmap.pdf')),width=11,height=8)
 
 
 
