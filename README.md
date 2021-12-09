@@ -41,6 +41,33 @@ groups <- group_samples(dm,color=T,lun=T,liv=F,per=F)
 ## generate the annotated_phylo object
 tree <- annotated_phylo(dm, groups)
 
+## print tree to see the information it contains (data from the angular distance matrix for C100):
+R> tree
+
+Annotated phylogenetic tree with 17 tips and 16 internal nodes.
+
+Rooted; includes branch lengths.
+
+    barcode order type lesion sample autopsy           group
+ 1:   Liv1a     1  Liv      1      a   FALSE Distant (other)
+ 2:   Liv1b     2  Liv      1      b   FALSE Distant (other)
+ 3:   Liv1c     3  Liv      1      c   FALSE Distant (other)
+ 4:   Liv2a     4  Liv      2      a   FALSE Distant (other)
+ 5:   Liv3a     5  Liv      3      a   FALSE Distant (other)
+ 6:   Liv3b     6  Liv      3      b   FALSE Distant (other)
+ 7:   Liv3c     7  Liv      3      c   FALSE Distant (other)
+ 8:   Liv3d     8  Liv      3      d   FALSE Distant (other)
+ 9:      L1     9    L      1          FALSE    Locoregional
+10:      L2    10    L      2          FALSE    Locoregional
+11:      L3    11    L      3          FALSE    Locoregional
+12:      L4    12    L      4          FALSE    Locoregional
+13:      P1    13    P      1          FALSE         Primary
+14:      P2    14    P      2          FALSE         Primary
+15:      P3    15    P      3          FALSE         Primary
+16:      P4    16    P      4          FALSE         Primary
+17:      N1    17    N      1          FALSE          Normal
+
+
 ## plot a standardized tree (uses 'ggtree' R-package)
 plot(tree)
 ```
