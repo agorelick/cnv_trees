@@ -23,7 +23,11 @@ annotated_phylo <- function(distance.matrix,groups,method='nj',root_at_normal=T)
     info <- merge(info, groups, by='barcode', all.x=T)
     info <- info[order(order),]
     colors <- info[!duplicated(group)]
-    colors$group <- factor(colors$group, levels=c('Normal','Primary','Locoregional','Peritoneum','Lung','Liver','Distant (other)'))
+    usual_groups <- c('Normal','Primary','Locoregional','Peritoneum','Lung','Liver','Distant (other)')
+    additional_groups <- unique(info$group[!info$group %in% usual_groups])
+    ordered_groups <- c(usual_groups, additional_groups)
+    ordered_groups <- unique(ordered_groups[ordered_groups %in% info$group])
+    colors$group <- factor(colors$group, levels=ordered_groups)
     colors <- colors[order(group)]
     color_scheme <- colors$color
     names(color_scheme) <- as.character(colors$group)
@@ -137,15 +141,15 @@ group_samples <- function(input,lun=T,liv=T,per=T,primary_autopsy_is_distant=T,h
 
 ##' plot.annotated_phylo
 ##' @export
-plot.annotated_phylo <- function(tree,cex=2.5,angle=F,layout='ape',legend.position='none',suppress_tip_labs=F, xpad=0.1, ...){ 
+plot.annotated_phylo <- function(tree,cex=2.5,angle=F,layout='ape',legend.position='none',suppress_tip_labs=F, xpad=0.1, fontface=1, ...){ 
     stopifnot('annotated_phylo' %in% class(tree))
     info <- data.table(label=tree$tip.label,group=tree$tip.annotations$group)
     color_scheme <- tree$colors
     tree$group <- NULL
     class(tree) <- 'phylo'
     p <- ggtree(tree, layout=layout, ...) %<+% info
-    if(suppress_tip_labs==F & angle==F) p <- p + geom_tiplab(aes(color=group),fontface=1,size=cex,angle=F)
-    if(suppress_tip_labs==F & angle==T) p <- p + geom_tiplab(aes(color=group,angle=angle),fontface=1,size=cex)
+    if(suppress_tip_labs==F & angle==F) p <- p + geom_tiplab(aes(color=group),fontface=fontface,size=cex,angle=F)
+    if(suppress_tip_labs==F & angle==T) p <- p + geom_tiplab(aes(color=group,angle=angle),fontface=fontface,size=cex)
     p <- p + scale_color_manual(values=color_scheme,name=NULL) + theme(legend.position=legend.position)
     xr <- range(p$data$x)
     xwidth <- xr[2]-xr[1]
@@ -166,11 +170,18 @@ expand_tree <- function(tree) {
     x <- as.data.table(reshape2::melt(tree$distance.matrix))
     names(x) <- c('barcode.1','barcode.2','distance')
     anno <- tree$tip.annotations
+    if('colors' %in% names(tree)) {
+        cols <- data.table(group=names(tree$colors),color=tree$colors)
+    } else {
+        cols <- data.table(group=unique(anno$group))
+        cols$color=rainbow(n=nrow(cols))
+    }
+    anno <- merge(anno, cols, by='group', all.x=T)
     x <- merge(x, anno, by.x='barcode.1', by.y='barcode', all.x=T)
-    setnames(x,c('type','lesion','sample','autopsy','group'),c('type.1','lesion.1','sample.1','autopsy.1','group.1'))
+    setnames(x,c('type','lesion','sample','autopsy','group','color'),c('type.1','lesion.1','sample.1','autopsy.1','group.1','color.1'))
     x <- merge(x, anno, by.x='barcode.2', by.y='barcode', all.x=T)
-    setnames(x,c('type','lesion','sample','autopsy','group'),c('type.2','lesion.2','sample.2','autopsy.2','group.2'))
-    x <- x[,c('barcode.1','barcode.2','distance','group.1','type.1','lesion.1','sample.1','autopsy.1','group.2','type.2','lesion.2','sample.2','autopsy.2'),with=F]
+    setnames(x,c('type','lesion','sample','autopsy','group','color'),c('type.2','lesion.2','sample.2','autopsy.2','group.2','color.2'))
+    x <- x[,c('barcode.1','barcode.2','distance','group.1','type.1','lesion.1','sample.1','autopsy.1','color.1','group.2','type.2','lesion.2','sample.2','autopsy.2','color.2'),with=F]
     x$barcode.1 <- factor(x$barcode.1, levels=barcode_order)
     x$barcode.2 <- factor(x$barcode.2, levels=barcode_order)
     x <- x[order(barcode.1,barcode.2),]
@@ -193,11 +204,10 @@ contract_tree <- function(x) {
     dm <- dm[barcode_order,barcode_order]
 
     ## remake the groups
-    tmp <- x[,c('barcode.1','type.1','lesion.1','sample.1','autopsy.1','group.1'),with=F]
-    names(tmp) <- gsub('[.]1','',names(tmp))
-    groups <- tmp$barcode
-    names(groups) <- tmp$group
-    
+    groups <- x[,c('barcode.1','group.1','color.1'),with=F]
+    names(groups) <- gsub('[.]1','',names(groups))
+    groups <- groups[!duplicated(barcode),]
+
     ## remake the annotated_phylo object
     tree <- annotated_phylo(dm, groups)
     tree
@@ -424,14 +434,7 @@ collapse_tree_all <- function(tree) {
 
         ## subset distance matrix
         subset_matrix <- orig_matrix[sample_subset,sample_subset] 
-
-        ## subset annotations
-        subset_info <- orig_info[barcode %in% sample_subset,]
-        subset_info <- subset_info[!duplicated(barcode),]
-
-        ## subset annotated_phylo
-        subset_groups <- orig_info$barcode
-        names(subset_groups) <- orig_info$group
+        subset_groups <- polyG::group_samples(rownames(subset_matrix),liv=T,lun=T,per=T,primary_autopsy_is_distant=T,color=T)
         subset_tree <- annotated_phylo(subset_matrix,subset_groups)
         subset_tree
     }

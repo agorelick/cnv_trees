@@ -327,7 +327,8 @@ process_copynumber_data <- function(obj_list, fit_file, sex, this.subject, min_s
     distance_matrix <- as.matrix(distance_matrix)
    
     ## save output from CNV data
-    write_tsv(m,here(paste0('output/',this.subject,'/',this.subject,'_cnv_matrix.txt')))
+    m_out <- cbind(barcode=rownames(m),as.data.table(m))
+    write_tsv(m_out,here(paste0('output/',this.subject,'/',this.subject,'_cnv_matrix.txt')))
     write_tsv(segs,here(paste0('output/',this.subject,'/',this.subject,'_cnv_segments.txt')))
     write_tsv(bins,here(paste0('output/',this.subject,'/',this.subject,'_cnv_bins.txt')))
     write_distance_matrix(dm_df=distance_matrix,filepath=here(paste0('output/',this.subject,'/',this.subject,'_cnv_distance_matrix.txt')))
