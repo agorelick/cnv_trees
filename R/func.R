@@ -345,6 +345,40 @@ process_copynumber_data <- function(obj_list, fit_file, sex, this.subject, min_s
 }
 
 
+bootstrap_cnv_tree <- function(x,B=1000,this.subject) {
+    message('Bootstrapping CNV tree ...')
+    title=paste0(this.subject,' bootstrapped SCNA tree (B=',B,')')
+    set.seed(42)
+    fun <- function(x) {
+        dm <- dist(x, method='euclidean')
+        tree <- nj(dm)
+        tree <- phytools::reroot(tree, node.number=grep('N1',tree$tip.label))
+        tree
+    }
+    tree <- fun(x)
+
+    ## get B bootstrap trees:
+    bstrees <- boot.phylo(tree, x, fun, B=B, trees = TRUE)$trees
+
+    ## get proportions of each bipartition, convert to a percentage and round it
+    boot <- prop.clades(tree, bstrees)
+    boot <- round(100*boot/B)
+
+    p <- ggtree(tree,layout='rect')
+    info <- as.data.table(p$data)
+    info$bootstrap[info$isTip==F] <- boot
+    p <- p %<+% info 
+    p <- p + geom_label(aes(label=bootstrap,fill=bootstrap), size=3, 
+                        label.padding=unit(0.1, "lines"),
+                        label.r = unit(0.1, "lines"))
+    p <- p + scale_fill_gradient(low='white',high='steelblue',name='Bootstrap value')
+    p <- p + geom_tiplab(fontface=1,size=3,hjust=-0.25,angle=F) 
+    p <- p + theme(legend.position='bottom')
+    p <- p + labs(title=title)
+    p
+}
+
+
 
 cnv_heatmap <- function(mat, seg, distance_matrix, this.subject) {
 

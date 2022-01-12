@@ -127,6 +127,11 @@ p <- cnv_heatmap(info$mat, info$seg, info$distance_matrix, this.subject=subject)
 ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_heatmap.pdf')),width=11,height=8)
 
 
+## bootstrap SCNA tree
+p <- bootstrap_cnv_tree(info$mat, B=1000, this.subject=subject)
+ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_tree_bootstrapped.pdf')),width=10,height=8)
+
+
 
 
 
