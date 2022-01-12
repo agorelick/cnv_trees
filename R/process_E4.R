@@ -9,7 +9,7 @@ obj_list <- rename_samples(obj_list, subject)
 
 ## remove results from previous run
 purity_file=here(paste0('output/',subject,'/fits/purity_ploidy.txt'))
-#if(file.exists(purity_file)) file.remove(purity_file)
+if(file.exists(purity_file)) file.remove(purity_file)
 
 samples <- names(obj_list)
 
@@ -149,7 +149,7 @@ ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_tree_bootstrapped
 
 
 
-
+############### temporary scrap work
 
 run_scrap=F
 
