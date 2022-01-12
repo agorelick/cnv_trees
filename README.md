@@ -13,7 +13,7 @@ Use this repo to process shallow WGS-based SCNA data. This will automatically do
 
 2. Open R and install the accompanying *polyG* R-package:
 ```r
-install.packages('cnv_trees/rpkg',type='src',repos=NULL)
+install.packages('cnv_trees/pkg',type='src',repos=NULL)
 ```
 
 3. 'cd' to the cloned repo, run the `run.R` script. That's it!
