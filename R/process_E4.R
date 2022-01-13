@@ -1,3 +1,4 @@
+rm(list=ls())
 source(here::here('R/func.R'))
 
 subject <- 'E4'
@@ -129,52 +130,55 @@ refit(obj_list[[35]], samplename=samples[35], sex=sex, ploidy=2, purity=0.42, sa
 # process cnv data
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-info <- process_copynumber_data(obj_list, fit_file=here(paste0('output/',subject,'/fits/purity_ploidy.txt')), sex=sex, this.subject=subject, min_segment_bins=5,field='meancopy')
-
-nrow(info$bins) ## 72030
-nrow(info$mat) ## 35
-nrow(info$segs) ## 1925
-nrow(info$distance_matrix) ## 35
-
-# exclude bad samples based on manual review, and manually 
+## remove any problematic samples based on manual curation
 bad_samples <- c("Per9","Per21","TD3","L6","L2","TD4")
 good_samples <- names(obj_list)[!names(obj_list) %in% bad_samples]
-info$mat <- info$mat[good_samples,]
-info$bins <- info$bins[sample %in% good_samples]
-info$segs <- info$segs[sample %in% good_samples]
+fit_file=here(paste0('output/',subject,'/fits/purity_ploidy.txt'))
+fits <- fread(fit_file)
+fits <- fits[barcode %in% good_samples,]
+write_tsv(fits, fit_file)
+obj_list <- obj_list[fits$barcode] ## names must match fits$barcode
 
-# override full chrX deletions to diploid as these are likely
-# due to non-tumor infiltrate via the singlecell data
-manual_override_chrX <- c('P9','Per19','Per18','Per14','Per1')
 
-for(this.sample in manual_override_chrX) { 
-    message('Overriding chrX copy number in sample ',this.sample)
+info <- get_bins_and_segments(obj_list, fit_file, sex)
 
-    ## update bins
-    info$bins[sample %in% this.sample & chr=='X',c('Copies','adjustedcopynumbers'):=list(2,2)]  
+manual_override_chrX <- c('Per17','Per10','Per12','Per16','Per15','Per2','P7','Per6','P1','L3','L5','L1','Per19','Per18','P9','Per14','Per1')
 
-    ## update segs
-    info$segs[sample %in% this.sample & chr=='X',c('value','adjustedintegercopies','sc.p.adj','sc.copies.exp','sc.direction.exp','padding','sc.call','sc.threshold','copies'):=list(2,2,NA,NA,NA,NA,F,0.01,2)]  
-
-    ## update mat
-    info$mat[this.sample,grep('X',colnames(info$mat),value=T)] <- 2
-
-    ## create a distance matrix from the binned segments
-    info$distance_matrix <- dist(info$mat,method='euclidean')
-    info$distance_matrix <- as.matrix(info$distance_matrix)
+override_X_bins <- function(tmp) {
+    tmp$copynumbers[tmp$chr=='X'] <- 2
+    tmp$segments[tmp$chr=='X'] <- 2
+    tmp$adjustedcopynumbers[tmp$chr=='X'] <- 2
+    tmp$intcopy[tmp$chr=='X'] <- 2
+    tmp$meancopy[tmp$chr=='X'] <- 2
+    tmp
+}
+override_X_segs <- function(tmp) {
+    tmp$Copies[tmp$Chromosome=='X'] <- 2
+    tmp$Segment_Mean[tmp$Chromosome=='X'] <- 2
+    tmp$Segment_Mean2[tmp$Chromosome=='X'] <- 2
+    tmp$Segment_SE[tmp$Chromosome=='X'] <- NA
+    tmp$P_log10[tmp$Chromosome=='X'] <- NA
+    tmp
 }
 
-# update the mat, segs, bins, and distance matrix files for E4 after manual override
-m_out <- cbind(barcode=rownames(info$mat),as.data.table(info$mat))
-write_tsv(m_out,here(paste0('output/',subject,'/',subject,'_cnv_matrix.txt')))
-write_tsv(info$segs,here(paste0('output/',subject,'/',subject,'_cnv_segments.txt')))
-write_tsv(info$bins,here(paste0('output/',subject,'/',subject,'_cnv_bins.txt')))
-write_distance_matrix(dm_df=info$distance_matrix,filepath=here(paste0('output/',subject,'/',subject,'_cnv_distance_matrix.txt')))
+for(this.sample in manual_override_chrX) {
+    message(this.sample)
+    info$bins[[this.sample]] <- override_X_bins(info$bins[[this.sample]])
+    info$segments[[this.sample]] <- override_X_segs(info$segments[[this.sample]])
+}
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # process cnv data
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#info <- get_bins_and_segments(obj_list, fit_file, sex)
+samples <- names(obj_list)
+info <- process_SCNA_data(samples, info, subject)
+
+## make CNV segment heatmap
+p <- cnv_heatmap(info$mat, info$seg, info$distance_matrix, this.subject=subject)
+ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_heatmap.pdf')),width=11,height=8)
 
 ## save plots comparing CNV 5+ Mb segment phylogeny to poly-G angular distance phylogeny
 set.seed(42)
@@ -183,126 +187,20 @@ ggsave(here(paste0('output/',subject,'/',subject,'_segment_euclidean_matrix_comp
 tree2.1 <- compare_trees(info$distance_matrix,subject, tree_method='nj')$plot
 ggsave(here(paste0('output/',subject,'/',subject,'_segment_euclidean_nj_tree_comparison.pdf')),width=10,height=8)
 
-## make CNV segment heatmap
-p <- cnv_heatmap(info$mat, info$seg, info$distance_matrix, this.subject=subject)
-ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_heatmap.pdf')),width=11,height=8)
-
 ## bootstrap SCNA tree
-p <- bootstrap_cnv_tree(info$mat, B=1000, this.subject=subject)
-ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_tree_bootstrapped.pdf')),width=9,height=8)
-
-
-
-
-############### temporary scrap work
-
-run_scrap=F
-
-if(run_scrap==T) {
-
-    pdf('~/Desktop/E4_allsamples_bootstrapped.pdf',width=8,height=10)
-    plot(tree, main = "E4 SCNA tree (all sWGS samples) with 1000 bootstrap values\nno subclonal SCNAs, no chrX")
-    drawSupportOnEdges(boot)
-    dev.off()
-
-
-
-    #fits <- fread(here(paste0('output/',subject,'/fits/purity_ploidy.txt')))
-    #fits <- fits[purity >= 0.2,]
-    #x <- x[fits$barcode,]
-    x <- round(x)
-    rows <- rownames(x)
-    rng <- range(x)
-    values <- rng[1]:rng[2]
-    x <- apply(x, 2, as.character)
-    rownames(x) <- rows
-    segments <- colnames(x)
-    segments <- segments[!grepl('X',segments)]
-    x <- x[,segments]
-
-    ## get maximum parsimony tree
-    set.seed(42)
-    pd <- as.phyDat(x,levels=as.character(values),type='USER',ambiguity='-')
-    tree <- pratchet(pd, trace=0)
-    tree <- acctran(tree, pd)
-    tree <- phytools::reroot(tree, node.number=grep('N1',tree$tip.label))
-
-    #dm <- as.matrix(distTips(tree,method='nNodes'))
-    dm <- as.matrix(distTips(tree,method='patristic'))
-    ad <- read_distance_matrix(here('original_data/polyG/E4_ad_matrix.txt'))
-    common_samples <- intersect(rownames(dm),rownames(ad))
-    common_samples <- common_samples[!grepl('^N',common_samples)]
-    sample_levels <- sort(common_samples, decreasing=T)
-    dm_subset <- dm[common_samples,common_samples]
-    ad_subset <- ad[common_samples,common_samples]
-    tst <- dist_similarity(test_dist=dm_subset, ref_dist=ad_subset, nperm=1000, cpus=4, return_only_pval=F, method='spearman')
-
-    this.subject <- 'E4'
-    ## heatmap
-    d_subset <- as.data.table(reshape2::melt(tst$test_dist))
-    d_subset$data <- 'CNV'
-    d_subset$Var1 <- factor(d_subset$Var1, levels=sample_levels)
-    d_subset$Var2 <- factor(d_subset$Var2, levels=sample_levels)
-    g_subset <- as.data.table(reshape2::melt(tst$ref_dist))
-    g_subset$data <- 'poly-G'
-    g_subset$Var1 <- factor(g_subset$Var1, levels=sample_levels)
-    g_subset$Var2 <- factor(g_subset$Var2, levels=sample_levels)
-
-    p1 <- ggplot(d_subset, aes(x=Var1,y=Var2)) +
-        scale_x_discrete(expand=c(0,0)) +
-        scale_y_discrete(expand=c(0,0)) +
-        theme_ang(base_size=10) +
-        geom_tile(aes(fill=value)) +
-        theme(
-              axis.text.x=element_blank(),axis.ticks.x=element_blank(),axis.line.x=element_blank(),
-              axis.text.y=element_blank(),axis.ticks.y=element_blank(),axis.line.y=element_blank(), 
-              legend.position='right') +
-scale_fill_gradient(low='white',high='steelblue',name='Euclidean\ndistance') +
-labs(x=NULL,y=NULL,subtitle=paste(this.subject,'SCNA distance matrix'))
-
-    p2 <- ggplot(g_subset, aes(x=Var1,y=Var2)) +
-        scale_x_discrete(expand=c(0,0)) +
-        scale_y_discrete(expand=c(0,0)) +
-        theme_ang(base_size=10) +
-        geom_tile(aes(fill=value)) +
-        theme(
-              axis.text.x=element_blank(),axis.ticks.x=element_blank(),axis.line.x=element_blank(),
-              axis.text.y=element_blank(),axis.ticks.y=element_blank(),axis.line.y=element_blank(), 
-              legend.position='right') +
-scale_fill_gradient(low='white',high='steelblue',name='Angular\ndistance') +
-labs(x=NULL,y=NULL,subtitle=paste(this.subject,'Polyguanine distance matrix'))
-    p_top <- plot_grid(p1, p2, ncol=2)
-p_space <- ggplot() + theme_nothing()
-p_bottom <- plot_grid(p_space, tst$plot, p_space, nrow=1, rel_widths=c(1,3,1))
-p <- plot_grid(p_top, p_bottom, ncol=1, rel_heights=c(1,1.2))
-p
-
-
-common_samples <- intersect(rownames(dm),rownames(ad))
-dm_subset <- dm[common_samples,common_samples]
-ad_subset <- ad[common_samples,common_samples]
-
-## define groups for plot
-groups <- group_samples(dm_subset,color=T,lun=F,liv=F,per=T)
-
-## CNV tree
-tree1 <- annotated_phylo(dm_subset, groups)
-tree$colors <- tree1$colors
-tree$tip.annotations <- tree1$tip.annotations
-tree$distance.matrix <- tree1$distance.matrix
-class(tree) <- 'annotated_phylo'
-tree$edge.length <- NULL
-
-p1 <- plot(tree, legend.position='none', angle=T) + labs(subtitle='SCNA maximum parsimony tree')
-
-## poly-G tree
-tree2 <- annotated_phylo(ad_subset, groups)
-p2 <- plot(tree2, legend.position='none', angle=T) + labs(subtitle='Polyguanine angular distance')
-
-p <- plot_grid(p1,p2,ncol=2)
-ggsave('~/Desktop/E4_maxpars_vs_ad_tree_min20purity.pdf',width=10,height=8)
-
+for(bs in seq(0,95,by=5)) {
+    if(bs < 10) {
+        bslab <- paste0('0',bs)
+    } else {
+        bslab <- as.character(bs)
+    }
+    p <- bootstrap_cnv_tree(info$mat, B=1000, this.subject=subject,collapse_threshold=bs)
+ggsave(here(paste0('output/',subject,'/collapsed_trees/',subject,'_cnv_segment_tree_bootstrapped_',bslab,'.pdf')),width=9,height=8)
 }
+
+
+
+
 
 
 

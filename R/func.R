@@ -4,6 +4,285 @@ library(RColorBrewer)
 library(cowplot)
 
 
+
+## first extract the adjusted copy number bins and segments for each sample
+get_bins_and_segments <- function(obj_list, fit_file, sex) {
+    options(scipen = 99)
+    segments <- list()
+    bins <- list()
+    fits <- fread(fit_file)
+    if(!all(names(obj_list)==fits$barcode)) stop('Names of the obj_list should match the *barcode* column of the fit file!')
+
+    samples <- names(obj_list)    
+    chr_info <- sex_chr_info(sex)
+    included_samples <- intersect(names(obj_list),samples)
+    obj_list <- obj_list[included_samples]
+    fits <- fits[barcode %in% included_samples,]
+
+    ## loop through each sample, generating bins and segments with purity/ploidy-adjusted values
+    for (i in 1:length(included_samples)){
+        sample <- included_samples[i]
+        object <- obj_list[[i]]
+        purity <- fits$purity[fits$barcode==sample]
+        ploidy <- fits$ploidy[fits$barcode==sample]
+        message(sample,'; purity=',purity,'; ploidy=',ploidy)
+    
+        ## get adjusted segments
+        template <- objectsampletotemplate(object, index=1)
+        include_chr <- unique(template$chr)[chr_info$plot_chr_included]
+        template <- template[template$chr %in% include_chr,]
+        segmentdf <- getadjustedsegments(template, ploidy=ploidy, cellularity = purity, sgc=chr_info$sgc) 
+
+        ## adjust the bin's copy number with the same formula as for getting adjustedsegments
+        bindata <- template
+        bindata$chr <- as.character(bindata$chr)
+        standard <- median(template$segments,na.rm=T)
+        gc <- rep(2, nrow(template))
+        gc[template$chr %in% chr_info$sgc] <- 1
+        bindata$adjustedcopynumbers <- bindata$copynumbers * (ploidy + 2/purity - 2)/standard - gc/purity + gc
+        bindata <- bindata[!is.na(bindata$copynumbers),]
+
+        ## add in the segment's adjusted intcopy and meancopy to the bins
+        bindata$intcopy <- NA
+        bindata$meancopy <- NA
+        for (j in 1:dim(segmentdf)[1]){
+            chr <- as.character(segmentdf$Chromosome[j])
+            start <- segmentdf$Start[j]
+            end <- segmentdf$End[j]
+            bindata$intcopy[which(bindata$chr==chr & bindata$start >= start & bindata$end <= end)] <- segmentdf$Copies[j]
+            bindata$meancopy[which(bindata$chr==chr & bindata$start >= start & bindata$end <= end)] <- segmentdf$Segment_Mean[j]
+        }
+
+        ## add the bins and segments to our running lists for each sample
+        segments[[i]] <- segmentdf 
+        bins[[i]] <- bindata
+    }
+    names(segments) <- included_samples
+    names(bins) <- included_samples
+    list(segments=segments, bins=bins)
+}
+
+
+test_subclonal_segments_and_annotate_bins <- function(this.sample, info) {
+    ## for each sample, test whether each segment has a significantly subclonal copy number alteration based on: 
+    ## 1. segmean is more than 0.1 away from the nearest integer copy number
+    ## 2. adjust p-value from a one-sided t-test in the expected direction is significant
+    ## 3. the copy number is less than 5
+
+    message('Testing for subclonal segments in sample ', this.sample)
+    segs <- as.data.table(info$segments[[this.sample]])
+    segs[,segment:=paste0(Chromosome,':',Start,'-',End)]
+    bins <- as.data.table(info$bins[[this.sample]])
+    bins[,binID:=paste0(chr,':',start,'-',end)]
+
+    setkey(bins,'chr','start','end')
+    setkey(segs,'Chromosome','Start','End')
+    tmp <- foverlaps(bins, segs, type='any')
+    bin_to_segment <- tmp[!duplicated(binID),c('binID','segment'),with=F]
+    bins <- merge(bins, bin_to_segment, by='binID', all.x=T)
+    bins[,binID:=NULL]
+    test_subclonal_segment <- function(tmp) {
+        options(scipen=6)
+        this_cn <- as.numeric(unique(tmp$Segment_Mean))
+        diff_from_clonal <- as.numeric(abs(this_cn - round(this_cn)))
+        int_cn <- as.integer(unique(tmp$Copies))
+        p <- tryCatch({
+            t.test(tmp$adjustedcopynumbers, mu=int_cn, alternative='two.sided')$p.value
+        },error=function(e) {
+            as.numeric(NA)
+        })
+        list(this_cn=this_cn,diff_from_clonal=diff_from_clonal,int_cn=int_cn,p=p)
+    }
+    res <- tmp[,test_subclonal_segment(.SD),by=c('chr','Start','End','segment','Num_Bins','P_log10')]
+    res$sc.p.adj <- p.adjust(res$p,method='BH')
+    res[,p:=NULL]
+    res[diff_from_clonal < 0.1 | int_cn >= 5 | chr %in% c('X','Y','MT'),c('sc.p.adj'):=list(NA)]
+    res[sc.p.adj >= 0.01 | is.na(sc.p.adj),sc.call:=F]
+    res[sc.p.adj < 0.01,sc.call:=T]
+    res[sc.call==F,copies:=as.numeric(int_cn)]
+    res[sc.call==T,copies:=as.numeric(round(this_cn,1))]
+    res[copies < 0,copies:=as.numeric(0)]
+
+    ## original subclonality fields I used:
+    ## 'sc.p.adj','sc.copies.exp','sc.direction.exp','padding','sc.call','sc.threshold','copies'):=list(2,2,NA,NA,NA,NA,F,0.01,2)]  
+
+    ## merge the subclonality results to the bins
+    bins <- merge(bins, res[,c('segment','sc.p.adj','sc.call','copies'),with=F], by='segment', all.x=T)
+    bins$chr <- factor(bins$chr, levels=c(1:22,'X','Y'))
+    bins <- bins[order(chr,start,end),]                   
+    bins$sample <- this.sample
+    bins
+}
+
+
+## now we use the floating-point copy number to get a new list of segments
+get_new_segments_from_bins <- function(bins_list, min_segment_bins=5) {
+
+    # first we create a wide table of copies for each bin, merged across all samples
+    # we will use the 'copies' field, containing either integer copies, or the floating-point copy number in the case of subclonal SCNAs
+    merge_field_across_samples <- function(bins,included_samples,field) {
+        b <- bins[[1]][,c('bin','chr','start','end')]
+        extract_value <- function(bins_for_subject) data.frame(value=bins_for_subject[[field]])
+        bin_list <- lapply(bins[1:length(bins)], extract_value)
+        bin_data <- do.call(cbind,bin_list)
+        names(bin_data) <- included_samples
+        out <- cbind(b, bin_data)
+        out
+    }
+    b <- (merge_field_across_samples(bins_list, samples, field='copies'))
+    b <- as.data.table(b)
+
+    ## next in each sample we check where any breakpoints occurred, then we format this data into a matrix with only the copy number changes in each sample
+    check_breakpoints_per_sample <- function(sample, b) {
+        out <- b[,c('bin','chr','start','end')]
+        out$sample <- sample
+        out$value <- b[[sample]]
+        out$change <- c(0,diff(b[[sample]]))
+        out
+    }
+    l0 <- rbindlist(lapply(samples, check_breakpoints_per_sample, b))
+    l <- data.table::dcast(data=l0, bin + chr + start + end ~ sample, value.var='change')
+    l[,id:=paste0(chr,':',start,'-',end)]
+
+    ## now we get the unique breakpoints, based on changes in any sample's copy number
+    m <- as.matrix(l[,(samples),with=F])
+    l$breakpoint <- rowSums(m != 0) > 0
+    l$segment <- cumsum(l$breakpoint) + 1
+
+    ## get the regions for each breakpoint
+    summarize_segments <- function(l) {
+        seg_start <- min(l$start)
+        seg_end <- max(l$end)
+        n_bins <- nrow(l)
+        list(seg_start=seg_start,seg_end=seg_end,n_bins=n_bins)
+    }
+    segs <- l[,summarize_segments(.SD),by=c('segment','chr')]
+    segs <- segs[n_bins >= min_segment_bins,] ## exclude segments less than X bins long
+
+    ## reshape the int-copy number data so that we can get each sample's int-copy number within each segment
+    setkey(segs,'chr','seg_start','seg_end')
+    setkey(l0,'chr','start','end')
+    segs <- foverlaps(l0, segs, type='within')
+    segs[,c('start','end','bin','change'):=NULL]
+    segs$segid <- paste0(segs$chr,':',segs$seg_start,'-',segs$seg_end)
+    segs <- segs[!is.na(segment),]
+
+    ## remove duplicate segments from merging
+    segs[,uniqueID:=paste(sample,segid)]
+    segs <- segs[!duplicated(uniqueID),]
+    segs[,uniqueID:=NULL]
+}
+
+get_copynumber_matrix_from_segs <- function(segs,field) { 
+    ## summarize the unique floating-point copy number per segment per sample
+    summarize_segments_again <- function(segs,field) {
+        myvalue <- unique(segs[[field]])
+        list(myvalue=myvalue, n=length(myvalue))
+    }
+    dat <- segs[,summarize_segments_again(.SD,field),by=c('segment','chr','seg_start','seg_end','n_bins','segid','sample')]
+    dat <- data.table::dcast(segment + segid + chr + seg_start + seg_end + n_bins ~ sample, value.var='myvalue', data=dat)
+    dat <- dat[order(segment),]
+    m <- as.matrix(dat[,(7:ncol(dat)),with=F])
+    rownames(m) <- dat$segid
+    m <- t(m)
+    m
+}
+
+
+get_new_segments_and_annotate_with_subclonality <- function(bins_list) {
+    message('Generate new segment based on the integer (and subclonal) copy number bins ...')
+    segs <- get_new_segments_from_bins(bins_list)
+
+    ## annotate the new segments with subclonality info extracted from the bins
+    bins <- rbindlist(bins_list)
+    tmp <- bins[,c('sample','bin','chr','start','end','sc.p.adj','sc.call','copies'),with=F]
+    segs[,sample_chr:=paste(sample,chr)]
+    tmp[,sample_chr:=paste(sample,chr)]
+    setkey(segs,'sample_chr','seg_start','seg_end')
+    setkey(tmp,'sample_chr','start','end')
+    tmp <- foverlaps(tmp, segs, type='any')
+    tmp[,uniqueID:=paste(sample,chr,start,end)]
+
+    collapse_segment_subclonality <- function(tmp) {
+        tmp[!duplicated(copies),] 
+    }
+    tmp <- tmp[,collapse_segment_subclonality(.SD),by=c('sample','segment','chr','seg_start','seg_end')]
+    tmp <- tmp[!is.na(segid) & !is.na(sample),]
+    tmp[,c('i.chr','i.sample','start','end','uniqueID'):=NULL]
+    tmp <- tmp[order(chr,seg_start,seg_end,sample),]
+    tmp$segid <- factor(tmp$segid, levels=unique(tmp$segid))
+    tmp$segment <- as.integer(tmp$segid)
+    tmp[,sample_chr:=NULL]
+    tmp
+}
+
+
+update_bins_with_new_segments <- function(bins_list, segs) {
+    ## update the 'segment' field in bins to reflect the new segments
+
+    bins <- rbindlist(bins_list)
+    bins[,segment:=NULL]
+    front_fields <- names(bins)
+    bins[,sample_chr:=paste(sample,chr)]
+    setkey(bins,'sample_chr','start','end')
+
+    toadd <- segs[,c('sample','chr','seg_start','seg_end','segid'),with=F]
+    toadd[,sample_chr:=paste(sample,chr)]
+    toadd[,c('sample','chr'):=NULL]
+    setkey(toadd,'sample_chr','seg_start','seg_end')
+    bins <- foverlaps(bins, toadd, type='any')
+    bins[,sample_chr:=NULL]
+    back_fields <- names(bins)[!names(bins) %in% front_fields]
+    fields <- c(front_fields, back_fields)
+    fields <- fields[fields %in% names(bins)]
+    bins <- bins[,(fields),with=F]
+    bins
+}
+
+
+process_SCNA_data <- function(samples, info, this.subject) {
+    ## get bins with purity/ploidy-corrected copy number and annotations for subclonality
+    bins_list <- lapply(samples, test_subclonal_segments_and_annotate_bins, info)
+    names(bins_list) <- samples
+
+    ## get new copy number segments based on the bins' integer or subclonal copy numbers
+    segs <- get_new_segments_and_annotate_with_subclonality(bins_list)
+    #segs$copies_for_heatmap <- segs$copies
+    #segs[copies > 0 & copies < 1, copies_for_heatmap:=0.5]
+    #segs[copies > 1 & copies < 2, copies_for_heatmap:=1.5]
+    #segs[copies > 2 & copies < 3, copies_for_heatmap:=2.5]
+    #segs[copies > 3 & copies < 4, copies_for_heatmap:=3.5]
+    #segs[copies > 4 & copies < 5, copies_for_heatmap:=4.5]
+
+    ## get the sample/segment copy number matrix
+    mat <- get_copynumber_matrix_from_segs(segs,'copies')
+
+    ## update the 'segment' field in bins to reflect the new segments
+    bins <- update_bins_with_new_segments(bins_list, segs)
+
+    ## create a distance matrix from the binned segments
+    seg_matrix <- copy(mat)
+    distance_matrix <- dist(seg_matrix,method='euclidean')
+    distance_matrix <- as.matrix(distance_matrix)
+
+    ## save output from CNV data
+    mat_out <- cbind(barcode=rownames(mat),as.data.table(mat))
+    write_tsv(mat_out,here(paste0('output/',this.subject,'/',this.subject,'_cnv_matrix.txt')))
+    write_tsv(segs,here(paste0('output/',this.subject,'/',this.subject,'_cnv_segments.txt')))
+    write_tsv(bins,here(paste0('output/',this.subject,'/',this.subject,'_cnv_bins.txt')))
+    write_distance_matrix(dm_df=distance_matrix,filepath=here(paste0('output/',this.subject,'/',this.subject,'_cnv_distance_matrix.txt')))
+
+    list(mat=mat, bins=bins, segs=segs, distance_matrix=distance_matrix)
+}
+
+
+
+
+
+
+
+
+
 rename_samples <- function(obj_list,this.subject) {
     ## rename samples in the plots
     names(obj_list) <- gsub(subject,'',gsub('_aligned','',names(obj_list)))
@@ -305,9 +584,9 @@ process_copynumber_data <- function(obj_list, fit_file, sex, this.subject, min_s
 }
 
 
-bootstrap_cnv_tree <- function(x,B=1000,this.subject) {
+bootstrap_cnv_tree <- function(x,B=1000,this.subject,collapse_threshold) {
     message('Bootstrapping CNV tree ...')
-    title=paste0(this.subject,' bootstrapped SCNA tree (B=',B,')')
+    title=paste0(this.subject,' bootstrapped SCNA tree (B=',B,'); collapsed BS < ',collapse_threshold)
     set.seed(42)
     fun <- function(x) {
         dm <- dist(x, method='euclidean')
@@ -315,6 +594,7 @@ bootstrap_cnv_tree <- function(x,B=1000,this.subject) {
         tree <- phytools::reroot(tree, node.number=grep('N1',tree$tip.label))
         tree
     }
+
     tree <- fun(x)
 
     ## get B bootstrap trees:
@@ -324,10 +604,19 @@ bootstrap_cnv_tree <- function(x,B=1000,this.subject) {
     boot <- prop.clades(tree, bstrees)
     boot <- round(100*boot/B)
 
+    ## collapse low confidence clades into polytomies
+    tmp <- as.data.frame(ggtree(tree,layout='rect')$data)
+    nodes <- tmp$node[tmp$isTip==F]
+    collapse_nodes <- nodes[boot < collapse_threshold & !is.na(boot)]
+    tree <- CollapseNode(tree, collapse_nodes)
+
+    ## add the bootstrap values to the tree
     p <- ggtree(tree,layout='rect')
     info <- as.data.table(p$data)
+    boot <- boot[boot >= collapse_threshold]
     info$bootstrap[info$isTip==F] <- boot
     p <- p %<+% info 
+
     p <- p + geom_label(aes(label=bootstrap,fill=bootstrap), size=3, 
                         label.padding=unit(0.1, "lines"),
                         label.r = unit(0.1, "lines"))
@@ -341,7 +630,7 @@ bootstrap_cnv_tree <- function(x,B=1000,this.subject) {
 
 
 cnv_heatmap <- function(mat, seg, distance_matrix, this.subject) {
-
+    #browser()
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # heatmap summarizing clonal/subclonal CNV segments
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -355,15 +644,16 @@ cnv_heatmap <- function(mat, seg, distance_matrix, this.subject) {
 
     ## annotated CNV calls
     #seg <- fread(seg_file)
-    seg <- seg[,c('sample','segment','sc.call'),with=F]
-    mat <- merge(mat, seg, by=c('sample','segment'), all.x=T)
-    mat[is.na(sc.call),sc.call:=F] ## only affects chrX
-    mat[seg.mean < 0,sc.call:=F]
-    mat[seg.mean < 0,seg.mean:=0]
-    mat$copies <- ''
-    mat[sc.call==F & round(seg.mean) %in% 0:5,copies:=as.character(round(seg.mean))]
-    mat[copies=='5' | seg.mean >= 5,copies:='5+']
-    mat[copies=='' & sc.call==T,copies:=paste0('(',floor(seg.mean),'-',ceiling(seg.mean),')')]
+    seg <- seg[,c('sample','segid','sc.call'),with=F]
+    mat <- merge(mat, seg, by.x=c('sample','segment'), by.y=c('sample','segid'), all.x=T)
+
+    #mat[is.na(sc.call),sc.call:=F] ## only affects chrX
+    #mat[seg.mean < 0,sc.call:=F]
+    #mat[seg.mean < 0,seg.mean:=0]
+    mat$copies <- as.character(mat$seg.mean)
+    #mat[sc.call==F & round(seg.mean) %in% 0:5,copies:=as.character(round(seg.mean))]
+    mat[seg.mean >= 5,copies:='5+']
+    mat[sc.call==T,copies:=paste0('(',floor(seg.mean),'-',ceiling(seg.mean),')')]
     mat$copies <- factor(mat$copies, levels=c('0','(0-1)','1','(1-2)','2','(2-3)','3','(3-4)','4','(4-5)','5+'))
 
     ## merge data
