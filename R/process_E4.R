@@ -124,23 +124,68 @@ refit(obj_list[[34]], samplename=samples[34], sex=sex, ploidy=2, purity=0.40, sa
 refit(obj_list[[35]], samplename=samples[35], sex=sex, ploidy=2, purity=0.42, save=T, output_dir=here(paste0('output/',subject)))
 
 
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # process cnv data
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#fits <- fread(here(paste0('output/',subject,'/fits/purity_ploidy.txt')))
-#fits <- fits[1:9,]
-#fits <- fits[purity >= 0.2,]
-#obj_list <- obj_list[fits$barcode]
-#write_tsv(fits,here(paste0('output/',subject,'/fits/purity_ploidy.txt')))
+info <- process_copynumber_data(obj_list, fit_file=here(paste0('output/',subject,'/fits/purity_ploidy.txt')), sex=sex, this.subject=subject, min_segment_bins=5,field='meancopy')
 
-info <- process_copynumber_data(obj_list, fit_file=here(paste0('output/',subject,'/fits/purity_ploidy.txt')), sex=sex, this.subject=subject, min_segment_bins=5,field='meancopy', R=10000, ncpus=4)
+nrow(info$bins) ## 72030
+nrow(info$mat) ## 35
+nrow(info$segs) ## 1925
+nrow(info$distance_matrix) ## 35
+
+# exclude bad samples based on manual review, and manually 
+bad_samples <- c("Per9","Per21","TD3","L6","L2","TD4")
+good_samples <- names(obj_list)[!names(obj_list) %in% bad_samples]
+info$mat <- info$mat[good_samples,]
+info$bins <- info$bins[sample %in% good_samples]
+info$segs <- info$segs[sample %in% good_samples]
+
+# override full chrX deletions to diploid as these are likely
+# due to non-tumor infiltrate via the singlecell data
+manual_override_chrX <- c('P9','Per19','Per18','Per14','Per1')
+
+for(this.sample in manual_override_chrX) { 
+    message('Overriding chrX copy number in sample ',this.sample)
+
+    ## update bins
+    info$bins[sample %in% this.sample & chr=='X',c('Copies','adjustedcopynumbers'):=list(2,2)]  
+
+    ## update segs
+    info$segs[sample %in% this.sample & chr=='X',c('value','adjustedintegercopies','sc.p.adj','sc.copies.exp','sc.direction.exp','padding','sc.call','sc.threshold','copies'):=list(2,2,NA,NA,NA,NA,F,0.01,2)]  
+
+    ## update mat
+    info$mat[this.sample,grep('X',colnames(info$mat),value=T)] <- 2
+
+    ## create a distance matrix from the binned segments
+    info$distance_matrix <- dist(info$mat,method='euclidean')
+    info$distance_matrix <- as.matrix(info$distance_matrix)
+}
+
+# update the mat, segs, bins, and distance matrix files for E4 after manual override
+m_out <- cbind(barcode=rownames(info$mat),as.data.table(info$mat))
+write_tsv(m_out,here(paste0('output/',subject,'/',subject,'_cnv_matrix.txt')))
+write_tsv(info$segs,here(paste0('output/',subject,'/',subject,'_cnv_segments.txt')))
+write_tsv(info$bins,here(paste0('output/',subject,'/',subject,'_cnv_bins.txt')))
+write_distance_matrix(dm_df=info$distance_matrix,filepath=here(paste0('output/',subject,'/',subject,'_cnv_distance_matrix.txt')))
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# process cnv data
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## save plots comparing CNV 5+ Mb segment phylogeny to poly-G angular distance phylogeny
+set.seed(42)
+p2 <- compare_matrices(info$distance_matrix,subject, R=1e4, ncpus=4)
+ggsave(here(paste0('output/',subject,'/',subject,'_segment_euclidean_matrix_comparison.pdf')),width=7,height=6)
+tree2.1 <- compare_trees(info$distance_matrix,subject, tree_method='nj')$plot
+ggsave(here(paste0('output/',subject,'/',subject,'_segment_euclidean_nj_tree_comparison.pdf')),width=10,height=8)
 
 ## make CNV segment heatmap
 p <- cnv_heatmap(info$mat, info$seg, info$distance_matrix, this.subject=subject)
 ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_heatmap.pdf')),width=11,height=8)
-
-#x <- read_distance_matrix(here('output/E4/results_all_samples/E4_cnv_matrix.txt'))
 
 ## bootstrap SCNA tree
 p <- bootstrap_cnv_tree(info$mat, B=1000, this.subject=subject)
