@@ -289,38 +289,6 @@ process_copynumber_data <- function(obj_list, fit_file, sex, this.subject, min_s
     }
     segs <- get_subclonal_segments(m, bins, threshold=0.01, padding=0.1)
 
-    ## load the map file to recode the sample names
-    #map <- fread(map_file,select=c('subject','oldname','barcode'))
-    #map <- map[subject==this.subject,] 
-    #map$oldname <- gsub(subject,'',map$oldname)
-
-    ## update sample names in the 'mat' object
-    #m <- cbind(sample=rownames(m), as.data.table(m))
-    #tmp <- data.table(oldname=m$sample)
-    #tmp$pos <- 1:nrow(tmp)
-    #tmp <- merge(tmp, map, by='oldname', all.x=T)
-    ##tmp[is.na(barcode),barcode:=paste0(oldname,'?')]
-    #tmp <- tmp[order(pos),]
-    #m$sample <- tmp$barcode
-
-    ## update sample names in the 'segs' object
-    #segs$sample <- as.character(segs$sample)
-    #tmp <- data.table(oldname=segs$sample)
-    #tmp$pos <- 1:nrow(tmp)
-    #tmp <- merge(tmp, map, by='oldname', all.x=T)
-    ##tmp[is.na(barcode),barcode:=paste0(oldname,'?')]
-    #tmp <- tmp[order(pos),]
-    #segs$sample <- tmp$barcode
-
-    ## update sample names in the 'bins' object
-    #bins$sample <- as.character(bins$sample)
-    #tmp <- data.table(oldname=bins$sample)
-    #tmp$pos <- 1:nrow(tmp)
-    #tmp <- merge(tmp, map, by='oldname', all.x=T)
-    ##tmp[is.na(barcode),barcode:=paste0(oldname,'?')]
-    #tmp <- tmp[order(pos),]
-    #bins$sample <- tmp$barcode
-
     ## create a distance matrix from the binned segments
     seg_matrix <- copy(m)
     distance_matrix <- dist(seg_matrix,method='euclidean')
@@ -332,14 +300,6 @@ process_copynumber_data <- function(obj_list, fit_file, sex, this.subject, min_s
     write_tsv(segs,here(paste0('output/',this.subject,'/',this.subject,'_cnv_segments.txt')))
     write_tsv(bins,here(paste0('output/',this.subject,'/',this.subject,'_cnv_bins.txt')))
     write_distance_matrix(dm_df=distance_matrix,filepath=here(paste0('output/',this.subject,'/',this.subject,'_cnv_distance_matrix.txt')))
-
-    ## save plots comparing CNV 5+ Mb segment phylogeny to poly-G angular distance phylogeny
-    set.seed(42)
-    p2 <- compare_matrices(distance_matrix,this.subject, R, ncpus)
-    ggsave(here(paste0('output/',this.subject,'/',this.subject,'_segment_euclidean_matrix_comparison.pdf')),width=7,height=6)
-    info2.1 <- compare_trees(distance_matrix,this.subject, tree_method='nj')
-    tree2.1 <- info2.1$plot
-    ggsave(here(paste0('output/',this.subject,'/',this.subject,'_segment_euclidean_nj_tree_comparison.pdf')),width=10,height=8)
 
     list(mat=m, bins=bins, segs=segs, distance_matrix=distance_matrix)
 }
@@ -506,7 +466,6 @@ cnv_heatmap <- function(mat, seg, distance_matrix, this.subject) {
     p <- plot_grid(p_tree, p_heatmap, align='h', rel_widths=c(1,6))
     p
 }
-
 
 
 
