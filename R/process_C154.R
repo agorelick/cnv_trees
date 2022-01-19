@@ -89,22 +89,65 @@ refit(obj_list[[23]], samplename=samples[23], sex=sex, ploidy=2, purity=0.64, sa
 
 
 
-
-
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # process cnv data
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-info <- process_copynumber_data(obj_list, fit_file=here(paste0('output/',subject,'/fits/purity_ploidy.txt')), sex=sex, this.subject=subject, min_segment_bins=5,field='meancopy', R=10000, ncpus=4)
+info <- get_bins_and_segments(obj_list, purity_file, sex)
+samples <- names(obj_list)
+info <- process_SCNA_data(samples, info, subject)
 
 ## make CNV segment heatmap
 p <- cnv_heatmap(info$mat, info$seg, info$distance_matrix, this.subject=subject)
-ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_heatmap.pdf')),width=11,height=7)
+ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_heatmap.pdf')),width=11,height=8)
 
+## save plots comparing CNV 5+ Mb segment phylogeny to poly-G angular distance phylogeny
+set.seed(42)
+p2 <- compare_matrices(info$distance_matrix,subject, R=1e4)
+ggsave(here(paste0('output/',subject,'/',subject,'_segment_euclidean_matrix_comparison.pdf')),width=7,height=6)
+tree2.1 <- compare_trees(info$distance_matrix,subject, tree_method='nj')$plot
+ggsave(here(paste0('output/',subject,'/',subject,'_segment_euclidean_nj_tree_comparison.pdf')),width=10,height=8)
 
 ## bootstrap SCNA tree
-p <- bootstrap_cnv_tree(info$mat, B=1000, this.subject=subject)
+p <- bootstrap_cnv_tree(info$mat, B=1000, this.subject=subject,collapse_threshold=0)
 ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_tree_bootstrapped.pdf')),width=9,height=8)
 
+
+## save the bootstrap values for to a table
+bs <- p$data$bootstrap
+bs <- bs[!is.na(bs)]
+bs_vals <- data.table(subject=subject,bs=bs)
+write_tsv(bs_vals, here(paste0('output/',subject,'/',subject,'_segment_euclidean_nj_tree_bootstrap_values.txt')))
+
+## save plots comparing CNV (binned) phylogeny to poly-G angular distance phylogeny
+bins <- info$bins[,c('sample','bin','copies'),with=F]
+bins <- dcast(sample ~ bin, value.var='copies', data=bins)
+bins <- d2m(bins)
+bins <- as.matrix(dist(bins, method='euclidean'))
+
+set.seed(42)
+p2 <- compare_matrices(bins,subject, R=1e4)
+ggsave(here(paste0('output/',subject,'/',subject,'_binned_euclidean_matrix_comparison.pdf')),width=7,height=6)
+tree2.1 <- compare_trees(bins,subject, tree_method='nj')$plot
+ggsave(here(paste0('output/',subject,'/',subject,'_binned_euclidean_nj_tree_comparison.pdf')),width=10,height=8)
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# test tree similarity
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+message('Testing tree similarity ...')
+mat1 <- read_distance_matrix(here(paste0('output/',subject,'/',subject,'_cnv_distance_matrix.txt')))
+mat2 <- read_distance_matrix(here(paste0('original_data/polyG/',subject,'_ad_matrix.txt')))
+
+## unnormalized
+set.seed(42)
+p1 <- test_tree_similarity(mat1,mat2,title=paste(subject,'SCNA segment vs Poly-G tree'),nperm=10000)
+ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_polyG_tree_similarity.pdf')),width=7,height=4.5)
+
+## normalized
+set.seed(42)
+p2 <- test_tree_similarity(mat1,mat2,title=paste(subject,'SCNA segment vs Poly-G tree'),nperm=10000,normalize=T)
+ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_polyG_tree_similarity_normalized.pdf')),width=7,height=4.5)
 
 

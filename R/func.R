@@ -2,7 +2,7 @@
 library(polyG)
 library(RColorBrewer)
 library(cowplot)
-
+library(TreeTools)
 
 
 ## first extract the adjusted copy number bins and segments for each sample
@@ -302,7 +302,7 @@ rename_samples <- function(obj_list,this.subject) {
     obj_list
 }
 
-process_copynumber_data <- function(obj_list, fit_file, sex, this.subject, min_segment_bins=5, field='intcopy', map_file=here('original_data/sample_info.txt'), R, ncpus) {
+process_copynumber_data <- function(obj_list, fit_file, sex, this.subject, min_segment_bins=5, field='intcopy', map_file=here('original_data/sample_info.txt'), R) {
     #browser()
     options(scipen = 99)
     segments <- list()
@@ -584,9 +584,109 @@ process_copynumber_data <- function(obj_list, fit_file, sex, this.subject, min_s
 }
 
 
+
+test_tree_similarity <- function(mat1,mat2,normalize=F,nperm=1000,title=NULL,return_plot=T) {
+    require(TreeDist)
+   
+    ## subset both matrices to the common samples 
+    common_samples <- intersect(rownames(mat1),rownames(mat2))
+    mat1 <- mat1[common_samples,common_samples]
+    mat2 <- mat2[common_samples,common_samples]
+
+    ## determine which tree to use as the reference and which to permute. We will use the tree with the lower phylogenetic information as the reference and permute the matrix for the other tree. This way the permuted values can potentially exceed the observed values, so we are not biasing the p-value downward.
+    assign_ref_and_test <- function(mat1, mat2) {
+        tree1 <- nj(mat1)
+        tree2 <- nj(mat2)
+
+        # Maximum phylogenetic information for each tree
+        info1 <- SplitwiseInfo(tree1)
+        info2 <- SplitwiseInfo(tree2) 
+
+        ## assign ref and test matrices
+        if(info1 < info2) {
+            ref <- mat1
+            test <- mat2
+            max_info <- info1
+        } else {
+            ref <- mat2
+            test <- mat1
+            max_info <- info2
+        }
+        list(test=test,ref=ref,max_info=max_info)
+    }
+    info <- assign_ref_and_test(mat1, mat2)
+    ref_tree <- nj(info$ref)
+    test_mat <- info$test
+
+    permute_test_and_get_shared_info <- function(i, test_mat, ref_tree) {
+        original_samples <- rownames(test_mat)
+        if(i==0) {
+            permuted_samples <- copy(original_samples)
+        } else {
+            permuted_samples <- sample(original_samples,replace=F)
+        }
+        perm_test_mat <- test_mat[permuted_samples,permuted_samples]    
+        rownames(perm_test_mat) <- original_samples; colnames(perm_test_mat) <- original_samples
+        perm_test_tree <- nj(perm_test_mat)        
+        shared_info <- SharedPhylogeneticInfo(perm_test_tree, ref_tree)
+        list(perm=i,shared_info=shared_info)
+    }
+    l <- lapply(0:nperm, permute_test_and_get_shared_info, test_mat, ref_tree)
+    res <- rbindlist(l)
+    res$max_shared_info <- info$max_info
+    res$normalized_shared_info <- res$shared_info / res$max_shared_info
+    obs <- res[perm==0,]
+    exp <- res[perm > 0,]
+
+    ## permutation test p-value
+    if(normalize==T) {
+        exp$shared_info <- exp$normalized_shared_info
+        obs$shared_info <- obs$normalized_shared_info
+    }
+    numerator <- sum(exp$shared_info >= obs$shared_info) + 1
+    denominator <- nrow(exp) + 1    
+    pval <- numerator / denominator
+    pval <- prettyNum(pval,digits=3)
+    mean_exp <- prettyNum(mean(exp$shared_info),digits=3)
+    confint_exp <- prettyNum(quantile(exp$shared_info,c(0.025,0.975)),digits=3)
+
+    if(normalize==F) {
+        label <- paste0('Expected: ',mean_exp,', 95%CI: [',confint_exp[1],'-',confint_exp[2],']; Observed: ',prettyNum(obs$shared_info,digits=3),'; P-value: ',pval,'\nMax possible shared info: ',prettyNum(obs$max_shared_info,digits=3),'; ',nperm,' permutations')
+    } else {
+        label <- paste0('Expected: ',mean_exp,', 95%CI: [',confint_exp[1],'-',confint_exp[2],']; Observed: ',prettyNum(obs$shared_info,digits=3),'; P-value: ',pval,'\nMax possible shared info: ',prettyNum(obs$max_shared_info,digits=3),' (normalized to 1); ',nperm,' permutations')
+    }
+
+    p <- ggplot(exp,aes(x=shared_info)) +
+        geom_histogram(bins=80,fill='#a6a6a6',size=1,color='white') +
+        polyG::theme_ang(base_size=12) +
+        geom_segment(x=obs$shared_info,xend=obs$shared_info,y=0,yend=Inf,color='red')
+    if(normalize==F) {
+        p <- p + labs(x='Tree similarity (shared phylogenetic info)',y='N random permutations',title=title,subtitle=label)
+    } else {
+        p <- p + labs(x='Normalized tree similarity (shared phylogenetic info)',y='N random permutations',title=title,subtitle=label)   
+    }
+    if(normalize==T) {
+        p <- p + scale_x_continuous(limits=c(0,1),breaks=seq(0,1,by=0.25),expand=c(0,0))
+        p <- p + theme(axis.text.x=element_text(angle=45,hjust=1,vjust=1))
+    }
+
+    if(return_plot==T) {
+        p
+    } else {
+        exp
+    }
+}
+
+
+
+
+
+
 bootstrap_cnv_tree <- function(x,B=1000,this.subject,collapse_threshold) {
     message('Bootstrapping CNV tree ...')
-    title=paste0(this.subject,' bootstrapped SCNA tree (B=',B,'); collapsed BS < ',collapse_threshold)
+    title=paste0(this.subject,' bootstrapped SCNA tree (B=',B,')')
+    if(collapse_threshold > 0) title=paste0(title,'; collapsed BS < ',collapse_threshold)
+
     set.seed(42)
     fun <- function(x) {
         dm <- dist(x, method='euclidean')
@@ -758,17 +858,8 @@ cnv_heatmap <- function(mat, seg, distance_matrix, this.subject) {
 }
 
 
-
-
-
-
-
-
-
-
-
 ## side-by-side comparison of distance matrix heatmaps from CNVs and polyG
-compare_matrices <- function(cnv_distance_matrix, this.subject, R, ncpus) {
+compare_matrices <- function(cnv_distance_matrix, this.subject, R) {
     set.seed(42)
 
     g <- read_distance_matrix(here(paste0('original_data/polyG/',this.subject,'_ad_matrix.txt')))
@@ -777,7 +868,7 @@ compare_matrices <- function(cnv_distance_matrix, this.subject, R, ncpus) {
     sample_levels <- sort(common_samples, decreasing=T)
     d_subset <- cnv_distance_matrix[common_samples,common_samples]
     g_subset <- g[common_samples,common_samples]
-    tst <- dist_similarity(test_dist=d_subset, ref_dist=g_subset, nperm=R, cpus=ncpus, return_only_pval=F, method='spearman')
+    tst <- dist_similarity(test_dist=d_subset, ref_dist=g_subset, nperm=R, return_only_pval=F, method='spearman')
 
     d_subset <- as.data.table(reshape2::melt(tst$test_dist))
     d_subset$data <- 'CNV'
@@ -828,7 +919,7 @@ compare_trees <- function(cnv_distance_matrix, this.subject, tree_method) {
     g_subset <- g[common_samples,common_samples]
 
     ## test matrix similarity
-    tst <- dist_similarity(test_dist=d_subset, ref_dist=g_subset, nperm=1000, cpus=4, return_only_pval=F)
+    tst <- dist_similarity(test_dist=d_subset, ref_dist=g_subset, nperm=1000, return_only_pval=F)
 
     ## define groups for plot
     groups <- group_samples(tst$test_dist,color=T,lun=T,liv=F,per=F)
