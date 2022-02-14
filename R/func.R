@@ -103,9 +103,6 @@ test_subclonal_segments_and_annotate_bins <- function(this.sample, info) {
     res[sc.call==T,copies:=as.numeric(round(this_cn,1))]
     res[copies < 0,copies:=as.numeric(0)]
 
-    ## original subclonality fields I used:
-    ## 'sc.p.adj','sc.copies.exp','sc.direction.exp','padding','sc.call','sc.threshold','copies'):=list(2,2,NA,NA,NA,NA,F,0.01,2)]  
-
     ## merge the subclonality results to the bins
     bins <- merge(bins, res[,c('segment','sc.p.adj','sc.call','copies'),with=F], by='segment', all.x=T)
     bins$chr <- factor(bins$chr, levels=c(1:22,'X','Y'))
@@ -247,12 +244,6 @@ process_SCNA_data <- function(samples, info, this.subject) {
 
     ## get new copy number segments based on the bins' integer or subclonal copy numbers
     segs <- get_new_segments_and_annotate_with_subclonality(bins_list)
-    #segs$copies_for_heatmap <- segs$copies
-    #segs[copies > 0 & copies < 1, copies_for_heatmap:=0.5]
-    #segs[copies > 1 & copies < 2, copies_for_heatmap:=1.5]
-    #segs[copies > 2 & copies < 3, copies_for_heatmap:=2.5]
-    #segs[copies > 3 & copies < 4, copies_for_heatmap:=3.5]
-    #segs[copies > 4 & copies < 5, copies_for_heatmap:=4.5]
 
     ## get the sample/segment copy number matrix
     mat <- get_copynumber_matrix_from_segs(segs,'copies')
@@ -276,31 +267,19 @@ process_SCNA_data <- function(samples, info, this.subject) {
 }
 
 
-
-
-
-
-
-
-
 rename_samples <- function(obj_list,this.subject) {
     ## rename samples in the plots
-    names(obj_list) <- gsub(subject,'',gsub('_aligned','',names(obj_list)))
-    samples <- data.table(oldname=names(obj_list))
+    names(obj_list) <- gsub('_aligned','',names(obj_list))
+    samples <- data.table(Sample_ID=names(obj_list))
     samples$pos <- 1:nrow(samples)
-    map <- fread(here('original_data/sample_info.txt'),select=c('subject','oldname','barcode'))
-    map <- map[subject==this.subject]
-    map[,oldname:=gsub(this.subject,'',oldname)]
-    if(this.subject=='C186') {
-        map$oldname <- paste0('LM1',map$oldname)
-        map[oldname=='LM1N3',barcode:='N1']
-    }
-    samples <- merge(samples, map, by='oldname', all.x=T)
+    map <- fread(here('original_data/sample_info2.txt'),select=c('Subject','Sample_ID','barcode'))
+    map <- map[Subject==this.subject]
+    samples <- merge(samples, map, by='Sample_ID', all.x=T)
     samples <- samples[order(pos)]
-    samples <- samples$barcode
-    names(obj_list) <- samples
+    names(obj_list) <- samples$barcode
     obj_list
 }
+
 
 process_copynumber_data <- function(obj_list, fit_file, sex, this.subject, min_segment_bins=5, field='intcopy', map_file=here('original_data/sample_info.txt'), R) {
     #browser()
@@ -585,146 +564,191 @@ process_copynumber_data <- function(obj_list, fit_file, sex, this.subject, min_s
 
 
 
-test_tree_similarity <- function(mat1,mat2,normalize=F,nperm=1000,title=NULL,return_plot=T) {
+test_tree_similarity <- function(mat1,mat2,method,nperm=1000,title=NULL,return_plot=T) {
     require(TreeDist)
-   
+    require(Quartet)
+
     ## subset both matrices to the common samples 
     common_samples <- intersect(rownames(mat1),rownames(mat2))
     mat1 <- mat1[common_samples,common_samples]
     mat2 <- mat2[common_samples,common_samples]
+    tree1 <- nj(mat1)
+    tree2 <- nj(mat2)
 
-    ## determine which tree to use as the reference and which to permute. We will use the tree with the lower phylogenetic information as the reference and permute the matrix for the other tree. This way the permuted values can potentially exceed the observed values, so we are not biasing the p-value downward.
-    assign_ref_and_test <- function(mat1, mat2) {
-        tree1 <- nj(mat1)
-        tree2 <- nj(mat2)
-
-        # Maximum phylogenetic information for each tree
-        info1 <- SplitwiseInfo(tree1)
-        info2 <- SplitwiseInfo(tree2) 
-
-        ## assign ref and test matrices
-        if(info1 < info2) {
-            ref <- mat1
-            test <- mat2
-            max_info <- info1
-        } else {
-            ref <- mat2
-            test <- mat1
-            max_info <- info2
-        }
-        list(test=test,ref=ref,max_info=max_info)
-    }
-    info <- assign_ref_and_test(mat1, mat2)
-    ref_tree <- nj(info$ref)
-    test_mat <- info$test
-
-    permute_test_and_get_shared_info <- function(i, test_mat, ref_tree) {
-        original_samples <- rownames(test_mat)
+    permute_test_and_get_shared_info <- function(i, mat1, tree2) {
+        original_samples <- rownames(mat1)
         if(i==0) {
             permuted_samples <- copy(original_samples)
         } else {
             permuted_samples <- sample(original_samples,replace=F)
         }
-        perm_test_mat <- test_mat[permuted_samples,permuted_samples]    
-        rownames(perm_test_mat) <- original_samples; colnames(perm_test_mat) <- original_samples
-        perm_test_tree <- nj(perm_test_mat)        
-        shared_info <- SharedPhylogeneticInfo(perm_test_tree, ref_tree)
-        list(perm=i,shared_info=shared_info)
+        perm_mat1 <- mat1[permuted_samples,permuted_samples]    
+        rownames(perm_mat1) <- original_samples; colnames(perm_mat1) <- original_samples
+        perm_tree1 <- nj(perm_mat1)        
+
+        if(method=='grf') {
+            tree_grf_similarity <- function(test_tree, ref_tree) {
+                test_info <- SplitwiseInfo(test_tree)
+                ref_info <- SplitwiseInfo(ref_tree) 
+                shared_info <- SharedPhylogeneticInfo(test_tree, ref_tree)
+                data.table(test_info=test_info, ref_info=ref_info, shared_info=shared_info)
+            }
+            info <- tree_grf_similarity(test_tree=perm_tree1, ref_tree=tree2)
+        } else {
+            info <- as.data.frame(QuartetStatus(perm_tree1, cf=tree2))
+        }
+        info$perm <- i
+        info
     }
-    l <- lapply(0:nperm, permute_test_and_get_shared_info, test_mat, ref_tree)
+    l <- lapply(0:nperm, permute_test_and_get_shared_info, mat1, tree2)
     res <- rbindlist(l)
-    res$max_shared_info <- info$max_info
-    res$normalized_shared_info <- res$shared_info / res$max_shared_info
+
+    if(method=='quartet') {
+        ## for Quartet
+        res$similarity <- res$s / res$Q
+    } else {
+        ## for GRF
+        m <- as.matrix(res[,c('test_info','ref_info'),with=F])
+        res$total_info <- apply(m,1,min)
+        #res$similarity <- res$shared_info / res$ref_info # normalize to the reference
+        res$similarity <- res$shared_info / res$total_info
+    }
     obs <- res[perm==0,]
     exp <- res[perm > 0,]
-
-    ## permutation test p-value
-    if(normalize==T) {
-        exp$shared_info <- exp$normalized_shared_info
-        obs$shared_info <- obs$normalized_shared_info
-    }
-    numerator <- sum(exp$shared_info >= obs$shared_info) + 1
+    numerator <- sum(exp$similarity >= obs$similarity) + 1
     denominator <- nrow(exp) + 1    
     pval <- numerator / denominator
     pval <- prettyNum(pval,digits=3)
-    mean_exp <- prettyNum(mean(exp$shared_info),digits=3)
-    confint_exp <- prettyNum(quantile(exp$shared_info,c(0.025,0.975)),digits=3)
+    mean_exp <- prettyNum(mean(exp$similarity),digits=3)
+    confint_exp <- prettyNum(quantile(exp$similarity,c(0.025,0.975)),digits=3)
 
-    if(normalize==F) {
-        label <- paste0('Expected: ',mean_exp,', 95%CI: [',confint_exp[1],'-',confint_exp[2],']; Observed: ',prettyNum(obs$shared_info,digits=3),'; P-value: ',pval,'\nMax possible shared info: ',prettyNum(obs$max_shared_info,digits=3),'; ',nperm,' permutations')
-    } else {
-        label <- paste0('Expected: ',mean_exp,', 95%CI: [',confint_exp[1],'-',confint_exp[2],']; Observed: ',prettyNum(obs$shared_info,digits=3),'; P-value: ',pval,'\nMax possible shared info: ',prettyNum(obs$max_shared_info,digits=3),' (normalized to 1); ',nperm,' permutations')
-    }
+    label <- paste0('Expected: ',mean_exp,', 95%CI: [',confint_exp[1],'-',confint_exp[2],']; Observed: ',prettyNum(obs$similarity,digits=3),'; P-value: ',pval,'; ',nperm,' permutations')
 
-    p <- ggplot(exp,aes(x=shared_info)) +
+    p <- ggplot(exp,aes(x=similarity)) +
         geom_histogram(bins=80,fill='#a6a6a6',size=1,color='white') +
         polyG::theme_ang(base_size=12) +
-        geom_segment(x=obs$shared_info,xend=obs$shared_info,y=0,yend=Inf,color='red')
-    if(normalize==F) {
-        p <- p + labs(x='Tree similarity (shared phylogenetic info)',y='N random permutations',title=title,subtitle=label)
-    } else {
-        p <- p + labs(x='Normalized tree similarity (shared phylogenetic info)',y='N random permutations',title=title,subtitle=label)   
-    }
-    if(normalize==T) {
-        p <- p + scale_x_continuous(limits=c(0,1),breaks=seq(0,1,by=0.25),expand=c(0,0))
-        p <- p + theme(axis.text.x=element_text(angle=45,hjust=1,vjust=1))
-    }
+        geom_segment(x=obs$similarity,xend=obs$similarity,y=0,yend=Inf,color='red')
+
+    p <- p + labs(x='Normalized tree similarity (shared phylogenetic info)',y='N random permutations',title=title,subtitle=label)   
+    p <- p + scale_x_continuous(limits=c(0,1),breaks=seq(0,1,by=0.25),expand=c(0,0))
+    p <- p + theme(axis.text.x=element_text(angle=45,hjust=1,vjust=1))
 
     if(return_plot==T) {
         p
     } else {
-        exp
+        res
     }
 }
 
 
-
-
-
-
-bootstrap_cnv_tree <- function(x,B=1000,this.subject,collapse_threshold) {
-    message('Bootstrapping CNV tree ...')
-    title=paste0(this.subject,' bootstrapped SCNA tree (B=',B,')')
-    if(collapse_threshold > 0) title=paste0(title,'; collapsed BS < ',collapse_threshold)
-
+get_bootstrapped_trees <- function(this.subject, type) {
+    ## load the SCNA table and generate both segment and chromosome-level bootstrap values.
+    ## we will compare these to the poly-G bootstrap values to show that chromosome-level are most consistent across samples (like poly-G) as opposed to segment-level.
     set.seed(42)
-    fun <- function(x) {
-        dm <- dist(x, method='euclidean')
-        tree <- nj(dm)
-        tree <- phytools::reroot(tree, node.number=grep('N1',tree$tip.label))
-        tree
+
+    if(type!='polyg') {
+        message(paste0('Bootstrapping SCNA tree (',type,' resampling) ...'))
+    } else {
+        message('Bootstrapping poly-G tree (marker resampling) ...')    
     }
 
-    tree <- fun(x)
+    get_valid_samples <- function(this.subject) {
+        info <- fread(here('original_data/sample_info2.txt'))
+        info <- info[Subject==this.subject]
+        list(polyg_samples=info$Sample_ID, scna_samples=info$barcode)
+    }
+    samples <- get_valid_samples(this.subject)
 
-    ## get B bootstrap trees:
-    bstrees <- boot.phylo(tree, x, fun, B=B, trees = TRUE)$trees
+    if(type=='chromosome') {
+        ## load the original SCNA sample segment matrix
+        scna_segments <- fread(here(paste0('output/',this.subject,'/',this.subject,'_cnv_segments.txt')))
+        valid_samples <- samples$scna_samples
+        scna_segments <- scna_segments[sample %in% valid_samples,]
 
-    ## get proportions of each bipartition, convert to a percentage and round it
-    boot <- prop.clades(tree, bstrees)
-    boot <- round(100*boot/B)
+        get_trees_bootstrapped_by_chromosome <- function(i, mat) { 
+            ## keep the segments for X and Y labeled separately but group them under XY for the sampling
+            mat[chr %in% 'X',segid:=paste0('XY.',segid)]
+            mat[chr %in% 'Y',segid:=paste0('XY.',segid)]
+            mat[chr %in% c('X','Y'),chr:='XY']
+            mat$chr <- factor(mat$chr,levels=c(1:22,'XY'))
+            chr_with_replacement <- c(1:22,'XY')
+            if(i > 0) chr_with_replacement <- sample(c(1:22,'XY'),replace=T)
+            data_per_chromosome <- function(this.chr, mat) {
+                mat <- mat[chr %in% this.chr] 
+                mat  
+            }
+            list_resampled_mat <- lapply(chr_with_replacement, data_per_chromosome, mat)
+            for(i in 1:length(list_resampled_mat)) list_resampled_mat[[i]]$newchr <- i 
+            resampled_mat <- rbindlist(list_resampled_mat)
+            resampled_mat[,segid:=paste0(newchr,'.',segid)]
+            resampled_mat[,c('chr','newchr'):=NULL]
+            resampled_mat <- d2m(resampled_mat)
+            distance_matrix <- dist(t(resampled_mat),method='euclidean')
+            tree <- nj(distance_matrix)
+        }
+        mat <- dcast(chr + segid ~ sample, value.var='copies', data=scna_segments)
+        bstrees <- lapply(1:1000, get_trees_bootstrapped_by_chromosome, mat)
+        tree <- get_trees_bootstrapped_by_chromosome(0, mat)
+        bstrees <- as.multiPhylo(bstrees)
 
-    ## collapse low confidence clades into polytomies
-    tmp <- as.data.frame(ggtree(tree,layout='rect')$data)
-    nodes <- tmp$node[tmp$isTip==F]
-    collapse_nodes <- nodes[boot < collapse_threshold & !is.na(boot)]
-    tree <- CollapseNode(tree, collapse_nodes)
+        ## root tree before adding the boostrap values!
+        refind <- grep(paste0('^Normal'),tree$tip.label)
+        tree <- root(tree,outgroup=refind,resolve.root=TRUE)
+        tree <- addConfidences(tree, bstrees) 
+        tree$node.label <- round(100*tree$node.label)
 
-    ## add the bootstrap values to the tree
-    p <- ggtree(tree,layout='rect')
-    info <- as.data.table(p$data)
-    boot <- boot[boot >= collapse_threshold]
-    info$bootstrap[info$isTip==F] <- boot
-    p <- p %<+% info 
 
-    p <- p + geom_label(aes(label=bootstrap,fill=bootstrap), size=3, 
-                        label.padding=unit(0.1, "lines"),
-                        label.r = unit(0.1, "lines"))
-    p <- p + scale_fill_gradient(low='white',high='steelblue',name='Bootstrap value')
-    p <- p + geom_tiplab(fontface=1,size=3,hjust=-0.25,angle=F) 
-    p <- p + theme(legend.position='bottom')
-    p <- p + labs(title=title)
-    p
+    } else if(type=='segment') { 
+        ## load the original SCNA sample segment matrix
+        scna_segments <- fread(here(paste0('output/',this.subject,'/',this.subject,'_cnv_segments.txt')))
+        valid_samples <- samples$scna_samples
+        scna_segments <- scna_segments[sample %in% valid_samples,]
+
+        get_trees_bootstrapped_by_segment <- function(i, mat2) { 
+            if(i > 0) mat2 <- mat2[,sample(colnames(mat2),replace=T)]
+            distance_matrix <- dist(mat2,method='euclidean')
+            tree <- nj(distance_matrix)
+        }
+        mat2 <- dcast(sample ~ segid, value.var='copies', data=scna_segments)
+        mat2 <- d2m(mat2)
+        bstrees <- lapply(1:1000, get_trees_bootstrapped_by_segment, mat2)
+        tree <- get_trees_bootstrapped_by_segment(0, mat2)
+        bstrees <- as.multiPhylo(bstrees)
+
+        ## root tree before adding the boostrap values!
+        refind <- grep(paste0('^Normal'),tree$tip.label)
+        tree <- root(tree,outgroup=refind,resolve.root=TRUE)
+        tree <- addConfidences(tree, bstrees) 
+        tree$node.label <- round(100*tree$node.label)
+
+    } else if(type=='polyg') {
+        orig_matrix <- read_distance_matrix(here(paste0('original_data/polyG/ad_matrix_oldnames/',this.subject,'_angular_dist_matrix_w_root_usedmarkers_repreReplicate_oldnames.txt')))
+        tree <- nj(orig_matrix)
+
+        ## root tree before adding the boostrap values!
+        refind <- grep(paste0('^',this.subject,'N[0-9]$'),tree$tip.label)
+        tree <- root(tree,outgroup=refind,resolve.root=TRUE)
+
+        ## now add bootstrap values
+        load(here(paste0('original_data/polyG/bstrees/',this.subject,'_bstrees_usedmarkers_repreReplicate_NJ.RData'))) ## load bstrees
+        bstrees <- as.multiPhylo(bstrees)
+        tree <- addConfidences(tree, bstrees) 
+        tree$node.label <- round(100*tree$node.label)
+
+        ## update sample names after bootstrapping
+        update_tree_labels <- function(tree) { 
+            tmp <- data.table(Sample_ID=tree$tip.label)
+            tmp$pos <- 1:nrow(tmp)
+            map <- data.table(Sample_ID=samples$polyg_samples, newname=samples$scna_samples)
+            tmp <- merge(tmp, map, by='Sample_ID', all.x=T)
+            tmp <- tmp[order(pos),]
+            tree$tip.label <- tmp$newname
+            tree
+        }
+        tree <- update_tree_labels(tree)
+        for(i in 1:length(bstrees)) bstrees[[i]] <- update_tree_labels(bstrees[[i]])
+    }
+    list(tree=tree, bstrees=bstrees)
 }
 
 
@@ -787,7 +811,7 @@ cnv_heatmap <- function(mat, seg, distance_matrix, this.subject) {
 
     ## use the copy-number euclidean distance tree for ordering the samples
     tree <- nj(distance_matrix)
-    tree <- phytools::reroot(tree, node.number=grep('^N[0-9]',tree$tip.label))
+    tree <- phytools::reroot(tree, node.number=grep('^Normal[0-9]',tree$tip.label))
     p_tree <- ggtree(tree,layout='rect',size=0.5)
     dat <- as.data.frame(p_tree$data)
     dat <- dat[dat$isTip==T,]
@@ -858,13 +882,27 @@ cnv_heatmap <- function(mat, seg, distance_matrix, this.subject) {
 }
 
 
+update_distance_matrix_samples <- function(g) {
+    map <- fread(here('original_data/sample_info2.txt'),select=c('Subject','Sample_ID','barcode'))
+    tmp <- data.table(Sample_ID=rownames(g))
+    tmp$pos <- 1:nrow(tmp)
+    tmp <- merge(tmp, map[,c('Sample_ID','barcode'),with=F], by='Sample_ID', all.x=T)
+    tmp <- tmp[order(pos),]
+    rownames(g) <- tmp$barcode; colnames(g) <- tmp$barcode
+    g
+}
+
+
+
 ## side-by-side comparison of distance matrix heatmaps from CNVs and polyG
 compare_matrices <- function(cnv_distance_matrix, this.subject, R) {
     set.seed(42)
 
-    g <- read_distance_matrix(here(paste0('original_data/polyG/',this.subject,'_ad_matrix.txt')))
+    g <- read_distance_matrix(here(paste0('original_data/polyG/ad_matrix_oldnames/',this.subject,'_angular_dist_matrix_w_root_usedmarkers_repreReplicate_oldnames.txt')))
+    g <- update_distance_matrix_samples(g)
+
     common_samples <- intersect(rownames(cnv_distance_matrix),rownames(g))
-    common_samples <- common_samples[!grepl('^N',common_samples)]
+    common_samples <- common_samples[!grepl('^Normal',common_samples)]
     sample_levels <- sort(common_samples, decreasing=T)
     d_subset <- cnv_distance_matrix[common_samples,common_samples]
     g_subset <- g[common_samples,common_samples]
@@ -912,7 +950,9 @@ compare_matrices <- function(cnv_distance_matrix, this.subject, R) {
 
 compare_trees <- function(cnv_distance_matrix, this.subject, tree_method) {
     ## align CNV and polyG distance matrices
-    g <- read_distance_matrix(here(paste0('original_data/polyG/',this.subject,'_ad_matrix.txt')))
+    g <- read_distance_matrix(here(paste0('original_data/polyG/ad_matrix_oldnames/',this.subject,'_angular_dist_matrix_w_root_usedmarkers_repreReplicate_oldnames.txt')))
+    g <- update_distance_matrix_samples(g)
+
     common_samples <- intersect(rownames(cnv_distance_matrix),rownames(g))
     sample_levels <- sort(common_samples, decreasing=T)
     d_subset <- cnv_distance_matrix[common_samples,common_samples]
@@ -922,7 +962,7 @@ compare_trees <- function(cnv_distance_matrix, this.subject, tree_method) {
     tst <- dist_similarity(test_dist=d_subset, ref_dist=g_subset, nperm=1000, return_only_pval=F)
 
     ## define groups for plot
-    groups <- group_samples(tst$test_dist,color=T,lun=T,liv=F,per=F)
+    groups <- group_samples(tst$test_dist,color=T,lun=F,liv=F,per=T)
 
     ## CNV tree
     tree1 <- annotated_phylo(tst$test_dist, groups, method=tree_method)
@@ -1025,3 +1065,10 @@ refit <- function(object, sex, purity=NA, ploidy, samplename=NA, sampleindex=1, 
         cat(paste(samplename,purity,ploidy,when,sep='\t'),'\n',file=fit_file,append=T)
     }
 }
+
+
+
+
+
+
+

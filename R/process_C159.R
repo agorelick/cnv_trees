@@ -5,7 +5,9 @@ sex <- 'male'
 
 ## because hacked to include X,Y, this is now as a list of 'obj', where each 'obj' has 1 sample
 obj_list <- readRDS(here(paste0('original_data/',subject,'_1000kbp_withXYMT.rds'))) 
+names(obj_list) <- paste0(subject,names(obj_list))
 obj_list <- rename_samples(obj_list, subject)
+#which(is.na(names(obj_list)))
 
 ## remove results from previous run
 purity_file=here(paste0('output/',subject,'/fits/purity_ploidy.txt'))
@@ -57,13 +59,13 @@ refit(obj_list[[8]], samplename=samples[8], sex=sex, ploidy=3, purity=0.21, save
 refit(obj_list[[9]], samplename=samples[9], sex=sex, ploidy=3, purity=0.54, save=T, output_dir=here(paste0('output/',subject)))
 
 ## AR3w (0% tumor)
-refit(obj_list[[10]], samplename=samples[10], sex=sex, ploidy=2, purity=1, save=T, output_dir=here(paste0('output/',subject)))
+#refit(obj_list[[10]], samplename=samples[10], sex=sex, ploidy=2, purity=1, save=T, output_dir=here(paste0('output/',subject)))
 
 ## B1
 refit(obj_list[[11]], samplename=samples[11], sex=sex, ploidy=3, purity=0.37, save=T, output_dir=here(paste0('output/',subject)))
 
 ## B2w
-refit(obj_list[[12]], samplename=samples[12], sex=sex, ploidy=3, purity=0.59, save=T, output_dir=here(paste0('output/',subject)))
+#refit(obj_list[[12]], samplename=samples[12], sex=sex, ploidy=3, purity=0.59, save=T, output_dir=here(paste0('output/',subject)))
 
 ## B3
 refit(obj_list[[13]], samplename=samples[13], sex=sex, ploidy=3, purity=0.5, save=T, output_dir=here(paste0('output/',subject)))
@@ -226,6 +228,7 @@ refit(obj_list[[64]], samplename=samples[64], sex=sex, ploidy=3, purity=0.59, sa
 # process cnv data
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+obj_list <- obj_list[!is.na(names(obj_list))]
 info <- get_bins_and_segments(obj_list, purity_file, sex)
 samples <- names(obj_list)
 info <- process_SCNA_data(samples, info, subject)
@@ -241,16 +244,17 @@ ggsave(here(paste0('output/',subject,'/',subject,'_segment_euclidean_matrix_comp
 tree2.1 <- compare_trees(info$distance_matrix,subject, tree_method='nj')$plot
 ggsave(here(paste0('output/',subject,'/',subject,'_segment_euclidean_nj_tree_comparison.pdf')),width=10,height=8)
 
-## bootstrap SCNA tree
-p <- bootstrap_cnv_tree(info$mat, B=1000, this.subject=subject,collapse_threshold=0)
-ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_tree_bootstrapped.pdf')),width=9,height=8)
 
+## generate bootstrapped trees
+set.seed(42)
+chr_trees <- get_bootstrapped_trees(subject, type='chromosome')
+set.seed(42)
+seg_trees <- get_bootstrapped_trees(subject, type='segment')
+set.seed(42)
+polyg_trees <- get_bootstrapped_trees(subject, type='polyg')
+out <- list(chr=chr_trees, seg=seg_trees, polyg=polyg_trees)
+saveRDS(out,file=here(paste0('output/',subject,'/',subject,'_bootstrapped_trees.rds')))
 
-## save the bootstrap values for to a table
-bs <- p$data$bootstrap
-bs <- bs[!is.na(bs)]
-bs_vals <- data.table(subject=subject,bs=bs)
-write_tsv(bs_vals, here(paste0('output/',subject,'/',subject,'_segment_euclidean_nj_tree_bootstrap_values.txt')))
 
 ## save plots comparing CNV (binned) phylogeny to poly-G angular distance phylogeny
 bins <- info$bins[,c('sample','bin','copies'),with=F]
@@ -265,22 +269,21 @@ tree2.1 <- compare_trees(bins,subject, tree_method='nj')$plot
 ggsave(here(paste0('output/',subject,'/',subject,'_binned_euclidean_nj_tree_comparison.pdf')),width=10,height=8)
 
 
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # test tree similarity
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 message('Testing tree similarity ...')
 mat1 <- read_distance_matrix(here(paste0('output/',subject,'/',subject,'_cnv_distance_matrix.txt')))
-mat2 <- read_distance_matrix(here(paste0('original_data/polyG/',subject,'_ad_matrix.txt')))
+mat2 <- read_distance_matrix(here(paste0('original_data/polyG/ad_matrix_oldnames/',subject,'_angular_dist_matrix_w_root_usedmarkers_repreReplicate_oldnames.txt')))
+mat2 <- update_distance_matrix_samples(mat2)
+
 
 ## unnormalized
 set.seed(42)
 p1 <- test_tree_similarity(mat1,mat2,title=paste(subject,'SCNA segment vs Poly-G tree'),nperm=10000)
-ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_polyG_tree_similarity.pdf')),width=7,height=4.5)
+ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_polyG_tree_similarity_GRF.pdf')),width=7,height=4.5)
 
-## normalized
-set.seed(42)
-p2 <- test_tree_similarity(mat1,mat2,title=paste(subject,'SCNA segment vs Poly-G tree'),nperm=10000,normalize=T)
-ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_polyG_tree_similarity_normalized.pdf')),width=7,height=4.5)
 
 

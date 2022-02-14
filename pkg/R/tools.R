@@ -55,7 +55,7 @@ distance_matrix_correlation <- function(test_dist_full, ref_dist_full, method, r
 
 ##' dist_similarity
 ##' @export
-dist_similarity <- function(test_dist, ref_dist, nperm=100, cpus=1, return_only_pval=T, method='spearman') {
+dist_similarity <- function(test_dist, ref_dist, nperm=100, return_only_pval=T, method='spearman') {
 
     shuffled_correlation <- function(i, test_dist, ref_dist, return_only_r, method) { 
         if(i > 0) {
@@ -87,13 +87,7 @@ dist_similarity <- function(test_dist, ref_dist, nperm=100, cpus=1, return_only_
     observed <- observed_info$r
     merged <- observed_info$merged
 
-    if(cpus==1) {
-        permuted <- unlist(lapply(1:nperm, shuffled_correlation, test_dist, ref_dist, return_only_r=T, method=method))
-    } else {
-        require(parallel)
-        permuted <- unlist(mclapply(1:nperm, shuffled_correlation, test_dist, ref_dist, return_only_r=T, mc.cores=cpus, method=method))
-    }
-    
+    permuted <- unlist(lapply(1:nperm, shuffled_correlation, test_dist, ref_dist, return_only_r=T, method=method))
     perms_as_correlated <- sum(permuted >= observed)
     p.value <- (perms_as_correlated + 1) / (nperm + 1) ## add pseudo-count to avoid p=0
 
