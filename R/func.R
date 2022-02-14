@@ -1,9 +1,15 @@
 ## load required R packages
-library(polyG)
-library(RColorBrewer)
-library(cowplot)
-library(TreeTools)
-
+require(RColorBrewer)
+require(cowplot)
+require(TreeTools)
+require(here)
+require(data.table)
+require(ACE)
+require(ggplot2)
+require(RColorBrewer)
+require(ggtree)
+require(phytools)
+require(TreeDist)
 
 ## first extract the adjusted copy number bins and segments for each sample
 get_bins_and_segments <- function(obj_list, fit_file, sex) {
@@ -272,7 +278,7 @@ rename_samples <- function(obj_list,this.subject) {
     names(obj_list) <- gsub('_aligned','',names(obj_list))
     samples <- data.table(Sample_ID=names(obj_list))
     samples$pos <- 1:nrow(samples)
-    map <- fread(here('original_data/sample_info2.txt'),select=c('Subject','Sample_ID','barcode'))
+    map <- fread(here('original_data/sample_info.txt'),select=c('Subject','Sample_ID','barcode'))
     map <- map[Subject==this.subject]
     samples <- merge(samples, map, by='Sample_ID', all.x=T)
     samples <- samples[order(pos)]
@@ -626,7 +632,7 @@ test_tree_similarity <- function(mat1,mat2,method,nperm=1000,title=NULL,return_p
 
     p <- ggplot(exp,aes(x=similarity)) +
         geom_histogram(bins=80,fill='#a6a6a6',size=1,color='white') +
-        polyG::theme_ang(base_size=12) +
+        theme_ang(base_size=12) +
         geom_segment(x=obs$similarity,xend=obs$similarity,y=0,yend=Inf,color='red')
 
     p <- p + labs(x='Normalized tree similarity (shared phylogenetic info)',y='N random permutations',title=title,subtitle=label)   
@@ -653,7 +659,7 @@ get_bootstrapped_trees <- function(this.subject, type) {
     }
 
     get_valid_samples <- function(this.subject) {
-        info <- fread(here('original_data/sample_info2.txt'))
+        info <- fread(here('original_data/sample_info.txt'))
         info <- info[Subject==this.subject]
         list(polyg_samples=info$Sample_ID, scna_samples=info$barcode)
     }
@@ -689,7 +695,7 @@ get_bootstrapped_trees <- function(this.subject, type) {
         mat <- dcast(chr + segid ~ sample, value.var='copies', data=scna_segments)
         bstrees <- lapply(1:1000, get_trees_bootstrapped_by_chromosome, mat)
         tree <- get_trees_bootstrapped_by_chromosome(0, mat)
-        bstrees <- as.multiPhylo(bstrees)
+        bstrees <- TreeTools::as.multiPhylo(bstrees)
 
         ## root tree before adding the boostrap values!
         refind <- grep(paste0('^Normal'),tree$tip.label)
@@ -713,7 +719,7 @@ get_bootstrapped_trees <- function(this.subject, type) {
         mat2 <- d2m(mat2)
         bstrees <- lapply(1:1000, get_trees_bootstrapped_by_segment, mat2)
         tree <- get_trees_bootstrapped_by_segment(0, mat2)
-        bstrees <- as.multiPhylo(bstrees)
+        bstrees <- TreeTools::as.multiPhylo(bstrees)
 
         ## root tree before adding the boostrap values!
         refind <- grep(paste0('^Normal'),tree$tip.label)
@@ -731,7 +737,7 @@ get_bootstrapped_trees <- function(this.subject, type) {
 
         ## now add bootstrap values
         load(here(paste0('original_data/polyG/bstrees/',this.subject,'_bstrees_usedmarkers_repreReplicate_NJ.RData'))) ## load bstrees
-        bstrees <- as.multiPhylo(bstrees)
+        bstrees <- TreeTools::as.multiPhylo(bstrees)
         tree <- addConfidences(tree, bstrees) 
         tree$node.label <- round(100*tree$node.label)
 
@@ -883,7 +889,7 @@ cnv_heatmap <- function(mat, seg, distance_matrix, this.subject) {
 
 
 update_distance_matrix_samples <- function(g) {
-    map <- fread(here('original_data/sample_info2.txt'),select=c('Subject','Sample_ID','barcode'))
+    map <- fread(here('original_data/sample_info.txt'),select=c('Subject','Sample_ID','barcode'))
     tmp <- data.table(Sample_ID=rownames(g))
     tmp$pos <- 1:nrow(tmp)
     tmp <- merge(tmp, map[,c('Sample_ID','barcode'),with=F], by='Sample_ID', all.x=T)
@@ -980,7 +986,6 @@ compare_trees <- function(cnv_distance_matrix, this.subject, tree_method) {
 
 sample_info <- function(query.subject = NA) {
     info <- fread(file=here(paste0("original_data/sample_info.txt")))
-    #info[is.na(newname), `:=`(newname, "n/a")]
     if (!is.na(query.subject)) {
         info[subject == query.subject]
     }
@@ -1067,8 +1072,637 @@ refit <- function(object, sex, purity=NA, ploidy, samplename=NA, sampleindex=1, 
 }
 
 
+d2m <- function(dt) {
+    ## assumes first column should be rownames of a matrix made from columns 2:ncol
+    rows <- dt[[1]]
+    if('data.table' %in% class(dt)) {
+        dt <- dt[,c(2:ncol(dt)),with=F]
+    } else if(class(dt)=='data.frame') {
+        ## assume this is a data.frame
+        dt <- dt[,c(2:ncol(dt))]
+    } else {
+        stop('enter a data.table or a data.frame')
+    }
+    m <- as.matrix(dt)
+    rownames(m) <- rows
+    m
+}
 
 
+
+distance_matrix_correlation <- function(test_dist_full, ref_dist_full, method, return_only_r=F) {
+    ref_dist <- ref_dist_full[order(rownames(ref_dist_full)),order(colnames(ref_dist_full))]    
+    test_dist <- test_dist_full[order(rownames(test_dist_full)),order(colnames(test_dist_full))]    
+
+    ## subset the distances for common samples 
+    common_samples <- sort(intersect(rownames(test_dist), rownames(ref_dist)))
+    test_dist <- test_dist[common_samples,common_samples]
+    ref_dist <- ref_dist[common_samples,common_samples]
+    
+    ## get a long table of sample:sample distances with columns for test and ref data
+    ref_dist_long <- ref_dist; test_dist_long <- test_dist; 
+    ref_dist_long[upper.tri(ref_dist_long)] <- NA
+    test_dist_long[upper.tri(test_dist_long)] <- NA
+    test_dist_long <- as.data.table(reshape2::melt(test_dist_long))
+    ref_dist_long <- as.data.table(reshape2::melt(ref_dist_long))
+    merged <- merge(test_dist_long,ref_dist_long,by=c('Var1','Var2'))
+    merged <- merged[Var1!=Var2 & !is.na(value.x) & !is.na(value.y)] 
+    merged[,c('Var1','Var2'):=NULL]
+    names(merged) <- c('test_dist','ref_dist')
+
+    ## get the correlation
+    r <- cor(merged$test_dist,merged$ref_dist,method=method)    
+
+    if(return_only_r==T) {
+        out <- r
+    } else {
+        out <- list(r=r, merged=merged, test_dist=test_dist, ref_dist=ref_dist, test_dist_full=test_dist_full, ref_dist_full=ref_dist_full)
+    }
+    out
+}
+
+
+dist_similarity <- function(test_dist, ref_dist, nperm=100, return_only_pval=T, method='spearman') {
+
+    shuffled_correlation <- function(i, test_dist, ref_dist, return_only_r, method) { 
+        if(i > 0) {
+            ## shuffle among all the samples with data (not only the common ones)
+            orig_samples <- rownames(test_dist)
+            shuffled_samples <- sample(orig_samples,replace=F)
+            test_dist <- test_dist[shuffled_samples,shuffled_samples]
+            rownames(test_dist) <- orig_samples
+            colnames(test_dist) <- orig_samples
+        }
+        info <- distance_matrix_correlation(test_dist, ref_dist, return_only_r=F, method=method)
+        r <- info$r
+        merged <- info$merged
+        test_dist <- info$test_dist
+        ref_dist <- info$ref_dist
+        test_dist_full <- info$test_dist_full
+        ref_dist_full <- info$ref_dist_full
+        ## return either just the distance or the complete data
+        if(return_only_r) { 
+            r
+        } else {
+            list(test_dist=test_dist, ref_dist=ref_dist, test_dist_full=test_dist_full, ref_dist_full=ref_dist_full, merged=merged, method=method, r=r)
+        }
+    }
+
+    observed_info <- shuffled_correlation(0, test_dist, ref_dist, return_only_r=F, method=method)
+    ref_dist <- observed_info$ref_dist
+    test_dist <- observed_info$test_dist
+    observed <- observed_info$r
+    merged <- observed_info$merged
+
+    permuted <- unlist(lapply(1:nperm, shuffled_correlation, test_dist, ref_dist, return_only_r=T, method=method))
+    perms_as_correlated <- sum(permuted >= observed)
+    p.value <- (perms_as_correlated + 1) / (nperm + 1) ## add pseudo-count to avoid p=0
+
+    if(return_only_pval==T) {
+        p.value
+    } else {
+        tmp <- data.table(permuted=permuted)
+        plot <- ggplot(tmp, aes(x=permuted)) +
+            geom_histogram(fill='black',color='white',bins=30) +
+            theme_ang(base_size=12)  +
+            geom_vline(xintercept=observed,linetype='dashed',color='red') +
+            labs(x='Correlation of sample-sample distances',y='N permutations',
+                 subtitle=paste0('Observed R=',round(observed,3),'; P-value = ',round(p.value,log10(nperm)))
+            )
+        list(p.value=p.value, observed=observed, permuted=permuted, merged=merged, ref_dist=ref_dist, test_dist=test_dist, plot=plot)
+    }
+}
+
+
+read_distance_matrix <- function(file,return.as.matrix=T) {
+    ## read txt file with a saved distance matrix (i.e. table with named rows and cols and numeric distances as cells)
+    distance_matrix <- fread(file)
+    rows <- distance_matrix[[1]]
+    distance_matrix <- distance_matrix[,(2:ncol(distance_matrix)),with=F]
+    m <- as.matrix(distance_matrix)
+    rownames(m) <- rows
+    if(return.as.matrix==F) {
+        as.dist(m,diag=T)
+    } else {
+        m
+    }
+}
+
+
+write_tsv <- function(d,file,sep='\t',quote=F,row.names=F,...) write.table(d,file=file,sep=sep,quote=quote,row.names=row.names,...)
+
+
+write_distance_matrix <- function(filepath,dm_df) {
+    write.table(dm_df,file=filepath,sep="\t",quote=FALSE,col.names=NA)
+}
+
+
+theme_ang <- function (base_size = 11, base_line_size = base_size/22, base_rect_size = base_size/22) {
+    require(ggplot2)
+    theme_bw(base_size = base_size, base_line_size = base_line_size, base_rect_size = base_rect_size) %+replace%
+    theme(
+          line = element_line(colour = "black", size = base_line_size, linetype = 1, lineend = "round"), 
+          text = element_text(colour = "black", size = base_size, lineheight = 0.9, hjust = 0.5, vjust = 0.5, angle = 0, margin = margin(), debug = F), 
+          axis.text = element_text(colour = "black", size = rel(0.8)), 
+          axis.ticks = element_line(colour = "black", size = rel(1)), 
+          panel.border = element_blank(), 
+          panel.grid.major = element_blank(),
+          panel.grid.minor = element_blank(), 
+          axis.line = element_line(colour = "black", size = rel(1)), 
+          legend.key = element_blank(),
+          strip.background = element_blank())
+}
+
+
+break_axis <- function(y, maxlower, minupper=NA, lowerticksize, upperticksize, ratio_lower_to_upper) {
+    if(is.na(minupper)) {
+        breakpos <- maxlower
+        lowerticklabels <- seq(0,breakpos,by=lowerticksize); lowerticklabels
+        upperticklabels <- seq(breakpos+upperticksize,max(y)+upperticksize,by=upperticksize); upperticklabels
+        ticklabels <- c(lowerticklabels, upperticklabels); ticklabels
+        lowertickpos <- lowerticklabels
+        uppertickspacing <- ratio_lower_to_upper * lowerticksize
+        uppertickpos <- breakpos + ((1:length(upperticklabels))*uppertickspacing)
+        tickpos <- c(lowertickpos, uppertickpos)
+        newy <- as.numeric(y)
+        ind <- newy > breakpos
+        newy[ind] <- breakpos + uppertickspacing*((newy[ind]-breakpos) / upperticksize)
+        list(newy=newy, breaks=tickpos, labels=ticklabels, limits=range(tickpos))
+    } else {
+        lowerticklabels <- seq(0,maxlower,by=lowerticksize); lowerticklabels
+        upperticklabels <- seq(minupper,max(y)+upperticksize,by=upperticksize); upperticklabels
+        ticklabels <- c(lowerticklabels, upperticklabels); ticklabels
+        lowertickpos <- lowerticklabels
+        uppertickspacing <- ratio_lower_to_upper * lowerticksize
+        uppertickpos <- maxlower + 0.5*lowerticksize + ((1:length(upperticklabels))*uppertickspacing)
+        tickpos <- c(lowertickpos, uppertickpos)
+        newy <- as.numeric(y)
+        ind <- newy > maxlower
+        newy[ind] <- maxlower + 0.5*lowerticksize + 1*uppertickspacing + uppertickspacing*((newy[ind]-minupper) / upperticksize)
+        list(newy=newy, breaks=tickpos, labels=ticklabels, limits=range(tickpos))
+    }
+}
+
+
+extract_gglegend <- function(p){
+    require(ggplot2)
+    require(cowplot)
+
+    ## extract the legend from a ggplot object
+    tmp <- ggplot_gtable(ggplot_build(p))
+    leg <- which(sapply(tmp$grobs, function(x) x$name) == "guide-box")
+    if(length(leg) > 0) leg <- tmp$grobs[[leg]]
+    else leg <- NULL
+    leg
+
+    ## return the legend as a ggplot object
+    legend <- cowplot::ggdraw() + cowplot::draw_grob(grid::grobTree(leg))
+    plot <- p + theme(legend.position='none')
+    list(plot=plot,legend=legend)
+}
+
+
+table_freq <- function(value) {
+    if(is.null(value) | length(value)==0) {
+        tbl <- data.table(value=NA,N=NA)
+    } else {
+        tbl <- as.data.table(table(value))
+        tbl <- tbl[order(tbl$N,decreasing=T),]
+    }
+    tbl
+}
+
+
+annotated_phylo <- function(distance.matrix,groups,method='nj',root_at_normal=T) { 
+    ## annotated_phylo: a class based on ape's nj() with extra annotations about the type of each leaf
+    require(data.table)
+    require(ape)
+    require(phangorn)
+    require(phytools)
+    require(ggtree)
+
+    if(method=='nj') {
+        tree <- ape::nj(distance.matrix)
+    } else if(method=='upgma') {
+        tree <- phangorn::upgma(distance.matrix)
+    } else {
+        stop('Method must be either nj or upgma')
+    }
+    ## constructor, takes a phylo class object and adds group information.
+    ## groups must be a named character vector, where the character-elements are the groups, and the names are samples (should match tree$tip.label).
+    stopifnot(class(tree)=='phylo')
+    info <- parse_barcode(tree$tip.label)
+    info$order <- 1:nrow(info)
+    info <- merge(info, groups, by='barcode', all.x=T)
+    info <- info[order(order),]
+    colors <- info[!duplicated(group)]
+    usual_groups <- c('Normal','Primary','Locoregional','Peritoneum','Lung','Liver','Distant (other)')
+    additional_groups <- unique(info$group[!info$group %in% usual_groups])
+    ordered_groups <- c(usual_groups, additional_groups)
+    ordered_groups <- unique(ordered_groups[ordered_groups %in% info$group])
+    colors$group <- factor(colors$group, levels=ordered_groups)
+    colors <- colors[order(group)]
+    color_scheme <- colors$color
+    names(color_scheme) <- as.character(colors$group)
+    fields <- c('barcode','order','type','lesion','sample','autopsy','group')
+    fields <- fields[fields %in% names(info)]
+    info <- info[,(fields),with=F]
+
+    ## attempt to root the tree
+    if(root_at_normal==T) { 
+        root.barcode=grep('^N',info$barcode,value=T)
+        node.number <- which(tree$tip.label==root.barcode)
+        if(length(node.number)!=1) {
+            n_roots <- length(node.number)
+            warning(n_roots,' root samples found! Need exactly one, proceeding unrooted.')
+        } else {
+            tree <- phytools::reroot(tree, node.number=node.number)
+        }
+    }
+
+    ## add the information extracted from the barcodes to the tree
+    tree$tip.annotations <- info
+    tree$distance.matrix <- distance.matrix
+    tree$colors <- color_scheme
+
+    ## extend the class of the new object
+    class(tree) <- c('annotated_phylo',class(tree)) 
+    tree
+}
+
+
+print.annotated_phylo <- function(x, printlen=30) {
+    nb.tip <- length(x$tip.label)
+    nb.node <- x$Nnode
+    cat(paste("\nAnnotated phylogenetic tree with", nb.tip, "tips and",
+              nb.node, "internal nodes.\n"))
+    rlab <- if (is.rooted(x))
+        "Rooted"
+    else "Unrooted"
+    cat("\n", rlab, "; ", sep = "")
+    blen <- if (is.null(x$edge.length))
+        "no branch lengths."
+    else "includes branch lengths."
+    cat(blen, "\n\n", sep = "")
+    print(head(x$tip.annotations, printlen))
+}
+
+
+group_samples <- function(input,lun=T,liv=T,per=T,primary_autopsy_is_distant=T,highlight_peritoneum_when_multi=T,color=F) {
+    if(any(c('data.frame','matrix') %in% class(input))) {
+        barcodes <- rownames(input)
+    } else if('character' %in% class(input)) {
+        barcodes <- input
+    }
+    info <- parse_barcode(barcodes)    
+    info[grepl('^N[0-9]',barcode) | grepl('^Normal[0-9]',barcode),group:='Normal']
+    info[grepl('^P[0-9]',barcode) | grepl('^PT[0-9]',barcode),group:='Primary']
+    info[grepl('^L[0-9]',barcode) | grepl('^LN[0-9]',barcode) | grepl('^TD[0-9]',barcode),group:='Locoregional']
+    info[grepl('^Lun[0-9]',barcode),group:='Lung']
+    info[grepl('^Liv[0-9]',barcode),group:='Liver']
+    #info[grepl('^Ad[0-9]',barcode) | grepl('^AD[0-9]',barcode),group:='Adenoma']
+    info[grepl('^Per[0-9]',barcode) | grepl('^Di[0-9]',barcode) | grepl('^Om[0-9]',barcode) | grepl('^PerOv[0-9]',barcode),group:='Peritoneum']
+    info[is.na(group),group:='Distant (other)']
+
+    if(lun==F) info[group=='Lung',group:='Distant (other)']
+    if(liv==F) info[group=='Liver',group:='Distant (other)']
+    if(per==F) info[group=='Peritoneum',group:='Distant (other)']
+    #if(tumor_deposit_with_lymph==F) info[grepl('^TD[0-9]',barcode),group:='Tumor deposit']
+    if(primary_autopsy_is_distant==T) info[group=='Primary' & autopsy==T,group:='Distant (other)']
+    out <- info[,c('barcode','group'),with=F]
+   
+    if(highlight_peritoneum_when_multi) {
+        ## default coloring showing all major types, but highlighting peritoneum
+        out[group=='Normal',color:='black']
+        out[group=='Primary',color:='#008c45']
+        out[group=='Locoregional',color:='#eb5b2b']
+        out[group=='Liver',color:='#4c86c6']
+        out[group=='Lung',color:='#ea6a8c']
+        out[group=='Peritoneum',color:='#fab31d']
+        out[group=='Distant (other)',color:='#534797']    
+    } else {
+        ## default coloring showing all major types, but highlighting lung
+        out[group=='Normal',color:='black']
+        out[group=='Primary',color:='#008c45']
+        out[group=='Locoregional',color:='#eb5b2b']
+        out[group=='Liver',color:='#4c86c6']
+        out[group=='Peritoneum',color:='#ea6a8c'] ## find alternative?
+        out[group=='Lung',color:='#fab31d']
+        out[group=='Distant (other)',color:='#534797']    
+    }
+
+    ## depending on which were included in input argumens, highlight single type
+    if(lun==T & liv==F & per==F) {
+        out[group=='Lung',color:='#fab31d']
+        out[group %in% 'Distant (other)',color:='#4c86c6']
+
+    } else if(lun==F & liv==T & per==F) {
+        out[group=='Liver',color:='#fab31d']
+        out[group %in% 'Distant (other)',color:='#4c86c6']
+
+    } else if(lun==F & liv==F & per==T) {
+        out[group=='Peritoneum',color:='#fab31d']
+        out[group %in% 'Distant (other)',color:='#4c86c6']
+    }
+    if(color==F) out[,color:=NULL]
+    out 
+}
+
+
+plot.annotated_phylo <- function(tree,cex=2.5,angle=F,layout='ape',legend.position='none',suppress_tip_labs=F, xpad=0.1, fontface=1, ...){ 
+    stopifnot('annotated_phylo' %in% class(tree))
+    info <- data.table(label=tree$tip.label,group=tree$tip.annotations$group)
+    color_scheme <- tree$colors
+    tree$group <- NULL
+    class(tree) <- 'phylo'
+    p <- ggtree(tree, layout=layout, ...) %<+% info
+    if(suppress_tip_labs==F & angle==F) p <- p + geom_tiplab(aes(color=group),fontface=fontface,size=cex,angle=F)
+    if(suppress_tip_labs==F & angle==T) p <- p + geom_tiplab(aes(color=group,angle=angle),fontface=fontface,size=cex)
+    p <- p + scale_color_manual(values=color_scheme,name=NULL) + theme(legend.position=legend.position)
+    xr <- range(p$data$x)
+    xwidth <- xr[2]-xr[1]
+    xmin <- xr[1] - xpad*xwidth
+    xmax <- xr[2] + xpad*xwidth
+    p <- p + xlim(c(xmin,xmax))
+    if('title' %in% names(tree)) {
+        tree_title <- tree$title
+        p <- p + labs(title=tree_title)
+    }
+    p 
+}
+
+
+expand_tree <- function(tree) {
+    barcode_order <- tree$tip.label
+    x <- as.data.table(reshape2::melt(tree$distance.matrix))
+    names(x) <- c('barcode.1','barcode.2','distance')
+    anno <- tree$tip.annotations
+    if('colors' %in% names(tree)) {
+        cols <- data.table(group=names(tree$colors),color=tree$colors)
+    } else {
+        cols <- data.table(group=unique(anno$group))
+        cols$color=rainbow(n=nrow(cols))
+    }
+    anno <- merge(anno, cols, by='group', all.x=T)
+    x <- merge(x, anno, by.x='barcode.1', by.y='barcode', all.x=T)
+    setnames(x,c('type','lesion','sample','autopsy','group','color'),c('type.1','lesion.1','sample.1','autopsy.1','group.1','color.1'))
+    x <- merge(x, anno, by.x='barcode.2', by.y='barcode', all.x=T)
+    setnames(x,c('type','lesion','sample','autopsy','group','color'),c('type.2','lesion.2','sample.2','autopsy.2','group.2','color.2'))
+    x <- x[,c('barcode.1','barcode.2','distance','group.1','type.1','lesion.1','sample.1','autopsy.1','color.1','group.2','type.2','lesion.2','sample.2','autopsy.2','color.2'),with=F]
+    x$barcode.1 <- factor(x$barcode.1, levels=barcode_order)
+    x$barcode.2 <- factor(x$barcode.2, levels=barcode_order)
+    x <- x[order(barcode.1,barcode.2),]
+    x$barcode.1 <- as.character(x$barcode.1)
+    x$barcode.2 <- as.character(x$barcode.2)
+    x$order <- 1:nrow(x)
+    x
+}
+
+
+contract_tree <- function(x) {
+    ## remake the distance matrix
+    barcode_order <- unique(x$barcode.1)
+    dm <- data.table::dcast(barcode.1 ~ barcode.2, value.var='distance', data=x)
+    rows <- dm$barcode.1
+    dm[,barcode.1:=NULL]
+    dm <- as.matrix(dm)
+    rownames(dm) <- rows
+    dm <- dm[barcode_order,barcode_order]
+
+    ## remake the groups
+    groups <- x[,c('barcode.1','group.1','color.1'),with=F]
+    names(groups) <- gsub('[.]1','',names(groups))
+    groups <- groups[!duplicated(barcode),]
+
+    ## remake the annotated_phylo object
+    tree <- annotated_phylo(dm, groups)
+    tree
+}
+
+
+parse_barcode <- function(barcodes) {
+    ## extract the main tissue type, lesion, and sample number from each sample's barcode
+    .parse_barcode <- function(barcode) {
+        str <- strsplit(gsub("([A-Za-z]*)([0-9]*)([A-Za-z]*)", "\\1 \\2 \\3", barcode), " ")[[1]]
+        list(barcode=barcode,type=str[1],lesion=str[2],sample=str[3])
+    }
+    s <- rbindlist(lapply(barcodes, .parse_barcode))
+    s[is.na(sample),sample:='']
+    s[grepl('-A$',barcode),autopsy:=T]
+    s[!grepl('-A$',barcode),autopsy:=F]
+    s$sample <- gsub('-A$','',s$sample)
+    s
+}
+
+
+collapse_tree_reiter <- function(tree,break_tie_method='least_similar',iter.max=500) {
+    # Collapse full phylogenies to the one-sample-per-lesion trees as used in Reiter et al, Nature Genetics 2020.
+
+    select_one <- function(candidates,info,method) {
+        get_avg_distance <- function(info) {
+            mu <- mean(info$distance,na.rm=T)
+            data.table(mu=mu)
+        }
+        tmp <- info[barcode.1 %in% candidates,get_avg_distance(.SD),by=barcode.1]
+        tmp <- tmp[order(mu,decreasing=T),]
+
+        if(method=='least_similar') {
+            ## for each candidate sample, get its average distance to all other samples. Keep the candidate that is most far away from all other samples. Remove the other candidates from the data and return this updated data.
+            least_similar <- tmp$barcode.1[1]
+            drop_tmp <- tmp$barcode.1[!tmp$barcode.1 %in% least_similar]
+            if(length(drop_tmp) > 0) info <- info[!barcode.1 %in% drop_tmp & !barcode.2 %in% drop_tmp,]
+
+        } else if(method=='random') {
+            random_choice <- sample(tmp$barcode.1,1)
+            drop_tmp <- tmp$barcode.1[!tmp$barcode.1 %in% random_choice]
+            if(length(drop_tmp) > 0) info <- info[!barcode.1 %in% drop_tmp & !barcode.2 %in% drop_tmp,]    
+        }
+        info
+    }
+   
+    get_comparison_id <- function(tmp) {
+        b1 <- tmp$barcode.1
+        b2 <- tmp$barcode.2
+        b <- sort(c(b1,b2))
+        id <- paste(b[1],b[2],sep=':')
+        tmp$comparison <- id
+        tmp$intra_lesion <- tmp$main_tissue.1==tmp$main_tissue.2 & tmp$lesion.1==tmp$lesion.2 & tmp$sample.1!=tmp$sample.2
+        tmp
+    }
+
+    get_clades_for_lesion <- function(lesion, info) {
+        ## get the number of nodes separating every pair of samples on the nj tree
+        mat <- contract_distance_matrix(info)
+        tree <- nj(mat) 
+        all_barcodes_for_lesion <- info[lesion.1==lesion & lesion.2==lesion,c('barcode.1','barcode.2'),with=F]
+        n <- nrow(all_barcodes_for_lesion)
+
+        if(n < 2) {
+            list(largest_clades=NULL, samples_not_in_largest_clades=NA)
+        } else {
+            check_same_clade <- function(i,all_barcodes_for_lesion,tree,info) {
+                out <- all_barcodes_for_lesion[i,]
+                sample.1 <- out$barcode.1
+                sample.2 <- out$barcode.2
+                if(sample.1==sample.2) {
+                    in_clade <- T
+                } else {
+                    sample_lesion <- info$lesion.1[info$barcode.1==sample.1 & info$barcode.2==sample.2]
+                    node <- fastMRCA(sp1=sample.1,sp2=sample.2,tree=tree)
+                    clade <- extract.clade(tree,node)
+                    samples_in_clade <- clade$tip.label
+                    lesions_in_clade <- unique(info$lesion.1[info$barcode.1 %in% samples_in_clade & info$barcode.2 %in% samples_in_clade])
+                    in_clade <- ifelse(all(lesions_in_clade %in% sample_lesion),T,F)
+                }
+                out$in_clade <- in_clade
+                out
+            }
+            clades_dat <- rbindlist(lapply(1:n, check_same_clade, all_barcodes_for_lesion, tree, info))
+            clades_dat$distance <- as.integer(clades_dat$in_clade==F)
+            clades_dat <- contract_distance_matrix(clades_dat) ## 1 means separate, 0 means together
+            f=function(s) paste(s,collapse='')
+            distances <- apply(clades_dat, 1, f)
+            clade_size <- table(distances)
+            max_clade_size <- max(clade_size)
+            if(max_clade_size > 1) {
+                largest_clades <- names(clade_size[clade_size==max_clade_size]) ## there may be multiple clades of the same maximum size
+                get_samples_in_clade <- function(largest_clade, distances) {
+                    names(distances[distances==largest_clade])            
+                }
+                largest_clades <- lapply(largest_clades, get_samples_in_clade, distances) 
+            } else {
+                ## in case multiple samples are all the same distance apart
+                largest_clades <- list(names(distances))
+            }
+            samples_in_largest_clades <- unlist(largest_clades)
+            all_samples <- rownames(clades_dat)
+            samples_not_in_largest_clades <- all_samples[!all_samples %in% samples_in_largest_clades]
+            list(largest_clades=largest_clades, samples_not_in_largest_clades=samples_not_in_largest_clades)
+        }
+    }
+
+    contract_distance_matrix <- function(info) {
+        ## recover the distance matrix from the expanded (long) table
+        dm <- data.table::dcast( barcode.1 ~ barcode.2, value.var='distance', data=info)
+        rows <- dm$barcode.1
+        dm[,barcode.1:=NULL]
+        dm <- as.matrix(dm)
+        rownames(dm) <- rows    
+        dm
+    }
+
+    ## repeat this process until it cannot be collapsed any further (force stop at 500 iterations)
+    size <- length(tree$tip.label)
+    run <- T 
+    r <- 0
+    while(r < iter.max & run==T) { 
+        ## expand the distance matrix
+        info <- expand_tree(tree)
+        info$lesion.1 <- paste0(info$type.1,info$lesion.1)
+        info$lesion.2 <- paste0(info$type.2,info$lesion.2)
+        info$groupl.1 <- tolower(info$group.1)
+        info$groupl.2 <- tolower(info$group.2)
+        if(sum(info$groupl.1=='normal')==0) warning('No normal samples found!')
+        if(sum(info$groupl.1=='primary')==0) warning('No primary samples found!')
+
+        ## any samples not organized into the specified groups will be grouped according to the type from their barcodes
+        info[groupl.1=='',groupl.1:=type.1]
+        info[groupl.2=='',groupl.2:=type.2]
+
+        ## remove extra germline normals
+        normals <- sort(unique(info$barcode.1[info$groupl.1=='normal']))
+        if(length(normals) > 1) info <- select_one(normals,info,method=break_tie_method)
+
+        ## remove non-cancer samples
+        info <- info[!groupl.1 %in% 'adenoma' & !groupl.2 %in% 'adenoma',]
+
+        ## prune non-representative samples for lesions. in the case of lesions with multiple samples where the majority are in a single clade, remove the lesion's other samples which aren't on this clade.
+        multiple_samples <- which(info$groupl.1==info$groupl.2 & info$lesion.1==info$lesion.2 & info$sample.1!=info$sample.2 & !info$groupl.1 %in% c('normal','primary'))
+        lesions_with_multiple_samples <- sort(unique(info$lesion.1[multiple_samples]))
+
+        for(l in lesions_with_multiple_samples) { 
+            clade_info <- get_clades_for_lesion(l,info)
+            to_drop <- clade_info$samples_not_in_largest_clades
+            to_drop <- to_drop[!is.na(to_drop)]
+            clades_to_collapse <- clade_info$largest_clades
+            num_clades_to_collapse <- length(clades_to_collapse)
+            if(length(to_drop) > 0) { 
+                message(' -> Pruning: ',paste(to_drop,collapse=', '))
+                info <- info[!barcode.1 %in% to_drop & !barcode.2 %in% to_drop,]
+            }
+
+            for(i in 1:num_clades_to_collapse) { 
+                candidates <- clades_to_collapse[[i]]
+                if(length(candidates) > 1) {
+                    message('Collapsing clade: ',paste(candidates,collapse=', '))
+                    info <- select_one(candidates,info,method=break_tie_method)
+                } 
+            }
+        }
+        tree <- contract_tree(info)
+        newsize <- length(tree$tip.label)
+        if(newsize==size) {
+            run <- F
+        } else {
+            size <- newsize
+            r <- r+1
+        }
+    }
+    if(r >= iter.max) warning('Maximum iterations reached!')
+    tree
+}
+
+
+collapse_tree_all <- function(tree) {
+    # Take a distance matrix which may contain multiple distinct samples per lesion and return a list of all possible matrices where each lesion is represented by a single sample.
+    # param tree A annotated_phylo class object.
+    # return a list of all unique possible trees where each lesion is represented by a single sample
+
+    ## get expanded data
+    x <- expand_tree(tree)
+    x$lesion.1 <- paste0(x$type.1,x$lesion.1)
+    x$lesion.2 <- paste0(x$type.2,x$lesion.2)
+    x$groupl.1 <- tolower(x$group.1)
+    x$groupl.2 <- tolower(x$group.2)
+
+    ## split tip annotations into Primary and Non-primary samples
+    orig_info <- tree$tip.annotations
+    orig_matrix <- tree$distance.matrix
+    info <- tree$tip.annotations[group!='Primary',]
+    info$lesion <- paste0(info$type,info$lesion)
+    infoP <- tree$tip.annotations[group=='Primary',]
+    infoP$lesion <- paste0(infoP$type,infoP$lesion)
+  
+    ## get a list of samples per each lesion
+    lesions <- unique(info$lesion)
+    f <- function(lesion, info) info$barcode[info$lesion==lesion]
+    l <- lapply(unique(lesions), f, info)
+    names(l) <- lesions
+
+    ## process the primary tumors the same way, but here we force it to treat every primary sample as its own lesion
+    barcodes <- unique(infoP$barcode)
+    fP <- function(barcode, infoP) infoP$barcode[infoP$barcode==barcode]
+    lP <- lapply(unique(barcodes), fP, infoP)
+    names(lP) <- infoP$barcode
+    l <- append(l, lP)
+
+    ## get all combinations of samples where each lesion is represented by a single sample
+    grid <- as.matrix(expand.grid(l))
+    n_subsets <- nrow(grid)
+    
+    ## get the subset distance matrix for samples in each combination
+    subset_tree <- function(i, grid, orig_matrix) {
+        sample_subset <- as.character(grid[i,])
+
+        ## subset distance matrix
+        subset_matrix <- orig_matrix[sample_subset,sample_subset] 
+        subset_groups <- group_samples(rownames(subset_matrix),liv=T,lun=T,per=T,primary_autopsy_is_distant=T,color=T)
+        subset_tree <- annotated_phylo(subset_matrix,subset_groups)
+        subset_tree
+    }
+    subset_trees <- lapply(1:n_subsets, subset_tree, grid, orig_matrix)
+    subset_trees
+}
 
 
 

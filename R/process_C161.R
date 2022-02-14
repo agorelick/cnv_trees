@@ -172,7 +172,7 @@ mat2 <- update_distance_matrix_samples(mat2)
 
 ## unnormalized
 set.seed(42)
-p1 <- test_tree_similarity(mat1,mat2,title=paste(subject,'SCNA segment vs Poly-G tree'),nperm=10000)
+p1 <- test_tree_similarity(mat1,mat2,title=paste(subject,'SCNA segment vs Poly-G tree'),method='grf',nperm=10000)
 ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_polyG_tree_similarity_GRF.pdf')),width=7,height=4.5)
 
 

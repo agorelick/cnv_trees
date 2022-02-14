@@ -1,1853 +1,247 @@
-subject	barcode	oldname	newname	cohort	center	type	lesion	sample	autopsy	main_tissue	sample_type7	sample_type4	retain_in_reiter_collapsed	retain_in_arule_collapsed
-C100	L1	C100L1	L1	NatGen	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C100	L2	C100L2	L2	NatGen	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C100	L3	C100L3	L3	NatGen	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C100	L4	C100L4	L4	NatGen	MGH	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C100	Liv1a	C100M1a	Liv1a	NatGen	MGH	Liv	1	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C100	Liv1b	C100M1b	Liv1b	NatGen	MGH	Liv	1	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C100	Liv1c	C100M1c	Liv1c	NatGen	MGH	Liv	1	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C100	Liv2a	C100M2a	Liv2a	NatGen	MGH	Liv	2	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C100	Liv3a	C100M3a	Liv3a	NatGen	MGH	Liv	3	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C100	Liv3b	C100M3b	Liv3b	NatGen	MGH	Liv	3	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C100	Liv3c	C100M3c	Liv3c	NatGen	MGH	Liv	3	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C100	Liv3d	C100M3d	Liv3d	NatGen	MGH	Liv	3	d	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C100	N1	C100N1	N1	NatGen	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C100	P1	C100P1b	P1	NatGen	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C100	P2	C100P1c	P2	NatGen	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C100	P3	C100P1d	P3	NatGen	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C100	P4	C100P1g	P4	NatGen	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C102	L1	C102L2	L1	NatGen	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C102	L2	C102L3	L2	NatGen	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C102	Liv1	C102M1	Liv1	NatGen	MGH	Liv	1	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C102	Liv2	C102M2	Liv2	NatGen	MGH	Liv	2	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C102	Liv3	C102M4	Liv3	NatGen	MGH	Liv	3	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C102	Liv4	C102M5	Liv4	NatGen	MGH	Liv	4	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C102	Liv5	C102M6	Liv5	NatGen	MGH	Liv	5	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C102	Liv6	C102M7	Liv6	NatGen	MGH	Liv	6	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C102	N1	C102N3	N1	NatGen	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C102	P1	C102P1b	P1	NatGen	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C102	P2	C102P1c	P2	NatGen	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C102	P3	C102P1d	P3	NatGen	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C102	P4	C102P1e	P4	NatGen	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C102	P5	C102P1f	P5	NatGen	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C102	P6	C102P1g	P6	NatGen	MGH	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C102	P7	C102P1j	P7	NatGen	MGH	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C11	L1	C11L1	L1	NatGen	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C11	L2	C11L2	L2	NatGen	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C11	L3	C11L3	L3	NatGen	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C11	L4	C11L4	L4	NatGen	MGH	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C11	L5	C11L5	L5	NatGen	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C11	N1	C11N1	N1	NatGen	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C11	P1	C11P1	P1	NatGen	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C11	P2	C11P2	P2	NatGen	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C11	P3	C11P3	P3	NatGen	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C11	P4	C11P4	P4	NatGen	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C11	P5	C11P5	P5	NatGen	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C11	P6	C11P6	P6	NatGen	MGH	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C12	L1	C12-P-T1	L1	Science	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C12	L2	C12-V	L2	Science	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C12	L3	C12-W-L1	L3	Science	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C12	L5	C12-C-L1	L5	Science	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C12	Liv1	C12-AE-T	Liv1	Science	MGH	Liv	1	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C12	N1	C12-A	N1	Science	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C12	P1	C12-H-T1	P1	Science	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C12	P10	C12-AD	P10	Science	MGH	P	10	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C12	P2	C12-H-T2	P2	Science	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C12	P3	C12-E	P3	Science	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C12	P4	C12-I	P4	Science	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C12	P5	C12-J	P5	Science	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C12	P6	C12-K	P6	Science	MGH	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C12	P7	C12-L	P7	Science	MGH	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C12	P8	C12-AA	P8	Science	MGH	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C12	P9	C12-AB	P9	Science	MGH	P	9	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C142	Lun1a	C142A1a	Lun1a	Lung	MGH	Lun	1	a	FALSE	Lung	Lung	Distant	TRUE	TRUE
-C142	Lun1b	C142A1b	Lun1b	Lung	MGH	Lun	1	b	FALSE	Lung	Lung	Distant	FALSE	FALSE
-C142	Lun2	C142A3b	Lun2	Lung	MGH	Lun	2	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-C142	N1	C142N1	Normal1	Lung	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C142	P1	C142P1	P1	Lung	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C142	P2	C142P2	P2	Lung	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C142	P3	C142P3	P3	Lung	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C146	L1	C146LN1	LN1	Peritoneal	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C146	L2	C146LN2	LN2	Peritoneal	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C146	L3	C146LN3	LN3	Peritoneal	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C146	L4	C146LN4	LN4	Peritoneal	MGH	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C146	L5	C146LN5	LN5	Peritoneal	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C146	L6	C146LN6	LN6	Peritoneal	MGH	L	6	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C146	N1	C146N1	Normal1	Peritoneal	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C146	P1	C146P2	PT1	Peritoneal	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C146	P2	C146P5	PT2	Peritoneal	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C146	P3	C146P6	PT3	Peritoneal	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C146	P4	C146P7	PT4	Peritoneal	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C146	P5	C146P8	PT5	Peritoneal	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C146	P6	C146P1	PT6	Peritoneal	MGH	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C146	P7	C146P9	PT7	Peritoneal	MGH	P	7	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-C146	P8	C146P3	PT8	Peritoneal	MGH	P	8	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-C146	P9	C146P4	PT9	Peritoneal	MGH	P	9	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-C146	Per1a	C146B1c	Per1a	Peritoneal	MGH	Per	1	a	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-C146	Per1b	C146B1b	Per1b	Peritoneal	MGH	Per	1	b	FALSE	Peritoneum	Peritoneum	Distant	TRUE	FALSE
-C146	Per1c	C146B1a	Per1c	Peritoneal	MGH	Per	1	c	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-C146	Per3	C146TD1	Per3	Peritoneal	MGH	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-C146	TD1	C146TD2	TD1	Peritoneal	MGH	TD	1	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-C154	Per1	C154B1	Per1	Peritoneal	MGH	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C154	TD5	C154B10	TD5	Peritoneal	MGH	TD	5	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-C154	TD6	C154B2	TD6	Peritoneal	MGH	TD	6	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-C154	TD1	C154B3	TD1	Peritoneal	MGH	TD	1	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-C154	Per2	C154B4	Per2	Peritoneal	MGH	Per	2	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C154	TD2	C154B5	TD2	Peritoneal	MGH	TD	2	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-C154	Per4	C154B6	Per4	Peritoneal	MGH	Per	4	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-C154	Per3	C154B7	Per3	Peritoneal	MGH	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C154	Per8?	C154B8	NA	Peritoneal	MGH	Per	8	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-C154	Per9?	C154B9	NA	Peritoneal	MGH	Per	9	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-C154	L6	C154L10	LN6	Peritoneal	MGH	L	6	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-C154	TD3	C154L11	TD3	Peritoneal	MGH	TD	3	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-C154	L7	C154L12	LN7	Peritoneal	MGH	L	7	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-C154	TD4	C154L13	TD4	Peritoneal	MGH	TD	4	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-C154	L1	C154L14	LN1	Peritoneal	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C154	TD7	C154L15	TD7	Peritoneal	MGH	TD	7	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-C154	L2a	C154L2a	LN2a	Peritoneal	MGH	L	2	a	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C154	L2b	C154L2b	LN2b	Peritoneal	MGH	L	2	b	FALSE	Lymph node	Locoregional	Locoregional	FALSE	FALSE
-C154	L3	C154L4	LN3	Peritoneal	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C154	L5?	C154L5	NA	Peritoneal	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-C154	L4	C154L6	LN4	Peritoneal	MGH	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C154	L9	C154L8	LN9	Peritoneal	MGH	L	9	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-C154	N1	C154N1	Normal1	Peritoneal	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C154	N2	C154N2	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-C154	P1	C154P1	PT1	Peritoneal	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C154	P6	C154P10	PT6	Peritoneal	MGH	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C154	P11?	C154P11	NA	Peritoneal	MGH	P	11	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-C154	P12?	C154P12	NA	Peritoneal	MGH	P	12	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-C154	P2	C154P2	PT2	Peritoneal	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C154	P3	C154P3	PT3	Peritoneal	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C154	P4	C154P4	PT4	Peritoneal	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C154	P5	C154P5	PT5	Peritoneal	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C154	P10	C154P6	PT10	Peritoneal	MGH	P	10	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-C154	P7	C154P7	PT7	Peritoneal	MGH	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C154	P8	C154P8	PT8	Peritoneal	MGH	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C154	P9	C154P9	PT9	Peritoneal	MGH	P	9	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C154	L5	C154TD1	LN5	Peritoneal	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C154	TD8	C154TD2	TD8	Peritoneal	MGH	TD	8	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-C157	L1	C157LN4	LN1	Peritoneal	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C157	L2a	C157TD2a	LN2a	Peritoneal	MGH	L	2	a	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-C157	L2b	C157TD2b	LN2b	Peritoneal	MGH	L	2	b	FALSE	Lymph node	Locoregional	Locoregional	TRUE	FALSE
-C157	N1	C157N1	Normal1	Peritoneal	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C157	P1	C157P1	PT1	Peritoneal	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C157	P2	C157P2	PT2	Peritoneal	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C157	P3	C157P3	PT3	Peritoneal	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C157	P4	C157P4	PT4	Peritoneal	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C157	P5	C157P6	PT5	Peritoneal	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C157	P6	C157P9	PT6	Peritoneal	MGH	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C157	P7	C157P10	PT7	Peritoneal	MGH	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C157	P8	C157TD1	PT8	Peritoneal	MGH	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C157	Per1	C157B1	Per1	Peritoneal	MGH	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C157	Per2	C157B2	Per2	Peritoneal	MGH	Per	2	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C157	Per3	C157Di1	Per3	Peritoneal	MGH	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C157	Per4	C157Di2	Per4	Peritoneal	MGH	Per	4	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C157	TD1	C157TD7	TD1	Peritoneal	MGH	TD	1	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-C157	TD2	C157LN3	TD2	Peritoneal	MGH	TD	2	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-C157	TD3	C157TD8	TD3	Peritoneal	MGH	TD	3	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-C157	TD3?	C157TD3	NA	Peritoneal	MGH	TD	3	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-C158	L1	C158L3	LN1	Peritoneal	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C158	L3	C158L1	LN3	Peritoneal	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-C158	N1	C158N2	Normal1	Peritoneal	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C158	N2	C158N1	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-C158	N3	C158L2	Normal3	Peritoneal	MGH	N	3	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-C158	OvH1a	C158O1a	OvH1a	Peritoneal	MGH	OvH	1	a	FALSE	Ovary (hematogenous)	Distant (other)	Distant	TRUE	TRUE
-C158	OvH1b	C158O1b	OvH1b	Peritoneal	MGH	OvH	1	b	FALSE	Ovary (hematogenous)	Distant (other)	Distant	FALSE	FALSE
-C158	OvH2a	C158O2a	OvH2a	Peritoneal	MGH	OvH	2	a	FALSE	Ovary (hematogenous)	Distant (other)	Distant	FALSE	TRUE
-C158	OvH2b	C158O2b	OvH2b	Peritoneal	MGH	OvH	2	b	FALSE	Ovary (hematogenous)	Distant (other)	Distant	TRUE	FALSE
-C158	P1	C158P7	PT1	Peritoneal	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C158	P2	C158P2	PT2	Peritoneal	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C158	P3	C158P3	PT3	Peritoneal	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C158	P4	C158P4	PT4	Peritoneal	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C158	P5	C158P5	PT5	Peritoneal	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C158	P6	C158P6	PT6	Peritoneal	MGH	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C158	P7	C158P1	PT7	Peritoneal	MGH	P	7	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-C158	Per1	C158B1	Per1	Peritoneal	MGH	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C158	Per2a	C158B2a	Per2a	Peritoneal	MGH	Per	2	a	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C158	Per2b	C158B2b	Per2b	Peritoneal	MGH	Per	2	b	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-C158	Per2c	C158B2c	Per2c	Peritoneal	MGH	Per	2	c	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-C158	Per3	C158B3	Per3	Peritoneal	MGH	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C158	Per4a	C158TD1a	Per4a	Peritoneal	MGH	Per	4	a	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-C158	Per4b	C158TD1b	Per4b	Peritoneal	MGH	Per	4	b	FALSE	Peritoneum	Peritoneum	Distant	TRUE	FALSE
-C159	AG1a-A	C159Ad1	AG1a-A	Lung	MGH	AG	1	a	TRUE	Adrenal gland	Distant (other)	Distant	FALSE	TRUE
-C159	AG1b-A	C159AR1w	AG1b-A	Lung	MGH	AG	1	b	TRUE	Adrenal gland	Distant (other)	Distant	TRUE	FALSE
-C159	AG2-A	C159Ad2	AG2-A	Lung	MGH	AG	2	NA	TRUE	Adrenal gland	Distant (other)	Distant	TRUE	TRUE
-C159	AG3w?	C159AR3w	NA	Lung	MGH	AG	3	w	FALSE	Adrenal gland	Distant (other)	Distant	FALSE	FALSE
-C159	Di1-A	C159Di1	Di1-A	Lung	MGH	Di	1	NA	TRUE	Diaphragm	Peritoneum	Distant	TRUE	TRUE
-C159	Di2-A	C159Di2	Di2-A	Lung	MGH	Di	2	NA	TRUE	Diaphragm	Peritoneum	Distant	TRUE	TRUE
-C159	Di3a-A	C159Di3	Di3a-A	Lung	MGH	Di	3	a	TRUE	Diaphragm	Peritoneum	Distant	TRUE	TRUE
-C159	Di3b-A	C159B3w	Di3b-A	Lung	MGH	Di	3	b	TRUE	Diaphragm	Peritoneum	Distant	FALSE	FALSE
-C159	L1	C159LN1	L1	Lung	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C159	L2	C159LN2	L2	Lung	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C159	L3	C159LN4	L3	Lung	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C159	L4	C159LN5	L4	Lung	MGH	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C159	L5	C159LN6	L5	Lung	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C159	L6	C159LN7	L6	Lung	MGH	L	6	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C159	L7	C159LN13	L7	Lung	MGH	L	7	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C159	Ld1-A	C159LD1	Ld1-A	Lung	MGH	Ld	1	NA	TRUE	Lymph node (distant)	Distant (other)	Distant	TRUE	TRUE
-C159	Ld2-A	C159LD2	Ld2-A	Lung	MGH	Ld	2	NA	TRUE	Lymph node (distant)	Distant (other)	Distant	TRUE	TRUE
-C159	Ld3a-A	C159LD3	Ld3a-A	Lung	MGH	Ld	3	a	TRUE	Lymph node (distant)	Distant (other)	Distant	FALSE	TRUE
-C159	Ld3b-A	C159LD1w	Ld3b-A	Lung	MGH	Ld	3	b	TRUE	Lymph node (distant)	Distant (other)	Distant	TRUE	FALSE
-C159	Ld4a-A	C159LD4	Ld4a-A	Lung	MGH	Ld	4	a	TRUE	Lymph node (distant)	Distant (other)	Distant	FALSE	TRUE
-C159	Ld4b-A	C159LD2w	Ld4b-A	Lung	MGH	Ld	4	b	TRUE	Lymph node (distant)	Distant (other)	Distant	TRUE	FALSE
-C159	Ld5a-A	C159LD5	Ld5a-A	Lung	MGH	Ld	5	a	TRUE	Lymph node (distant)	Distant (other)	Distant	TRUE	TRUE
-C159	Ld5b-A	C159LD3w	Ld5b-A	Lung	MGH	Ld	5	b	TRUE	Lymph node (distant)	Distant (other)	Distant	FALSE	FALSE
-C159	Liv1-A	C159H3	Liv1-A	Lung	MGH	Liv	1	NA	TRUE	Liver	Liver	Distant	TRUE	TRUE
-C159	Liv2-A	C159H6b	Liv2-A	Lung	MGH	Liv	2	NA	TRUE	Liver	Liver	Distant	TRUE	TRUE
-C159	Liv3a-A	C159H7a	Liv3a-A	Lung	MGH	Liv	3	a	TRUE	Liver	Liver	Distant	TRUE	TRUE
-C159	Liv3b-A	C159H7b	Liv3b-A	Lung	MGH	Liv	3	b	TRUE	Liver	Liver	Distant	FALSE	FALSE
-C159	Liv4a-A	C159H8	Liv4a-A	Lung	MGH	Liv	4	a	TRUE	Liver	Liver	Distant	TRUE	TRUE
-C159	Liv4b-A	C159H1w	Liv4b-A	Lung	MGH	Liv	4	b	TRUE	Liver	Liver	Distant	FALSE	FALSE
-C159	Lun1-A	C159A1	Lun1-A	Lung	MGH	Lun	1	NA	TRUE	Lung	Lung	Distant	TRUE	TRUE
-C159	Lun2a-A	C159A2a	Lun2a-A	Lung	MGH	Lun	2	a	TRUE	Lung	Lung	Distant	FALSE	TRUE
-C159	Lun2b-A	C159A2b	Lun2b-A	Lung	MGH	Lun	2	b	TRUE	Lung	Lung	Distant	FALSE	FALSE
-C159	Lun2c-A	C159A1w	Lun2c-A	Lung	MGH	Lun	2	c	TRUE	Lung	Lung	Distant	FALSE	FALSE
-C159	Lun2d-A	C159A2w	Lun2d-A	Lung	MGH	Lun	2	d	TRUE	Lung	Lung	Distant	TRUE	FALSE
-C159	Me1-A	C159Me1	Me1-A	Lung	MGH	Me	1	NA	TRUE	Mediastinum	Distant (other)	Distant	TRUE	TRUE
-C159	N1	C159N1	Normal1	Lung	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C159	P1	C159P2	P1	Lung	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C159	P10-A	C159P1w	P10-A	Lung	MGH	P	10	NA	TRUE	Primary	Primary	Primary	TRUE	TRUE
-C159	P11-A	C159P2w	P11-A	Lung	MGH	P	11	NA	TRUE	Primary	Primary	Primary	TRUE	TRUE
-C159	P12-A	C159P3w	P12-A	Lung	MGH	P	12	NA	TRUE	Primary	Primary	Primary	TRUE	TRUE
-C159	P13-A	C159P4w	P13-A	Lung	MGH	P	13	NA	TRUE	Primary	Primary	Primary	TRUE	TRUE
-C159	P2	C159P3	P2	Lung	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C159	P3	C159P4	P3	Lung	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C159	P4	C159P7	P4	Lung	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C159	P5	C159P5	P5	Lung	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C159	P6	C159P8	P6	Lung	MGH	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C159	P7	C159P6	P7	Lung	MGH	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C159	P8-A	C159P9	P8-A	Lung	MGH	P	8	NA	TRUE	Primary	Primary	Primary	TRUE	TRUE
-C159	P9-A	C159P10	P9-A	Lung	MGH	P	9	NA	TRUE	Primary	Primary	Primary	TRUE	TRUE
-C159	Pan1a-A	C159Pa1	Pa1a-A	Lung	MGH	Pan	1	a	TRUE	Pancreas	Distant (other)	Distant	FALSE	TRUE
-C159	Pan1b-A	C159D1w	Pa1b-A	Lung	MGH	Pan	1	b	TRUE	Pancreas	Distant (other)	Distant	TRUE	FALSE
-C159	Per1-A	C159Ab1	Per1-A	Lung	MGH	Per	1	NA	TRUE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C159	Per2-A	C159Pg1	Per2-A	Lung	MGH	Per	2	NA	TRUE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C159	Per2w?	C159B2w	NA	Lung	MGH	Per	2	w	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-C159	Per3-A	C159B1	Per3-A	Lung	MGH	Per	3	NA	TRUE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C159	Per4-A	C159B3	Per4-A	Lung	MGH	Per	4	NA	TRUE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C159	Per5-A	C159B4	Per5-A	Lung	MGH	Per	5	NA	TRUE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C159	SB1-A	C159SB1	SB1-A	Lung	MGH	SB	1	NA	TRUE	Small bowel	Distant (other)	Distant	TRUE	TRUE
-C159	Sp1a-A	C159Sp1	Sp1a-A	Lung	MGH	Sp	1	a	TRUE	Spleen	Distant (other)	Distant	FALSE	TRUE
-C159	Sp1b-A	C159S1w	Sp1b-A	Lung	MGH	Sp	1	b	TRUE	Spleen	Distant (other)	Distant	TRUE	FALSE
-C159	TD1	C159TD1	TD1	Lung	MGH	TD	1	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-C159	X1a-A	C159X1a	X1a-A	Lung	MGH	X	1	a	TRUE	Unknown or n/a	n/a	n/a	FALSE	TRUE
-C159	X1b-A	C159X1b	X1b-A	Lung	MGH	X	1	b	TRUE	Unknown or n/a	n/a	n/a	TRUE	FALSE
-C159	X1c-A	C159X1c	X1c-A	Lung	MGH	X	1	c	TRUE	Unknown or n/a	n/a	n/a	FALSE	FALSE
-C159	X1d-A	C159X2w	X1d-A	Lung	MGH	X	1	d	TRUE	Unknown or n/a	n/a	n/a	FALSE	FALSE
-C160	L1	C160L1	L1	Lung	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C160	L2	C160L2	L2	Lung	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C160	Lun1a	C160A1a	Lun1a	Lung	MGH	Lun	1	a	FALSE	Lung	Lung	Distant	FALSE	TRUE
-C160	Lun1b	C160A1b	Lun1b	Lung	MGH	Lun	1	b	FALSE	Lung	Lung	Distant	FALSE	FALSE
-C160	Lun1c	C160A1c	Lun1c	Lung	MGH	Lun	1	c	FALSE	Lung	Lung	Distant	FALSE	FALSE
-C160	Lun1d	C160A1d	Lun1d	Lung	MGH	Lun	1	d	FALSE	Lung	Lung	Distant	FALSE	FALSE
-C160	Lun1e	C160A1e	Lun1e	Lung	MGH	Lun	1	e	FALSE	Lung	Lung	Distant	TRUE	FALSE
-C160	Lun1f	C160A1f	Lun1f	Lung	MGH	Lun	1	f	FALSE	Lung	Lung	Distant	FALSE	FALSE
-C160	Lun1g	C160A1g	Lun1g	Lung	MGH	Lun	1	g	FALSE	Lung	Lung	Distant	FALSE	FALSE
-C160	N1	C160N1	Normal1	Lung	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C160	P1	C160P1	P1	Lung	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C160	P2	C160P2	P2	Lung	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C160	P3	C160P3	P3	Lung	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C161	Di1-A	C161B1	Di1-A	Lung	MGH	Di	1	NA	TRUE	Diaphragm	Peritoneum	Distant	TRUE	TRUE
-C161	L1	C161L1	L1	Lung	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C161	L2	C161L2	L2	Lung	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C161	L3	C161L3	L3	Lung	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C161	L4	C161L4	L4	Lung	MGH	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C161	Ld1-A	C161Ld1	Ld1-A	Lung	MGH	Ld	1	NA	TRUE	Lymph node (distant)	Distant (other)	Distant	TRUE	TRUE
-C161	Ld2-A	C161Ld2	Ld2-A	Lung	MGH	Ld	2	NA	TRUE	Lymph node (distant)	Distant (other)	Distant	TRUE	TRUE
-C161	Liv1-A	C161H1	Liv1-A	Lung	MGH	Liv	1	NA	TRUE	Liver	Liver	Distant	TRUE	TRUE
-C161	Lun1	C161A1	Lun1	Lung	MGH	Lun	1	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-C161	Lun2	C161A2	Lun2	Lung	MGH	Lun	2	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-C161	Lun3-A	C161A5	Lun3-A	Lung	MGH	Lun	3	NA	TRUE	Lung	Lung	Distant	TRUE	TRUE
-C161	N1	C161N1	Normal1	Lung	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C161	Ov1-A	C161O1	Ova1-A	Lung	MGH	Ov	1	NA	TRUE	Ovary	Distant (other)	Distant	TRUE	TRUE
-C161	Ov2-A	C161O2	Ova2-A	Lung	MGH	Ov	2	NA	TRUE	Ovary	Distant (other)	Distant	TRUE	TRUE
-C161	P1	C161P9	P1	Lung	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C161	P2	C161P2	P2	Lung	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C161	P3	C161P3	P3	Lung	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C161	P4	C161P4	P4	Lung	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C161	P5	C161P5	P5	Lung	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C161	P6	C161P6	P6	Lung	MGH	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C161	P7	C161P7	P7	Lung	MGH	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C161	P8-A	C161P8	P8-A	Lung	MGH	P	8	NA	TRUE	Primary	Primary	Primary	TRUE	TRUE
-C161	Pan1-A	C161Pa1	Pa1-A	Lung	MGH	Pan	1	NA	TRUE	Pancreas	Distant (other)	Distant	TRUE	TRUE
-C161	Per1-A	C161B2	Per1-A	Lung	MGH	Per	1	NA	TRUE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C161	Per2-A	C161B6	Per2-A	Lung	MGH	Per	2	NA	TRUE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C161	Per3-A	C161B4	Per3-A	Lung	MGH	Per	3	NA	TRUE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C161	Per4-A	C161B7	Per4-A	Lung	MGH	Per	4	NA	TRUE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C161	Per5-A	C161B8	Per5-A	Lung	MGH	Per	5	NA	TRUE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C161	Plu1-A	C161A6	Plu1-A	Lung	MGH	Plu	1	NA	TRUE	Pleura	Distant (other)	Distant	TRUE	TRUE
-C161	SB1-A	C161SB1	SB1-A	Lung	MGH	SB	1	NA	TRUE	Small bowel	Distant (other)	Distant	TRUE	TRUE
-C161	SB2-A	C161SB2	SB2-A	Lung	MGH	SB	2	NA	TRUE	Small bowel	Distant (other)	Distant	TRUE	TRUE
-C161	Sp1-A	C161S1	Sp1-A	Lung	MGH	Sp	1	NA	TRUE	Spleen	Distant (other)	Distant	TRUE	TRUE
-C161	St1-A	C161St1	St1-A	Lung	MGH	St	1	NA	TRUE	Stomach	Distant (other)	Distant	TRUE	TRUE
-C161	St2-A	C161St2	St2-A	Lung	MGH	St	2	NA	TRUE	Stomach	Distant (other)	Distant	TRUE	TRUE
-C178	Lun1a	C178A1a	Lun1a	Lung	MGH	Lun	1	a	FALSE	Lung	Lung	Distant	TRUE	TRUE
-C178	Lun1b	C178A1b	Lun1b	Lung	MGH	Lun	1	b	FALSE	Lung	Lung	Distant	FALSE	FALSE
-C178	Lun2	C178A3	Lun2	Lung	MGH	Lun	2	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-C178	Lun3a*	C178A6a	Lun3a*	Lung	MGH	Lun	3	a*	FALSE	Lung	Lung	Distant	FALSE	FALSE
-C178	Lun3b*	C178A6b	Lun3b*	Lung	MGH	Lun	3	b*	FALSE	Lung	Lung	Distant	TRUE	FALSE
-C178	Lun4a*	C178A7b	Lun4a*	Lung	MGH	Lun	4	a*	FALSE	Lung	Lung	Distant	FALSE	FALSE
-C178	Lun4b*	C178A7c	Lun4b*	Lung	MGH	Lun	4	b*	FALSE	Lung	Lung	Distant	TRUE	FALSE
-C178	Lun5a*	C178A8a	Lun5a*	Lung	MGH	Lun	5	a*	FALSE	Lung	Lung	Distant	FALSE	FALSE
-C178	Lun5b*	C178A8b	Lun5b*	Lung	MGH	Lun	5	b*	FALSE	Lung	Lung	Distant	TRUE	FALSE
-C178	Lun6a*	C178A9a	Lun6a*	Lung	MGH	Lun	6	a*	FALSE	Lung	Lung	Distant	TRUE	FALSE
-C178	Lun6b*	C178A9b	Lun6b*	Lung	MGH	Lun	6	b*	FALSE	Lung	Lung	Distant	FALSE	FALSE
-C178	N1	C178N1	Normal1	Lung	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C178	P1	C178P1	P1	Lung	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C178	P2	C178P3	P2	Lung	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C178	P3	C178P4	P3	Lung	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C178	P4	C178P5	P4	Lung	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C186	Brn1a	C186M3	Brn1a	Lung	MGH	Brn	1	a	FALSE	Brain	Distant (other)	Distant	FALSE	TRUE
-C186	Brn1b	C186M5	Brn1b	Lung	MGH	Brn	1	b	FALSE	Brain	Distant (other)	Distant	FALSE	FALSE
-C186	Brn1c	C186M6	Brn1c	Lung	MGH	Brn	1	c	FALSE	Brain	Distant (other)	Distant	TRUE	FALSE
-C186	Brn2a	C186M7	Brn2a	Lung	MGH	Brn	2	a	FALSE	Brain	Distant (other)	Distant	TRUE	TRUE
-C186	Brn2b	C186M10	Brn2b	Lung	MGH	Brn	2	b	FALSE	Brain	Distant (other)	Distant	FALSE	FALSE
-C186	Cal1a	C186CA1	Cal1a	Lung	MGH	Cal	1	a	FALSE	Calf	Distant (other)	Distant	TRUE	TRUE
-C186	Cal1b	C186CA2	Cal1b	Lung	MGH	Cal	1	b	FALSE	Calf	Distant (other)	Distant	FALSE	FALSE
-C186	Lun1	C186A1	Lun1	Lung	MGH	Lun	1	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-C186	Lun2a	C186A2	Lun2a	Lung	MGH	Lun	2	a	FALSE	Lung	Lung	Distant	FALSE	TRUE
-C186	Lun2b	C186A3	Lun2b	Lung	MGH	Lun	2	b	FALSE	Lung	Lung	Distant	TRUE	FALSE
-C186	Lun3a	C186A4	Lun3a	Lung	MGH	Lun	3	a	FALSE	Lung	Lung	Distant	TRUE	TRUE
-C186	Lun3b	C186A5	Lun3b	Lung	MGH	Lun	3	b	FALSE	Lung	Lung	Distant	FALSE	FALSE
-C186	N1	C186N1	Normal1	Lung	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C186	N3	C186N3	Normal3	Lung	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C186	P1	C186P1	P1	Lung	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C186	P2	C186P2	P2	Lung	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C186	P3	C186P3	P3	Lung	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C186	P4	C186P5	P4	Lung	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C186	P5	C186P7	P5	Lung	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C31	L1	C31-W	L1	Science	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C31	L2	C31-X	L2	Science	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C31	Liv1a	C31-L	Liv1a	Science	MGH	Liv	1	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-C31	Liv1b	C31-M	Liv1b	Science	MGH	Liv	1	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C31	Liv1c	C31-P	Liv1c	Science	MGH	Liv	1	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C31	Liv1d	C31-Q	Liv1d	Science	MGH	Liv	1	d	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C31	Liv1e	C31-R	Liv1e	Science	MGH	Liv	1	e	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C31	Liv1f	C31-S	Liv1f	Science	MGH	Liv	1	f	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C31	Liv1g	C31-T	Liv1g	Science	MGH	Liv	1	g	FALSE	Liver	Liver	Distant	TRUE	FALSE
-C31	Liv1h	C31-U	Liv1h	Science	MGH	Liv	1	h	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C31	N1	C31-Y	N1	Science	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C31	P1	C31-C	P1	Science	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C31	P2	C31-D	P2	Science	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C31	P3	C31-E	P3	Science	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C31	P4	C31-F	P4	Science	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C36	L1	C36-1-G1	L1	Science	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C36	L2	C36-1-G2	L2	Science	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C36	L3	C36-1-H	L3	Science	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C36	L4	C36-1-I	L4	Science	MGH	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C36	Liv1	C36-3-A	Liv1	Science	MGH	Liv	1	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C36	Liv2	C36-3-B	Liv2	Science	MGH	Liv	2	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C36	N1	C36-1-A	N1	Science	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C36	P1	C36-1-B	P1	Science	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C36	P2	C36-1-E	P2	Science	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C36	P3	C36-1-F	P3	Science	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C38	L1	C38-K	L1	Science	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C38	N1	C38-F	N1	Science	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C38	P1	C38-A	P1	Science	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C38	P2	C38-B	P2	Science	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C38	P3	C38-C	P3	Science	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C38	P4	C38-E	P4	Science	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C38	P5	C38-D	P5	Science	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C38	Per1	C38-I	Per1	Science	MGH	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C38	Per2	C38-J-N1	Per2	Science	MGH	Per	2	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C38	Per3	C38-J-N2	Per3	Science	MGH	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-C38	Sat1	C38-G	Sat1	Science	MGH	Sat	1	NA	FALSE	Satellite nodule	Other	Other	TRUE	TRUE
-C38	Sat2	C38-H	Sat2	Science	MGH	Sat	2	NA	FALSE	Satellite nodule	Other	Other	TRUE	TRUE
-C38	VI1	C38-L	VI1	Science	MGH	VI	1	NA	FALSE	Venous invasion	Other	Other	TRUE	TRUE
-C39	CT1	C39-1-B-T1	CT1	Science	MGH	CT	1	NA	FALSE	Cecal tumor	Distant (other)	Distant	TRUE	TRUE
-C39	CT2	C39-1-I-T1	CT2	Science	MGH	CT	2	NA	FALSE	Cecal tumor	Distant (other)	Distant	TRUE	TRUE
-C39	L1	C39-1-C-J	L1	Science	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C39	Liv1	C39-2-I-J	Liv1	Science	MGH	Liv	1	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C39	N1	C39-2-E	N1	Science	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C39	St1	C39-1-A	ST1	Science	MGH	St	1	NA	FALSE	Stomach	Distant (other)	Distant	TRUE	TRUE
-C39	St2	C39-1-H-Sec	ST2	Science	MGH	St	2	NA	FALSE	Stomach	Distant (other)	Distant	TRUE	TRUE
-C45	L1	C45-E-LN	L1	Science	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C45	L2	C45-F	L2	Science	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C45	Liv1	C45-LB1	Liv1	Science	MGH	Liv	1	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C45	N1	C45-A	N1	Science	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C45	P1	C45-D-T1	P1	Science	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C45	P2	C45-B	P2	Science	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C45	P3	C45-BT	P3	Science	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C45	SB1	C45-SB	SB1	Science	MGH	SB	1	NA	FALSE	Small bowel	Distant (other)	Distant	TRUE	TRUE
-C46	L1	C46-I	L1	Science	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C46	Liv1	C46-H	Liv1	Science	MGH	Liv	1	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C46	N1	C46-J	N1	Science	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C46	P1	C46-C	P1	Science	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C46	P2	C46-D	P2	Science	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C46	P3	C46-E-T1	P3	Science	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C46	P4	C46-A	P4	Science	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C46	P5	C46-G	P5	Science	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C51	L1	C51-D	L1	Science	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C51	L2	C51-E	L2	Science	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C51	Liv1a	C51-C--firstR-	Liv1a	Science	MGH	Liv	1	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-C51	Liv1b	C51-C--macro-	Liv1b	Science	MGH	Liv	1	b	FALSE	Liver	Liver	Distant	TRUE	FALSE
-C51	N1	C51-B	N1	Science	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C51	P1	C51-G	P1	Science	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C51	P2	C51-A	P2	Science	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C51	P3	C51-H	P3	Science	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C53	L1	C53-E	L1	Science	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C53	Liv1a	C53-B	Liv1a	Science	MGH	Liv	1	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C53	Liv1b	C53-I	Liv1b	Science	MGH	Liv	1	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C53	Liv2	C53-I_Nod	Liv2	Science	MGH	Liv	2	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C53	Liv3	C53-J	Liv3	Science	MGH	Liv	3	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C53	N1	C53-C	N1	Science	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C53	P1	C53-A	P1	Science	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C53	P2	C53-F	P2	Science	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C53	P3	C53-G	P3	Science	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C53	P4	C53-H	P4	Science	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C57	Liv1a	C57M1a	Liv1a	NatGen	MGH	Liv	1	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C57	Liv1b	C57M1b	Liv1b	NatGen	MGH	Liv	1	b	FALSE	Liver	Liver	Distant	TRUE	FALSE
-C57	Liv2	C57M2	Liv2	NatGen	MGH	Liv	2	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C57	Liv3	C57M3	Liv3	NatGen	MGH	Liv	3	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C57	Liv4	C57M4	Liv4	NatGen	MGH	Liv	4	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C57	N1	C57N2	N1	NatGen	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C57	P1	C57P1a	P1	NatGen	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C57	P2	C57P1b	P2	NatGen	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C57	P3	C57P1d	P3	NatGen	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C57	P4	C57P1e	P4	NatGen	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C57	P5	C57P1f	P5	NatGen	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C58	L1	C58-I--L1	L1	Science	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C58	L10	C58-D	L10	Science	MGH	L	10	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C58	L2	C58-J	L2	Science	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C58	L3	C58-L-L1	L3	Science	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C58	L4	C58-L-L3	L4	Science	MGH	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C58	L5	C58-L-L4	L5	Science	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C58	L6	C58-L-L5	L6	Science	MGH	L	6	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C58	L7	C58-M-L1	L7	Science	MGH	L	7	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C58	L8	C58-M-L2	L8	Science	MGH	L	8	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C58	L9	C58-N	L9	Science	MGH	L	9	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C58	Liv1a	C58-B	Liv1a	Science	MGH	Liv	1	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C58	Liv1b	C58-B-Sec	Liv1b	Science	MGH	Liv	1	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C58	Liv1c	C58-P	Liv1c	Science	MGH	Liv	1	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C58	N1	C58-C	N1	Science	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C58	P1	C58-E	P1	Science	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C58	P2	C58-F	P2	Science	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C58	P3	C58-A	P3	Science	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C58	P4	C58-H	P4	Science	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C59	L1	C59-E	L1	Science	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C59	L2	C59-F-L1	L2	Science	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C59	L3	C59-F-L2	L3	Science	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C59	Liv1a	C59-G	Liv1a	Science	MGH	Liv	1	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-C59	Liv1b	C59-C	Liv1b	Science	MGH	Liv	1	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C59	Liv1c	C59-H	Liv1c	Science	MGH	Liv	1	c	FALSE	Liver	Liver	Distant	TRUE	FALSE
-C59	N1	C59-D	N1	Science	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C59	P1	C59-I	P1	Science	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C59	P2	C59-J	P2	Science	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C59	P3	C59-A	P3	Science	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C59	P4	C59-M	P4	Science	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C59	P5	C59-N	P5	Science	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C6	L1	C6L2	L1	NatGen	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C6	L2	C6L3	L2	NatGen	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C6	L3	C6L5	L3	NatGen	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C6	L4	C6L6	L4	NatGen	MGH	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C6	L5	C6L7	L5	NatGen	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C6	N1	C6N1	N1	NatGen	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C6	P1	C6P1a	P1	NatGen	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C6	P2	C6P1b	P2	NatGen	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C6	P3	C6P1c	P3	NatGen	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C6	P4	C6P1d	P4	NatGen	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C61	L1	C61-D	L1	Science	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C61	Liv1a	C61-B	Liv1a	Science	MGH	Liv	1	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C61	Liv1b	C61-Bmacro	Liv1b	Science	MGH	Liv	1	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C61	N1	C61-C	N1	Science	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C61	P1	C61-A	P1	Science	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C61	P2	C61-E	P2	Science	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C61	P3	C61-F	P3	Science	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C61	P4	C61-G	P4	Science	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C63	L1	C63-LN	L1	Science	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C63	Liv1	C63-LM2	Liv1	Science	MGH	Liv	1	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C63	N1	C63-N	N1	Science	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C63	P1	C63-PT2	P1	Science	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C65	L1a	C65-C-LA	L1a	Science	MGH	L	1	a	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C65	L1b	C65-C-LB	L1b	Science	MGH	L	1	b	FALSE	Lymph node	Locoregional	Locoregional	FALSE	FALSE
-C65	L2	C65-H	L2	Science	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C65	L3	C65-D	L3	Science	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C65	Liv1a	C65-E	Liv1a	Science	MGH	Liv	1	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C65	Liv1b	C65-F	Liv1b	Science	MGH	Liv	1	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C65	N1	C65-A	N1	Science	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C65	P1	C65-B	P1	Science	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C65	P2	C65-G	P2	Science	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C66	L1	C66-F	L1	Science	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C66	L2	C66-G-L2	L2	Science	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C66	L3	C66-H-L1	L3	Science	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C66	L4	C66-H-L2	L4	Science	MGH	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C66	L5	C66-H-L3	L5	Science	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C66	Liv1a	C66-J	Liv1a	Science	MGH	Liv	1	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-C66	Liv1b	C66-K	Liv1b	Science	MGH	Liv	1	b	FALSE	Liver	Liver	Distant	TRUE	FALSE
-C66	Liv2	C66-L	Liv2	Science	MGH	Liv	2	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C66	N1	C66-A	N1	Science	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C66	P1	C66-C	P1	Science	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C66	P2	C66-D	P2	Science	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C66	P3	C66-E	P3	Science	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C69	L1	C69-H	L1	Science	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C69	Liv1	C69-I	Liv1	Science	MGH	Liv	1	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C69	Liv2	C69-J	Liv2	Science	MGH	Liv	2	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C69	Liv3a	C69-L	Liv3a	Science	MGH	Liv	3	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-C69	Liv3b	C69-M	Liv3b	Science	MGH	Liv	3	b	FALSE	Liver	Liver	Distant	TRUE	FALSE
-C69	Liv3c	C69-N	Liv3c	Science	MGH	Liv	3	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C69	N1	C69-A	N1	Science	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C69	P1	C69-B	P1	Science	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C69	P2	C69-C	P2	Science	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C69	P3	C69-D	P3	Science	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C69	P4	C69-E	P4	Science	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C69	P5	C69-F	P5	Science	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C69	P6	C69-G	P6	Science	MGH	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C70	L1	C70L1	L1	NatGen	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C70	Ld1a	C70M4a	D1a	NatGen	MGH	Ld	1	a	FALSE	Lymph node (distant)	Distant (other)	Distant	TRUE	TRUE
-C70	Ld1b	C70M4b	D1b	NatGen	MGH	Ld	1	b	FALSE	Lymph node (distant)	Distant (other)	Distant	FALSE	FALSE
-C70	Ld2	C70M5	D2	NatGen	MGH	Ld	2	NA	FALSE	Lymph node (distant)	Distant (other)	Distant	TRUE	TRUE
-C70	Liv1	C70M1	Liv1	NatGen	MGH	Liv	1	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C70	Liv2	C70M2	Liv2	NatGen	MGH	Liv	2	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C70	Liv3	C70M3	Liv3	NatGen	MGH	Liv	3	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C70	N1	C70N1	N1	NatGen	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C70	P1	C70P1a	P1	NatGen	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C70	P2	C70P1b	P2	NatGen	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C70	P3	C70P1c	P3	NatGen	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C70	P4	C70P1d	P4	NatGen	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C70	P5	C70P1e	P5	NatGen	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C77	L1	C77-G	L1	Science	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C77	L2	C77-H	L2	Science	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C77	Liv1a	C77-A	Liv1a	Science	MGH	Liv	1	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-C77	Liv1b	C77-B	Liv1b	Science	MGH	Liv	1	b	FALSE	Liver	Liver	Distant	TRUE	FALSE
-C77	N1	C77-C	N1	Science	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C77	P1	C77-J	P1	Science	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C77	P2	C77-K	P2	Science	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C79	Liv1	C79-O	Liv1	Science	MGH	Liv	1	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C79	N1	C79-M	N1	Science	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C79	P1	C79-A	P1	Science	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C79	P10	C79-J	P10	Science	MGH	P	10	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C79	P11	C79-K	P11	Science	MGH	P	11	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C79	P12	C79-L	P12	Science	MGH	P	12	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C79	P2	C79-B	P2	Science	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C79	P3	C79-C-T1	P3	Science	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C79	P4	C79-D	P4	Science	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C79	P5	C79-E	P5	Science	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C79	P6	C79-F	P6	Science	MGH	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C79	P7	C79-G	P7	Science	MGH	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C79	P8	C79-H	P8	Science	MGH	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C79	P9	C79-I	P9	Science	MGH	P	9	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C80	Liv1a	C80M1a	Liv1a	NatGen	MGH	Liv	1	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C80	Liv1b	C80M1b	Liv1b	NatGen	MGH	Liv	1	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C80	Liv2	C80M2	Liv2	NatGen	MGH	Liv	2	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C80	Liv3	C80M3	Liv3	NatGen	MGH	Liv	3	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C80	Liv4	C80M4b	Liv4	NatGen	MGH	Liv	4	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C80	N1	C80N1	N1	NatGen	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C80	P1	C80P1a	P1	NatGen	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C80	P2	C80P1b	P2	NatGen	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C80	P3	C80P1c	P3	NatGen	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C80	P4	C80P1d	P4	NatGen	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C83	L1	C83L1	L1	NatGen	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C83	L2	C83L2	L2	NatGen	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C83	L3	C83L3	L3	NatGen	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C83	L4	C83L4	L4	NatGen	MGH	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C83	L5	C83L5	L5	NatGen	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C83	L6	C83L6	L6	NatGen	MGH	L	6	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C83	L7	C83L7	L7	NatGen	MGH	L	7	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C83	L8	C83L8	L8	NatGen	MGH	L	8	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C83	L9	C83L9	L9	NatGen	MGH	L	9	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C83	N1	C83N1	N1	NatGen	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C83	P1	C83P1a	P1	NatGen	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C83	P2	C83P1b	P2	NatGen	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C83	P3	C83P1c	P3	NatGen	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C83	P4	C83P1d	P4	NatGen	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C83	P5	C83P1e	P5	NatGen	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C83	P6	C83P1f	P6	NatGen	MGH	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C84	L1	C84L2	L1	NatGen	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C84	L10	C84L11	L10	NatGen	MGH	L	10	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C84	L11	C84L12	L11	NatGen	MGH	L	11	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C84	L12	C84L14	L12	NatGen	MGH	L	12	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C84	L2	C84L3	L2	NatGen	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C84	L3	C84L4	L3	NatGen	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C84	L4	C84L5	L4	NatGen	MGH	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C84	L5	C84L6	L5	NatGen	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C84	L6	C84L7	L6	NatGen	MGH	L	6	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C84	L7	C84L8	L7	NatGen	MGH	L	7	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C84	L8	C84L9	L8	NatGen	MGH	L	8	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C84	L9	C84L10	L9	NatGen	MGH	L	9	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C84	N1	C84N1	N1	NatGen	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C84	P1	C84P1a	P1	NatGen	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C84	P2	C84P1b	P2	NatGen	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C84	P3	C84P1c	P3	NatGen	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C84	P4	C84P1d	P4	NatGen	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C85	L1	C85L1	L1	NatGen	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C85	L2	C85L2	L2	NatGen	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C85	L3	C85L3	L3	NatGen	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C85	L4	C85L5	L4	NatGen	MGH	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C85	L5	C85L6	L5	NatGen	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C85	N1	C85N1	N1	NatGen	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C85	P1	C85P1a	P1	NatGen	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C85	P2	C85P1b	P2	NatGen	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C85	P3	C85P1c	P3	NatGen	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C85	P4	C85P1d	P4	NatGen	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C85	P5	C85P1e	P5	NatGen	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C89	L1	C89L1	L1	NatGen	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C89	L2	C89L2	L2	NatGen	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C89	L3	C89L3	L3	NatGen	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C89	L4	C89L4	L4	NatGen	MGH	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C89	L5	C89L5	L5	NatGen	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C89	L6	C89L6	L6	NatGen	MGH	L	6	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C89	N1	C89N1	N1	NatGen	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C89	Ov1	C89M2	O1	NatGen	MGH	Ov	1	NA	FALSE	Omentum	Peritoneum	Distant	TRUE	TRUE
-C89	Ov1a	C89M1a	Ov1a	NatGen	MGH	Ov	1	a	FALSE	Ovary	Distant (other)	Distant	FALSE	TRUE
-C89	Ov1b	C89M1b	Ov1b	NatGen	MGH	Ov	1	b	FALSE	Ovary	Distant (other)	Distant	TRUE	FALSE
-C89	Ov1c	C89M1c	Ov1c	NatGen	MGH	Ov	1	c	FALSE	Ovary	Distant (other)	Distant	FALSE	FALSE
-C89	Ov1d	C89M1d	Ov1d	NatGen	MGH	Ov	1	d	FALSE	Ovary	Distant (other)	Distant	FALSE	FALSE
-C89	Ov1e	C89M1e	Ov1e	NatGen	MGH	Ov	1	e	FALSE	Ovary	Distant (other)	Distant	FALSE	FALSE
-C89	Ov1f	C89M1f	Ov1f	NatGen	MGH	Ov	1	f	FALSE	Ovary	Distant (other)	Distant	FALSE	FALSE
-C89	Ov1g	C89M1g	Ov1g	NatGen	MGH	Ov	1	g	FALSE	Ovary	Distant (other)	Distant	FALSE	FALSE
-C89	Ov2	C89M3	O2	NatGen	MGH	Ov	2	NA	FALSE	Omentum	Peritoneum	Distant	TRUE	TRUE
-C89	Ov3	C89M4	O3	NatGen	MGH	Ov	3	NA	FALSE	Omentum	Peritoneum	Distant	TRUE	TRUE
-C89	P1	C89P1a	P1	NatGen	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C89	P2	C89P1b	P2	NatGen	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C89	P3	C89P1c	P3	NatGen	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C89	P4	C89P1e	P4	NatGen	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C89	P5	C89P1f	P5	NatGen	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C89	P6	C89P1g	P6	NatGen	MGH	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C89	P7	C89P1h	P7	NatGen	MGH	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C89	P8	C89P1i	P8	NatGen	MGH	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C90	L1	C90L1	L1	NatGen	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C90	L2	C90L2	L2	NatGen	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C90	L3	C90L3	L3	NatGen	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C90	L4	C90L4	L4	NatGen	MGH	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C90	L5	C90L5	L5	NatGen	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C90	Liv1a	C90M1a	Liv1a	NatGen	MGH	Liv	1	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C90	Liv1b	C90M1b	Liv1b	NatGen	MGH	Liv	1	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C90	Liv1c	C90M1c	Liv1c	NatGen	MGH	Liv	1	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C90	N1	C90N1	N1	NatGen	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C90	P1	C90P1b	P1	NatGen	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C90	P2	C90P1c	P2	NatGen	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C90	P3	C90P1d	P3	NatGen	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C90	P4	C90P1e	P4	NatGen	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C90	P5	C90P1f	P5	NatGen	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C90	P6	C90P1g	P6	NatGen	MGH	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C90	P7	C90P1j	P7	NatGen	MGH	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C90	P8	C90P1k	P8	NatGen	MGH	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C92	L1	C92L1	L1	NatGen	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C92	L2	C92L2	L2	NatGen	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C92	L3	C92L3	L3	NatGen	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C92	N1	C92N1	N1	NatGen	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C92	P1	C92P1d	P1	NatGen	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C92	P2	C92P1e	P2	NatGen	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C92	P3	C92P1f	P3	NatGen	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C92	P4	C92P1g	P4	NatGen	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C92	P5	C92P1h	P5	NatGen	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C93	L1	C93L2	L1	NatGen	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C93	L2	C93L3	L2	NatGen	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C93	L3	C93L4	L3	NatGen	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C93	L4	C93L5	L4	NatGen	MGH	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C93	L5	C93L6	L5	NatGen	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C93	N1	C93N1	N1	NatGen	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C93	P1	C93P1a	P1	NatGen	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C93	P2	C93P1c	P2	NatGen	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C93	P3	C93P1g	P3	NatGen	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C94	L1	C94L2	L1	NatGen	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C94	L10	C94L11	L10	NatGen	MGH	L	10	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C94	L11	C94L12	L11	NatGen	MGH	L	11	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C94	L2	C94L3	L2	NatGen	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C94	L3	C94L4	L3	NatGen	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C94	L4	C94L5	L4	NatGen	MGH	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C94	L5	C94L6	L5	NatGen	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C94	L6	C94L7	L6	NatGen	MGH	L	6	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C94	L7	C94L8	L7	NatGen	MGH	L	7	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C94	L8	C94L9	L8	NatGen	MGH	L	8	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C94	L9	C94L10	L9	NatGen	MGH	L	9	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C94	N1	C94N1	N1	NatGen	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C94	P1	C94P1b	P1	NatGen	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C94	P2	C94P1d	P2	NatGen	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C94	P3	C94P1e	P3	NatGen	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C94	P4	C94P1f	P4	NatGen	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C95	L1	C95L1	L1	NatGen	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C95	L2	C95L2	L2	NatGen	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C95	L3	C95L3	L3	NatGen	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C95	L4	C95L4	L4	NatGen	MGH	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C95	L5	C95L5	L5	NatGen	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C95	L6	C95L7	L6	NatGen	MGH	L	6	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C95	L7	C95L8	L7	NatGen	MGH	L	7	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C95	L8	C95L9	L8	NatGen	MGH	L	8	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C95	L9	C95L12	L9	NatGen	MGH	L	9	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C95	N1	C95N2	N1	NatGen	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C95	P1	C95P1a	P1	NatGen	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C95	P2	C95P1c	P2	NatGen	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C96	L1	C96L1	L1	NatGen	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C96	L2	C96L2	L2	NatGen	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C96	L3	C96L3	L3	NatGen	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C96	N1	C96N1	N1	NatGen	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C96	P1	C96P1a	P1	NatGen	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C96	P2	C96P1b	P2	NatGen	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C96	P3	C96P1c	P3	NatGen	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C96	P4	C96P1d	P4	NatGen	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C96	P5	C96P1e	P5	NatGen	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C96	P6	C96P1f	P6	NatGen	MGH	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C96	P7	C96P1g	P7	NatGen	MGH	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C96	P8	C96P1h	P8	NatGen	MGH	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C97	Liv1a	C97M1c	Liv1a	NatGen	MGH	Liv	1	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C97	Liv1b	C97M1a	Liv1b	NatGen	MGH	Liv	1	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C97	Liv1c	C97M1b	Liv1c	NatGen	MGH	Liv	1	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C97	Liv2a	C97M2a	Liv2a	NatGen	MGH	Liv	2	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C97	Liv2b	C97M2b	Liv2b	NatGen	MGH	Liv	2	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C97	N1	C97N1	N1	NatGen	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C97	P1	C97P1a	P1	NatGen	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C97	P2	C97P1b	P2	NatGen	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C97	P3	C97P1c	P3	NatGen	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C97	P4	C97P1d	P4	NatGen	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C97	P5	C97P1e	P5	NatGen	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C98	Liv1	C98M1b	Liv1	NatGen	MGH	Liv	1	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C98	Liv2a	C98M2a	Liv2a	NatGen	MGH	Liv	2	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C98	N1	C98N1	N1	NatGen	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C98	P1	C98P1a	P1	NatGen	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C98	P2	C98P1b	P2	NatGen	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C98	P3	C98P1c	P3	NatGen	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C98	P4	C98P1d	P4	NatGen	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C98	P5	C98P1e	P5	NatGen	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C98	P6	C98P1f	P6	NatGen	MGH	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C99	L1	C99L1	L1	NatGen	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-C99	Liv1a	C99M1a	Liv1a	NatGen	MGH	Liv	1	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-C99	Liv1b	C99M1b	Liv1b	NatGen	MGH	Liv	1	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C99	Liv1c	C99M1c	Liv1c	NatGen	MGH	Liv	1	c	FALSE	Liver	Liver	Distant	TRUE	FALSE
-C99	Liv1d	C99M1d	Liv1d	NatGen	MGH	Liv	1	d	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C99	Liv2a	C99M2a	Liv2a	NatGen	MGH	Liv	2	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-C99	Liv2b	C99M2b	Liv2b	NatGen	MGH	Liv	2	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C99	Liv2c	C99M2c	Liv2c	NatGen	MGH	Liv	2	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-C99	N1	C99N1	N1	NatGen	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-C99	P1	C99P1a	P1	NatGen	MGH	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C99	P2	C99P1b	P2	NatGen	MGH	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C99	P3	C99P1c	P3	NatGen	MGH	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C99	P4	C99P1d	P4	NatGen	MGH	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C99	P5	C99P1e	P5	NatGen	MGH	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C99	P6	C99P1f	P6	NatGen	MGH	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C99	P7	C99P1g	P7	NatGen	MGH	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-C99	P8	C99P1h	P8	NatGen	MGH	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E1	L1	E1L1	LN1	Peritoneal	Utrecht	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E1	L2	E1L7	LN2	Peritoneal	Utrecht	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E1	L3	E1L8	LN3	Peritoneal	Utrecht	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E1	L4	E1L2	LN4	Peritoneal	Utrecht	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E1	L5	E1L3	LN5	Peritoneal	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E1	L6	E1L4	LN6	Peritoneal	MGH	L	6	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E1	L7	E1L5	LN7	Peritoneal	MGH	L	7	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E1	Lun1	E1A1	Lun1	Peritoneal	Utrecht	Lun	1	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-E1	N1	E1N2	Normal1	Peritoneal	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-E1	N2	E1N1	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E1	P1	E1P3	PT1	Peritoneal	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E1	P2	E1P6	PT2	Peritoneal	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E1	P3	E1P10	PT3	Peritoneal	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E1	P4	E1P12	PT4	Peritoneal	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E1	P5	E1P9	PT5	Peritoneal	MGH	P	5	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-E1	P6	E1P4	PT6	Peritoneal	MGH	P	6	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-E1	P7	E1P5	PT7	Peritoneal	MGH	P	7	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-E1	Per1	E1B2	Per1	Peritoneal	Utrecht	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E1	Per2	E1B1	Per2	Peritoneal	Utrecht	Per	2	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E1	Per3	E1B4	Per3	Peritoneal	Utrecht	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E1	Per4	E1B6	Per4	Peritoneal	Utrecht	Per	4	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E1	Per5	E1B7	Per5	Peritoneal	Utrecht	Per	5	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E1	Per6	E1B8	Per6	Peritoneal	Utrecht	Per	6	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E1	Per7	E1X1	Per7	Peritoneal	Utrecht	Per	7	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E1	Per8	E1B3	Per8	Peritoneal	MGH	Per	8	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E1	Per9	E1B5	Per9	Peritoneal	MGH	Per	9	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E1	TD1	E1L6	TD1	Peritoneal	Utrecht	TD	1	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E10	L1	E10L3	LN1	Peritoneal	Utrecht	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E10	L2	E10L6	LN2	Peritoneal	Utrecht	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E10	L3	E10L5	LN3	Peritoneal	Utrecht	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E10	L4	E10L2	LN4	Peritoneal	Utrecht	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E10	L5	E10L4	LN5	Peritoneal	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E10	L6	E10L8	LN6	Peritoneal	MGH	L	6	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E10	L7	E10L10	LN7	Peritoneal	MGH	L	7	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E10	L8	E10L7	LN8	Peritoneal	MGH	L	8	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E10	L9	E10L9	LN9	Peritoneal	MGH	L	9	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E10	Liv1a	E10H1a	Liv1a	Peritoneal	Utrecht	Liv	1	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-E10	Liv1b	E10H1b	Liv1b	Peritoneal	Utrecht	Liv	1	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-E10	Liv1c	E10H1c	Liv1c	Peritoneal	Utrecht	Liv	1	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-E10	N1	E10N1	Normal1	Peritoneal	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-E10	OvH1	E10OL1	OvH1	Peritoneal	Utrecht	OvH	1	NA	FALSE	Ovary (hematogenous)	Distant (other)	Distant	TRUE	TRUE
-E10	Pa1	E10P1a	PTa1	Peritoneal	Utrecht	Pa	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E10	Pa2	E10P3a	PTa2	Peritoneal	Utrecht	Pa	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E10	Pa3	E10P4a	PTa3	Peritoneal	Utrecht	Pa	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E10	Pa4	E10P5a	PTa4	Peritoneal	Utrecht	Pa	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E10	Pa5	E10P6a	PTa5	Peritoneal	Utrecht	Pa	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E10	Pa6	E10P7a	PTa6	Peritoneal	Utrecht	Pa	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E10	Pb1	E10P8b	PTb1	Peritoneal	Utrecht	Pb	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E10	Pb2	E10P9b	PTb2	Peritoneal	Utrecht	Pb	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E10	Pb3	E10P10b	PTb3	Peritoneal	Utrecht	Pb	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E10	Pb4	E10P11b	PTb4	Peritoneal	Utrecht	Pb	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E10	Pb5	E10P13b	PTb5	Peritoneal	Utrecht	Pb	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E10	Pb6	E10P14b	PTb6	Peritoneal	Utrecht	Pb	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E10	Per1	E10B2	Per1	Peritoneal	Utrecht	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E10	Per10	E10B14	Per10	Peritoneal	Utrecht	Per	10	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E10	Per11	E10X7	Per11	Peritoneal	Utrecht	Per	11	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E10	Per12	E10B10	Per12	Peritoneal	Utrecht	Per	12	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E10	Per13	E10B11	Per13	Peritoneal	Utrecht	Per	13	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E10	Per14	E10B13	Per14	Peritoneal	Utrecht	Per	14	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E10	Per2	E10B3	Per2	Peritoneal	Utrecht	Per	2	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E10	Per3	E10B4	Per3	Peritoneal	Utrecht	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E10	Per4	E10B5	Per4	Peritoneal	Utrecht	Per	4	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E10	Per5	E10B6	Per5	Peritoneal	Utrecht	Per	5	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E10	Per6	E10B7	Per6	Peritoneal	Utrecht	Per	6	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E10	Per7	E10B8	Per7	Peritoneal	Utrecht	Per	7	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E10	Per8	E10B9	Per8	Peritoneal	Utrecht	Per	8	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E10	Per9	E10B12	Per9	Peritoneal	Utrecht	Per	9	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E10	TD1	E10X1	TD1	Peritoneal	Utrecht	TD	1	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E10	TD2	E10X2	TD2	Peritoneal	Utrecht	TD	2	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E10	TD3	E10X4	TD3	Peritoneal	Utrecht	TD	3	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E10	TD4	E10L1	TD4	Peritoneal	Utrecht	TD	4	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E10	TD5	E10X9	TD5	Peritoneal	Utrecht	TD	5	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E10	TD6	E10X5	TD6	Peritoneal	Utrecht	TD	6	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E10	TD7	E10X8	TD7	Peritoneal	MGH	TD	7	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-E11	L1	E11L2p	LN1	Peritoneal	Utrecht	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E11	L2	E11L6	LN2	Peritoneal	Utrecht	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E11	L3	E11L3	LN3	Peritoneal	Utrecht	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E11	L4	E11L5	LN4	Peritoneal	Utrecht	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E11	L5	E11L1	LN5	Peritoneal	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E11	L6	E11L7	LN6	Peritoneal	MGH	L	6	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E11	L7a	E11L2s	LN7a	Peritoneal	MGH	L	7	a	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E11	Liv1	E11H1	Liv1	Peritoneal	Utrecht	Liv	1	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-E11	N1	E11N4	Normal1	Peritoneal	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-E11	N2	E11N2	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E11	N3	E11N6	Normal3	Peritoneal	MGH	N	3	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E11	Pa1	E11P1	PTa1	Peritoneal	Utrecht	Pa	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E11	Pa2	E11P3	PTa2	Peritoneal	Utrecht	Pa	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E11	Pa3	E11P2	PTa3	Peritoneal	MGH	Pa	3	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-E11	Pb1	E11P13	PTb1	Peritoneal	Utrecht	Pb	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E11	Pb2	E11P7	PTb2	Peritoneal	Utrecht	Pb	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E11	Pb3	E11P8	PTb3	Peritoneal	Utrecht	Pb	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E11	Pb4	E11P9	PTb4	Peritoneal	Utrecht	Pb	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E11	Pb5	E11P10	PTb5	Peritoneal	Utrecht	Pb	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E11	Pb6	E11P11	PTb6	Peritoneal	Utrecht	Pb	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E11	Per1	E11B1	Per1	Peritoneal	Utrecht	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E11	Per2	E11B4	Per2	Peritoneal	Utrecht	Per	2	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E11	Per3a	E11B2a	Per3a	Peritoneal	Utrecht	Per	3	a	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E11	Per3b	E11B2b	Per3b	Peritoneal	Utrecht	Per	3	b	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E11	Per3c	E11B2c	Per3c	Peritoneal	Utrecht	Per	3	c	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E11	Per4	E11B3	Per4	Peritoneal	MGH	Per	4	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E11	TD1	E11X2	TD1	Peritoneal	Utrecht	TD	1	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E11	TD2	E11X4	TD2	Peritoneal	MGH	TD	2	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-E11	TD3	E11X3	TD3	Peritoneal	MGH	TD	3	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-E12	L1	E12L4	LN1	Peritoneal	Utrecht	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E12	L2	E12L5	LN2	Peritoneal	Utrecht	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E12	L3	E12L6	LN3	Peritoneal	Utrecht	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E12	L4	E12L3	LN4	Peritoneal	MGH	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E12	N1	E12N1	Normal1	Peritoneal	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-E12	N2	E12N2	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E12	N3	E12N3	Normal3	Peritoneal	MGH	N	3	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E12	P1	E12P1	PT1	Peritoneal	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E12	P2	E12P2	PT2	Peritoneal	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E12	P3	E12P4	PT3	Peritoneal	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E12	P4	E12P5	PT4	Peritoneal	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E12	P5	E12P6	PT5	Peritoneal	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E12	P6	E12P8	PT6	Peritoneal	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E12	P7	E12P9	PT7	Peritoneal	Utrecht	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E12	P8	E12P10	PT8	Peritoneal	Utrecht	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E12	P9	E12P7	PT9	Peritoneal	MGH	P	9	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-E12	Per10a	E12B10a	Per10a	Peritoneal	Utrecht	Per	10	a	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per10b	E12B10b	Per10b	Peritoneal	Utrecht	Per	10	b	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E12	Per11	E12B11	Per11	Peritoneal	Utrecht	Per	11	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per12	E12B12	Per12	Peritoneal	Utrecht	Per	12	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per13	E12B13	Per13	Peritoneal	Utrecht	Per	13	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per14	E12B14	Per14	Peritoneal	Utrecht	Per	14	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per15	E12B15	Per15	Peritoneal	Utrecht	Per	15	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per16	E12B16	Per16	Peritoneal	Utrecht	Per	16	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per17	E12B17	Per17	Peritoneal	Utrecht	Per	17	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per18	E12B18	Per18	Peritoneal	Utrecht	Per	18	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per19	E12B19	Per19	Peritoneal	Utrecht	Per	19	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per1a	E12B3b	Per1a	Peritoneal	Utrecht	Per	1	a	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per1b	E12B3a	Per1b	Peritoneal	Utrecht	Per	1	b	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E12	Per2	E12B4	Per2	Peritoneal	Utrecht	Per	2	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per20	E12B20	Per20	Peritoneal	Utrecht	Per	20	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per21	E12B21	Per21	Peritoneal	Utrecht	Per	21	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per22	E12B22	Per22	Peritoneal	Utrecht	Per	22	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per23	E12B23	Per23	Peritoneal	Utrecht	Per	23	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per24	E12B24	Per24	Peritoneal	Utrecht	Per	24	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per3	E12B1	Per3	Peritoneal	Utrecht	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per4	E12X1	Per4	Peritoneal	Utrecht	Per	4	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per5	E12B5	Per5	Peritoneal	Utrecht	Per	5	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per6	E12B6	Per6	Peritoneal	Utrecht	Per	6	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per7	E12B7	Per7	Peritoneal	Utrecht	Per	7	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per8	E12B8	Per8	Peritoneal	Utrecht	Per	8	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	Per9	E12B9	Per9	Peritoneal	Utrecht	Per	9	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E12	PerOv1	E12B2	PerOv1	Peritoneal	Utrecht	PerOv	1	NA	FALSE	Peritoneum (ovary)	Peritoneum	Distant	TRUE	TRUE
-E12	TD1	E12L1	TD1	Peritoneal	Utrecht	TD	1	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E12	TD2	E12L2	TD2	Peritoneal	Utrecht	TD	2	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E13	L1	E13L1	LN1	Peritoneal	Utrecht	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E13	Liv1a	E13H1a	Liv1a	Peritoneal	Utrecht	Liv	1	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-E13	Liv1b	E13H1b	Liv1b	Peritoneal	Utrecht	Liv	1	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-E13	Liv1c	E13H1c	Liv1c	Peritoneal	Utrecht	Liv	1	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-E13	Liv1d	E13H1d	Liv1d	Peritoneal	Utrecht	Liv	1	d	FALSE	Liver	Liver	Distant	FALSE	FALSE
-E13	Liv1e	E13H1e	Liv1e	Peritoneal	Utrecht	Liv	1	e	FALSE	Liver	Liver	Distant	FALSE	FALSE
-E13	N1	E13N1	Normal1	Peritoneal	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-E13	N2	E13N2	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E13	OvH1a	E13OLc	OvH1a	Peritoneal	Utrecht	OvH	1	a	FALSE	Ovary (hematogenous)	Distant (other)	Distant	FALSE	TRUE
-E13	OvH1b	E13OLb	OvH1b	Peritoneal	Utrecht	OvH	1	b	FALSE	Ovary (hematogenous)	Distant (other)	Distant	FALSE	FALSE
-E13	OvH1c	E13OLe	OvH1c	Peritoneal	Utrecht	OvH	1	c	FALSE	Ovary (hematogenous)	Distant (other)	Distant	FALSE	FALSE
-E13	OvH1d	E13OLd	OvH1d	Peritoneal	Utrecht	OvH	1	d	FALSE	Ovary (hematogenous)	Distant (other)	Distant	TRUE	FALSE
-E13	OvH1e	E13OLa	OvH1e	Peritoneal	Utrecht	OvH	1	e	FALSE	Ovary (hematogenous)	Distant (other)	Distant	FALSE	FALSE
-E13	OvH2a	E13ORa	OvH2a	Peritoneal	Utrecht	OvH	2	a	FALSE	Ovary (hematogenous)	Distant (other)	Distant	FALSE	TRUE
-E13	OvH2b	E13ORb	OvH2b	Peritoneal	Utrecht	OvH	2	b	FALSE	Ovary (hematogenous)	Distant (other)	Distant	TRUE	FALSE
-E13	OvH2c	E13ORc	OvH2c	Peritoneal	Utrecht	OvH	2	c	FALSE	Ovary (hematogenous)	Distant (other)	Distant	FALSE	FALSE
-E13	OvH2d	E13ORd	OvH2d	Peritoneal	Utrecht	OvH	2	d	FALSE	Ovary (hematogenous)	Distant (other)	Distant	FALSE	FALSE
-E13	P1	E13P1	PT1	Peritoneal	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E13	P2	E13P2	PT2	Peritoneal	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E13	P3	E13P5	PT3	Peritoneal	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E13	P4	E13P7	PT4	Peritoneal	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E13	P5	E13P8	PT5	Peritoneal	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E13	P6	E13P9	PT6	Peritoneal	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E13	P7	E13P3	PT7	Peritoneal	Utrecht	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E13	P8	E13P4	PT8	Peritoneal	Utrecht	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E13	P9	E13P6	PT9	Peritoneal	Utrecht	P	9	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E13	Per1	E13B4	Per1	Peritoneal	Utrecht	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E13	Per2	E13B5	Per2	Peritoneal	Utrecht	Per	2	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E13	Per3	E13X3	Per3	Peritoneal	MGH	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E13	TD1	E13X1	TD1	Peritoneal	Utrecht	TD	1	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E13	TD2	E13X2	TD2	Peritoneal	MGH	TD	2	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-E14	L1	E14L2	LN1	Peritoneal	Utrecht	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E14	L2	E14L3	LN2	Peritoneal	Utrecht	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E14	L3	E14L1	LN3	Peritoneal	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E14	Liv1	E14H1	Liv1	Peritoneal	Utrecht	Liv	1	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-E14	N1	E14N1	Normal1	Peritoneal	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-E14	N2	E14N2	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E14	N3	E14N3	Normal3	Peritoneal	MGH	N	3	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E14	P1	E14P1	PT1	Peritoneal	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E14	P10	E14P11	PT10	Peritoneal	Utrecht	P	10	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E14	P2	E14P3	PT2	Peritoneal	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E14	P3	E14P4	PT3	Peritoneal	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E14	P4	E14P5	PT4	Peritoneal	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E14	P5	E14P6	PT5	Peritoneal	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E14	P6	E14P7	PT6	Peritoneal	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E14	P7	E14P8	PT7	Peritoneal	Utrecht	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E14	P8	E14P9	PT8	Peritoneal	Utrecht	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E14	P9	E14P10	PT9	Peritoneal	Utrecht	P	9	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E14	Per1	E14B1	Per1	Peritoneal	Utrecht	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E14	Per2	E14B2	Per2	Peritoneal	Utrecht	Per	2	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E14	Per3	E14B5	Per3	Peritoneal	Utrecht	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E14	Per4	E14B3	Per4	Peritoneal	Utrecht	Per	4	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E14	Per5	E14B4	Per5	Peritoneal	Utrecht	Per	5	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E14	Per6	E14B6	Per6	Peritoneal	Utrecht	Per	6	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E14	Per7	E14B7	Per7	Peritoneal	Utrecht	Per	7	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E14	TD1a	E14X1	TD1a	Peritoneal	Utrecht	TD	1	a	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-E14	TD1b	E14X2	TD1b	Peritoneal	Utrecht	TD	1	b	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	FALSE
-E14	TD2	E14X3	TD2	Peritoneal	Utrecht	TD	2	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E14	TD3	E14P2	TD3	Peritoneal	Utrecht	TD	3	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E15	L1	E15L1	LN1	Peritoneal	Utrecht	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E15	L2	E15L4	LN2	Peritoneal	Utrecht	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E15	L3	E15L5	LN3	Peritoneal	Utrecht	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E15	L4a	E15L8	LN4a	Peritoneal	Utrecht	L	4	a	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E15	L4b	E15L9	LN4b	Peritoneal	Utrecht	L	4	b	FALSE	Lymph node	Locoregional	Locoregional	FALSE	FALSE
-E15	L5	E15L7	LN5	Peritoneal	Utrecht	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E15	L6	E15L3	LN6	Peritoneal	Utrecht	L	6	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E15	L7	E15L6	LN7	Peritoneal	MGH	L	7	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E15	L8	E15L2	LN8	Peritoneal	MGH	L	8	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E15	N1	E15N1	Normal1	Peritoneal	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-E15	N2	E15N3	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E15	Pa1	E15P1a	PTa1	Peritoneal	Utrecht	Pa	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E15	Pa2	E15P5a	PTa2	Peritoneal	Utrecht	Pa	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E15	Pa3	E15P6a	PTa3	Peritoneal	Utrecht	Pa	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E15	Pa4	E15P7a	PTa4	Peritoneal	Utrecht	Pa	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E15	Pa5	E15P4a	PTa5	Peritoneal	Utrecht	Pa	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E15	Pa6	E15P3a	PTa6	Peritoneal	Utrecht	Pa	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E15	Pb1	E15P9b	PTb1	Peritoneal	Utrecht	Pb	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E15	Pb2	E15P10b	PTb2	Peritoneal	Utrecht	Pb	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E15	Pb3	E15P12b	PTb3	Peritoneal	Utrecht	Pb	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E15	Pb4	E15P13b	PTb4	Peritoneal	Utrecht	Pb	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E15	Pb5	E15P14b	PTb5	Peritoneal	Utrecht	Pb	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E15	Pb6	E15P8b	PTb6	Peritoneal	Utrecht	Pb	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E15	Pb7	E15P11b	PTb7	Peritoneal	Utrecht	Pb	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E15	Per1	E15B7	Per1	Peritoneal	Utrecht	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E15	Per10a	E15B5a	Per10a	Peritoneal	Utrecht	Per	10	a	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E15	Per10b	E15B5b	Per10b	Peritoneal	Utrecht	Per	10	b	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E15	Per11	E15B1	Per11	Peritoneal	MGH	Per	11	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E15	Per2	E15B8	Per2	Peritoneal	Utrecht	Per	2	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E15	Per3	E15B9	Per3	Peritoneal	Utrecht	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E15	Per4a	E15B11a	Per4a	Peritoneal	Utrecht	Per	4	a	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E15	Per4b	E15B11b	Per4b	Peritoneal	Utrecht	Per	4	b	FALSE	Peritoneum	Peritoneum	Distant	TRUE	FALSE
-E15	Per4c	E15B11c	Per4c	Peritoneal	Utrecht	Per	4	c	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E15	Per5	E15B12	Per5	Peritoneal	Utrecht	Per	5	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E15	Per6a	E15B6a	Per6a	Peritoneal	Utrecht	Per	6	a	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E15	Per6b	E15B6c	Per6b	Peritoneal	Utrecht	Per	6	b	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E15	Per6c	E15B6d	Per6c	Peritoneal	Utrecht	Per	6	c	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E15	Per6d	E15B6b	Per6d	Peritoneal	Utrecht	Per	6	d	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E15	Per7	E15B2	Per7	Peritoneal	Utrecht	Per	7	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E15	Per8	E15B3	Per8	Peritoneal	Utrecht	Per	8	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E15	Per9	E15B4	Per9	Peritoneal	Utrecht	Per	9	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E15	TD1	E15X2	TD1	Peritoneal	Utrecht	TD	1	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E15	TD2	E15X6	TD2	Peritoneal	Utrecht	TD	2	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E15	TD3	E15X7	TD3	Peritoneal	Utrecht	TD	3	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E15	TD4	E15X8	TD4	Peritoneal	Utrecht	TD	4	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E15	TD5	E15P15b	TD5	Peritoneal	Utrecht	TD	5	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E15	TD6	E15X4	TD6	Peritoneal	Utrecht	TD	6	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E16	L1	E16L11	LN1	Peritoneal	Utrecht	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E16	L10	E16L7	LN10	Peritoneal	MGH	L	10	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E16	L2	E16L8	LN2	Peritoneal	Utrecht	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E16	L3	E16L1	LN3	Peritoneal	Utrecht	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E16	L4	E16L2	LN4	Peritoneal	Utrecht	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E16	L5	E16L10	LN5	Peritoneal	Utrecht	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E16	L6	E16L5	LN6	Peritoneal	Utrecht	L	6	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E16	L7	E16L6	LN7	Peritoneal	Utrecht	L	7	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E16	L8	E16L9	LN8	Peritoneal	Utrecht	L	8	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E16	L9	E16L3	LN9	Peritoneal	MGH	L	9	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E16	N1	E16N1	Normal1	Peritoneal	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-E16	N2	E16N2	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E16	P1	E16P1	PT1	Peritoneal	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E16	P10	E16P6	PT10	Peritoneal	MGH	P	10	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-E16	P2	E16P2	PT2	Peritoneal	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E16	P3	E16P3	PT3	Peritoneal	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E16	P4	E16P4	PT4	Peritoneal	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E16	P5	E16P5	PT5	Peritoneal	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E16	P6	E16P9	PT6	Peritoneal	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E16	P7	E16P12	PT7	Peritoneal	Utrecht	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E16	P8	E16P11	PT8	Peritoneal	Utrecht	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E16	P9	E16P10	PT9	Peritoneal	MGH	P	9	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-E16	Per1	E16B1	Per1	Peritoneal	Utrecht	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E16	Per10	E16B14	Per10	Peritoneal	Utrecht	Per	10	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E16	Per11	E16B15	Per11	Peritoneal	Utrecht	Per	11	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E16	Per12	E16B17	Per12	Peritoneal	Utrecht	Per	12	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E16	Per13	E16B18	Per13	Peritoneal	Utrecht	Per	13	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E16	Per14	E16B20	Per14	Peritoneal	Utrecht	Per	14	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E16	Per15	E16B21	Per15	Peritoneal	Utrecht	Per	15	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E16	Per16	E16B22	Per16	Peritoneal	Utrecht	Per	16	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E16	Per17	E16B2	Per17	Peritoneal	MGH	Per	17	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E16	Per18	E16B4	Per18	Peritoneal	MGH	Per	18	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E16	Per19	E16B7	Per19	Peritoneal	MGH	Per	19	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E16	Per2	E16B3	Per2	Peritoneal	Utrecht	Per	2	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E16	Per20	E16B13	Per20	Peritoneal	MGH	Per	20	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E16	Per21	E16B19	Per21	Peritoneal	MGH	Per	21	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E16	Per3	E16B5	Per3	Peritoneal	Utrecht	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E16	Per4	E16B6	Per4	Peritoneal	Utrecht	Per	4	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E16	Per5	E16B8	Per5	Peritoneal	Utrecht	Per	5	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E16	Per6	E16B9	Per6	Peritoneal	Utrecht	Per	6	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E16	Per7	E16B10	Per7	Peritoneal	Utrecht	Per	7	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E16	Per8	E16B11	Per8	Peritoneal	Utrecht	Per	8	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E16	Per9	E16B12	Per9	Peritoneal	Utrecht	Per	9	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E16	TD1	E16X1	TD1	Peritoneal	Utrecht	TD	1	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E16	TD2	E16X3	TD2	Peritoneal	Utrecht	TD	2	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E16	TD3	E16L4	TD3	Peritoneal	Utrecht	TD	3	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E16	TD4	E16X2	TD4	Peritoneal	MGH	TD	4	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-E17	L1	E17L1	LN1	Peritoneal	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E17	N1	E17N1	Normal1	Peritoneal	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-E17	N2	E17N3	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E17	P1	E17P1	PT1	Peritoneal	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E17	P10	E17P11	PT10	Peritoneal	Utrecht	P	10	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E17	P11	E17P12	PT11	Peritoneal	Utrecht	P	11	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E17	P12	E17P13	PT12	Peritoneal	Utrecht	P	12	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E17	P13	E17P2	PT13	Peritoneal	Utrecht	P	13	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E17	P14	E17X2	PT14	Peritoneal	Utrecht	P	14	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E17	P2	E17P3	PT2	Peritoneal	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E17	P3	E17P4	PT3	Peritoneal	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E17	P4	E17P5	PT4	Peritoneal	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E17	P5	E17P6	PT5	Peritoneal	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E17	P6	E17P7	PT6	Peritoneal	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E17	P7	E17P8	PT7	Peritoneal	Utrecht	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E17	P8	E17P9	PT8	Peritoneal	Utrecht	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E17	P9	E17P10	PT9	Peritoneal	Utrecht	P	9	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E17	Per1	E17B4	Per1	Peritoneal	Utrecht	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E17	Per2	E17B1	Per2	Peritoneal	Utrecht	Per	2	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E17	Per3	E17B5	Per3	Peritoneal	Utrecht	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E17	Per4a	E17B3	Per4a	Peritoneal	Utrecht	Per	4	a	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E17	Per4b	E17B2	Per4b	Peritoneal	Utrecht	Per	4	b	FALSE	Peritoneum	Peritoneum	Distant	TRUE	FALSE
-E17	Per5	E17B6	Per5	Peritoneal	Utrecht	Per	5	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E17	Per6	E17B7	Per6	Peritoneal	Utrecht	Per	6	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E17	Per7	E17B8	Per7	Peritoneal	Utrecht	Per	7	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E17	Per9	E17B9	Per9	Peritoneal	MGH	Per	9	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E18	L1a	E18LD2a	LN1a	Peritoneal	Utrecht	L	1	a	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E18	L1b	E18LD2b	LN1b	Peritoneal	Utrecht	L	1	b	FALSE	Lymph node	Locoregional	Locoregional	FALSE	FALSE
-E18	L3	E18LD1	LN3	Peritoneal	MGH	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E18	L4	E18LD3	LN4	Peritoneal	MGH	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E18	L5	E18L1	LN5	Peritoneal	MGH	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E18	Ld1a	E18L4a	DLN1a	Peritoneal	Utrecht	Ld	1	a	FALSE	Lymph node (distant)	Distant (other)	Distant	FALSE	TRUE
-E18	Ld1b	E18L4b	DLN1b	Peritoneal	Utrecht	Ld	1	b	FALSE	Lymph node (distant)	Distant (other)	Distant	TRUE	FALSE
-E18	N1	E18N1	Normal1	Peritoneal	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-E18	N2	E18N2	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E18	N3	E18N3	Normal3	Peritoneal	MGH	N	3	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E18	P1	E18P1	PT1	Peritoneal	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E18	P10	E18P11	PT10	Peritoneal	Utrecht	P	10	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E18	P11	E18P5	PT11	Peritoneal	Utrecht	P	11	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E18	P12	E18P12	PT12	Peritoneal	MGH	P	12	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-E18	P2	E18P2	PT2	Peritoneal	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E18	P3	E18P3	PT3	Peritoneal	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E18	P4	E18P4	PT4	Peritoneal	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E18	P5	E18P6	PT5	Peritoneal	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E18	P6	E18P7	PT6	Peritoneal	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E18	P7	E18P8	PT7	Peritoneal	Utrecht	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E18	P8	E18P9	PT8	Peritoneal	Utrecht	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E18	P9	E18P10	PT9	Peritoneal	Utrecht	P	9	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E18	Per1	E18B1	Per1	Peritoneal	Utrecht	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E18	Per11	E18B5	Per11	Peritoneal	MGH	Per	11	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E18	Per12	E18B11	Per12	Peritoneal	MGH	Per	12	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E18	Per13	E18B3	Per13	Peritoneal	MGH	Per	13	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E18	Per2	E18B4	Per2	Peritoneal	Utrecht	Per	2	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E18	Per3	E18B8	Per3	Peritoneal	Utrecht	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E18	Per4	E18B9	Per4	Peritoneal	Utrecht	Per	4	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E18	Per5	E18B7	Per5	Peritoneal	Utrecht	Per	5	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E18	Per6	E18B6	Per6	Peritoneal	Utrecht	Per	6	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E18	Per7	E18B10	Per7	Peritoneal	Utrecht	Per	7	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E18	Per8	E18B12	Per8	Peritoneal	Utrecht	Per	8	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E18	Per9	E18B2	Per9	Peritoneal	Utrecht	Per	9	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E18	TD1	E18X1	TD1	Peritoneal	Utrecht	TD	1	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E18	TD2	E18X3	TD2	Peritoneal	Utrecht	TD	2	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E18	TD3	E18X5	TD3	Peritoneal	Utrecht	TD	3	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E18	TD4	E18X6	TD4	Peritoneal	Utrecht	TD	4	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E18	TD5	E18X7	TD5	Peritoneal	Utrecht	TD	5	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E18	TD6	E18X4	TD6	Peritoneal	Utrecht	TD	6	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E18	TD7	E18X8	TD7	Peritoneal	MGH	TD	7	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-E18	TD8	E18X2	TD8	Peritoneal	MGH	TD	8	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-E19	L1	E19L1	LN1	Peritoneal	Utrecht	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E19	L2	E19L2	LN2	Peritoneal	Utrecht	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E19	L3	E19L8	LN3	Peritoneal	Utrecht	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E19	L4	E19L9	LN4	Peritoneal	Utrecht	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E19	L6	E19L3	LN6	Peritoneal	MGH	L	6	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E19	Ld1	E19L10	DLN1	Peritoneal	Utrecht	Ld	1	NA	FALSE	Lymph node (distant)	Distant (other)	Distant	TRUE	TRUE
-E19	N1	E19N1	Normal1	Peritoneal	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-E19	N2	E19N2	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E19	N3	E19N3	Normal3	Peritoneal	MGH	N	3	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E19	OvH1	E19OL	OvH1	Peritoneal	Utrecht	OvH	1	NA	FALSE	Ovary (hematogenous)	Distant (other)	Distant	TRUE	TRUE
-E19	P1	E19P1	PT1	Peritoneal	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E19	P10	E19P12	PT10	Peritoneal	Utrecht	P	10	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E19	P11	E19P5	PT11	Peritoneal	Utrecht	P	11	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E19	P12	E19P11	PT12	Peritoneal	Utrecht	P	12	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E19	P2	E19P2	PT2	Peritoneal	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E19	P3	E19P3	PT3	Peritoneal	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E19	P4	E19P4	PT4	Peritoneal	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E19	P5	E19P6	PT5	Peritoneal	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E19	P6	E19P7	PT6	Peritoneal	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E19	P7	E19P8	PT7	Peritoneal	Utrecht	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E19	P8	E19P9	PT8	Peritoneal	Utrecht	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E19	P9	E19P10	PT9	Peritoneal	Utrecht	P	9	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E19	Per10	E19L7	Per10	Peritoneal	Utrecht	Per	10	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E19	Per1a	E19B1a	Per1a	Peritoneal	Utrecht	Per	1	a	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E19	Per1b	E19B1b	Per1b	Peritoneal	Utrecht	Per	1	b	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E19	Per2a	E19B3a	Per2a	Peritoneal	Utrecht	Per	2	a	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E19	Per2b	E19B3c	Per2b	Peritoneal	Utrecht	Per	2	b	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E19	Per2c	E19B3b	Per2c	Peritoneal	Utrecht	Per	2	c	FALSE	Peritoneum	Peritoneum	Distant	TRUE	FALSE
-E19	Per3	E19B4	Per3	Peritoneal	Utrecht	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E19	Per4a	E19B5a	Per4a	Peritoneal	Utrecht	Per	4	a	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E19	Per4b	E19B5b	Per4b	Peritoneal	Utrecht	Per	4	b	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E19	Per5	E19B6	Per5	Peritoneal	Utrecht	Per	5	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E19	Per6a	E19B2a	Per6a	Peritoneal	Utrecht	Per	6	a	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E19	Per6b	E19B2b	Per6b	Peritoneal	Utrecht	Per	6	b	FALSE	Peritoneum	Peritoneum	Distant	TRUE	FALSE
-E19	Per6c	E19B2c	Per6c	Peritoneal	Utrecht	Per	6	c	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E19	Per6d	E19B2d	Per6d	Peritoneal	Utrecht	Per	6	d	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E19	Per7	E19L6	Per7	Peritoneal	Utrecht	Per	7	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E19	Per8	E19X2	Per8	Peritoneal	Utrecht	Per	8	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E19	Per9	E19X1	Per9	Peritoneal	Utrecht	Per	9	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E2	L1	E2L2	LN1	Peritoneal	Utrecht	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E2	L2	E2L4	LN2	Peritoneal	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E2	Lun1a	E2A1a	Lun1a	Peritoneal	Utrecht	Lun	1	a	FALSE	Lung	Lung	Distant	FALSE	TRUE
-E2	Lun1b	E2A1b	Lun1b	Peritoneal	Utrecht	Lun	1	b	FALSE	Lung	Lung	Distant	TRUE	FALSE
-E2	Lun2a	E2A2a	Lun2a	Peritoneal	Utrecht	Lun	2	a	FALSE	Lung	Lung	Distant	TRUE	TRUE
-E2	Lun2b	E2A2b	Lun2b	Peritoneal	Utrecht	Lun	2	b	FALSE	Lung	Lung	Distant	FALSE	FALSE
-E2	N1	E2N1	Normal1	Peritoneal	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-E2	N2	E2N3	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E2	N3	E2N2	Normal3	Peritoneal	MGH	N	3	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E2	P1	E2P1	PT1	Peritoneal	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E2	P10	E2X3	PT10	Peritoneal	MGH	P	10	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-E2	P11	E2P8	PT11	Peritoneal	MGH	P	11	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-E2	P2	E2P2	PT2	Peritoneal	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E2	P3	E2P5	PT3	Peritoneal	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E2	P4	E2P6	PT4	Peritoneal	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E2	P5	E2P7	PT5	Peritoneal	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E2	P6	E2P4	PT6	Peritoneal	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E2	P7	E2P9	PT7	Peritoneal	Utrecht	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E2	P8	E2P10	PT8	Peritoneal	Utrecht	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E2	P9	E2P3	PT9	Peritoneal	Utrecht	P	9	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E2	Per1a	E2B1a	Per1a	Peritoneal	Utrecht	Per	1	a	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E2	Per1b	E2B1b	Per1b	Peritoneal	Utrecht	Per	1	b	FALSE	Peritoneum	Peritoneum	Distant	TRUE	FALSE
-E2	Per2a	E2B2a	Per2a	Peritoneal	Utrecht	Per	2	a	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E2	Per2b	E2B2c	Per2b	Peritoneal	Utrecht	Per	2	b	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E2	Per2c	E2B2b	Per2c	Peritoneal	Utrecht	Per	2	c	FALSE	Peritoneum	Peritoneum	Distant	TRUE	FALSE
-E2	Per3a	E2B3b	Per3a	Peritoneal	Utrecht	Per	3	a	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E2	Per3b	E2B3c	Per3b	Peritoneal	Utrecht	Per	3	b	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E2	Per3c	E2B3a	Per3c	Peritoneal	Utrecht	Per	3	c	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E2	TD1a	E2X1	TD1a	Peritoneal	Utrecht	TD	1	a	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-E2	TD1b	E2X2	TD1b	Peritoneal	Utrecht	TD	1	b	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	FALSE
-E2	TD2	E2L1	TD2	Peritoneal	Utrecht	TD	2	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E2	TD3	E2L3	TD3	Peritoneal	Utrecht	TD	3	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E20	N1	E20N2	Normal1	Peritoneal	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-E20	N2	E20N1	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E20	N3	E20N3	Normal3	Peritoneal	MGH	N	3	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E20	P1	E20P2	PT1	Peritoneal	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E20	P10	E20P9	PT10	Peritoneal	Utrecht	P	10	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E20	P2	E20P3	PT2	Peritoneal	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E20	P3	E20P4	PT3	Peritoneal	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E20	P4	E20P5	PT4	Peritoneal	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E20	P5	E20P7	PT5	Peritoneal	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E20	P6	E20P8	PT6	Peritoneal	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E20	P7	E20P10	PT7	Peritoneal	Utrecht	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E20	P8	E20P11	PT8	Peritoneal	Utrecht	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E20	P9	E20P1	PT9	Peritoneal	Utrecht	P	9	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E20	Per1	E20B3	Per1	Peritoneal	Utrecht	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E20	Per10	E20X2	Per10	Peritoneal	Utrecht	Per	10	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E20	Per11	E20B2	Per11	Peritoneal	Utrecht	Per	11	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E20	Per12	E20X4	Per12	Peritoneal	Utrecht	Per	12	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E20	Per13	E20B7	Per13	Peritoneal	Utrecht	Per	13	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E20	Per14	E20B8	Per14	Peritoneal	Utrecht	Per	14	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E20	Per16	E20B1	Per16	Peritoneal	MGH	Per	16	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E20	Per17	E20X3	Per17	Peritoneal	MGH	Per	17	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E20	Per18	E20X12	Per18	Peritoneal	MGH	Per	18	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E20	Per19	E20X16	Per19	Peritoneal	MGH	Per	19	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E20	Per2	E20B4	Per2	Peritoneal	Utrecht	Per	2	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E20	Per20	E20X18	Per20	Peritoneal	MGH	Per	20	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E20	Per21	E20X23	Per21	Peritoneal	MGH	Per	21	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E20	Per22	E20X24	Per22	Peritoneal	MGH	Per	22	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E20	Per23	E20X22	Per23	Peritoneal	MGH	Per	23	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E20	Per3	E20X15	Per3	Peritoneal	Utrecht	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E20	Per4	E20X17	Per4	Peritoneal	Utrecht	Per	4	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E20	Per5	E20X20	Per5	Peritoneal	Utrecht	Per	5	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E20	Per6	E20X21	Per6	Peritoneal	Utrecht	Per	6	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E20	Per7	E20B5	Per7	Peritoneal	Utrecht	Per	7	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E20	Per8	E20B6	Per8	Peritoneal	Utrecht	Per	8	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E20	Per9	E20X1	Per9	Peritoneal	Utrecht	Per	9	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E20	TD1	E20X8	TD1	Peritoneal	Utrecht	TD	1	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E20	TD10	E20X14	TD10	Peritoneal	MGH	TD	10	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-E20	TD2	E20X11	TD2	Peritoneal	Utrecht	TD	2	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E20	TD3	E20X13	TD3	Peritoneal	Utrecht	TD	3	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E20	TD4	E20P6	TD4	Peritoneal	Utrecht	TD	4	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E20	TD5	E20X5	TD5	Peritoneal	MGH	TD	5	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-E20	TD6	E20X9	TD6	Peritoneal	MGH	TD	6	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-E20	TD7	E20X7	TD7	Peritoneal	MGH	TD	7	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-E20	TD8	E20X6	TD8	Peritoneal	MGH	TD	8	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-E20	TD9	E20X10	TD9	Peritoneal	MGH	TD	9	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-E3	L1	E3L2	LN1	Peritoneal	Utrecht	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E3	L2	E3L1	LN2	Peritoneal	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E3	Lun1	E3A1	Lun1	Peritoneal	Utrecht	Lun	1	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-E3	Lun2a	E3A2a	Lun2a	Peritoneal	Utrecht	Lun	2	a	FALSE	Lung	Lung	Distant	TRUE	TRUE
-E3	Lun2b	E3A2b	Lun2b	Peritoneal	Utrecht	Lun	2	b	FALSE	Lung	Lung	Distant	FALSE	FALSE
-E3	Lun2c	E3A2c	Lun2c	Peritoneal	Utrecht	Lun	2	c	FALSE	Lung	Lung	Distant	FALSE	FALSE
-E3	N1	E3N1	Normal1	Peritoneal	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-E3	N2	E3N4	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E3	Pa1	E3P1a	PTa1	Peritoneal	Utrecht	Pa	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E3	Pa2	E3P3a	PTa2	Peritoneal	Utrecht	Pa	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E3	Pa3	E3P4a	PTa3	Peritoneal	Utrecht	Pa	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E3	Pa4	E3P5a	PTa4	Peritoneal	Utrecht	Pa	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E3	Pa5	E3P6a	PTa5	Peritoneal	Utrecht	Pa	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E3	Pb1	E3P8b	PTb1	Peritoneal	Utrecht	Pb	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E3	Pb2	E3P10b	PTb2	Peritoneal	Utrecht	Pb	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E3	Pb3	E3P13b	PTb3	Peritoneal	Utrecht	Pb	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E3	Pb4	E3P14b	PTb4	Peritoneal	Utrecht	Pb	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E3	Pb5	E3P7b	PTb5	Peritoneal	Utrecht	Pb	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E3	Pb6	E3P11b	PTb6	Peritoneal	MGH	Pb	6	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-E3	Pb7	E3P12b	PTb7	Peritoneal	MGH	Pb	7	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-E3	Pb8	E3P9b	PTb8	Peritoneal	MGH	Pb	8	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-E3	Pc1	E3P15c	PTc1	Peritoneal	Utrecht	Pc	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E3	Pc2	E3P16c	PTc2	Peritoneal	Utrecht	Pc	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E3	Pc3	E3P17c	PTc3	Peritoneal	Utrecht	Pc	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E3	Pc4	E3P18c	PTc4	Peritoneal	Utrecht	Pc	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E3	Pc5	E3P19c	PTc5	Peritoneal	Utrecht	Pc	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E3	Pc6	E3P20c	PTc6	Peritoneal	MGH	Pc	6	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-E3	Per1	E3B1	Per1	Peritoneal	Utrecht	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E3	TD1	E3L3	TD1	Peritoneal	Utrecht	TD	1	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E3	TD2	E3L4	TD2	Peritoneal	Utrecht	TD	2	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E3	TD3	E3X2	TD3	Peritoneal	MGH	TD	3	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-E4	L1	E4L4	LN1	Peritoneal	Utrecht	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E4	L2	E4L5	LN2	Peritoneal	Utrecht	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E4	L3	E4L8	LN3	Peritoneal	Utrecht	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E4	L4	E4L9	LN4	Peritoneal	Utrecht	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E4	L5	E4L10	LN5	Peritoneal	Utrecht	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E4	L6	E4L1	LN6	Peritoneal	Utrecht	L	6	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E4	L7	E4L6	LN7	Peritoneal	MGH	L	7	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E4	Liv1	E4H1	Liv1	Peritoneal	Utrecht	Liv	1	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-E4	N1	E4N1	Normal1	Peritoneal	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-E4	N2	E4N3	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E4	P1	E4P1	PT1	Peritoneal	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E4	P2	E4P2	PT2	Peritoneal	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E4	P3	E4P3	PT3	Peritoneal	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E4	P4	E4P7	PT4	Peritoneal	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E4	P5	E4P9	PT5	Peritoneal	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E4	P6	E4P10	PT6	Peritoneal	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E4	P7	E4P11	PT7	Peritoneal	Utrecht	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E4	P8	E4P14	PT8	Peritoneal	Utrecht	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E4	P9	E4P5	PT9	Peritoneal	Utrecht	P	9	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E4	Per1	E4B2	Per1	Peritoneal	Utrecht	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	Per10	E4B18	Per10	Peritoneal	Utrecht	Per	10	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	Per11	E4B19	Per11	Peritoneal	Utrecht	Per	11	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	Per12	E4B20	Per12	Peritoneal	Utrecht	Per	12	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	Per13	E4B14	Per13	Peritoneal	Utrecht	Per	13	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	Per14	E4B22	Per14	Peritoneal	Utrecht	Per	14	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	Per15	E4B7	Per15	Peritoneal	Utrecht	Per	15	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	Per16	E4B8	Per16	Peritoneal	Utrecht	Per	16	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	Per17	E4B16	Per17	Peritoneal	Utrecht	Per	17	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	Per18	E4B15	Per18	Peritoneal	Utrecht	Per	18	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	Per19	E4B9	Per19	Peritoneal	Utrecht	Per	19	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	Per2	E4B3	Per2	Peritoneal	Utrecht	Per	2	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	Per20	E4B13	Per20	Peritoneal	Utrecht	Per	20	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	Per21	E4B1	Per21	Peritoneal	Utrecht	Per	21	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	Per3	E4B5	Per3	Peritoneal	Utrecht	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	Per4	E4B6	Per4	Peritoneal	Utrecht	Per	4	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	Per5	E4B17	Per5	Peritoneal	Utrecht	Per	5	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	Per6	E4B21	Per6	Peritoneal	Utrecht	Per	6	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	Per7	E4B10	Per7	Peritoneal	Utrecht	Per	7	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	Per8	E4B11	Per8	Peritoneal	Utrecht	Per	8	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	Per9	E4B12	Per9	Peritoneal	Utrecht	Per	9	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E4	PerOv1	E4O2	PerOv1	Peritoneal	Utrecht	PerOv	1	NA	FALSE	Peritoneum (ovary)	Peritoneum	Distant	TRUE	TRUE
-E4	PerOv2	E4O1	PerOv2	Peritoneal	MGH	PerOv	2	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E4	TD1	E4L3	TD1	Peritoneal	Utrecht	TD	1	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E4	TD2	E4L2	TD2	Peritoneal	Utrecht	TD	2	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E4	TD3	E4L11	TD3	Peritoneal	Utrecht	TD	3	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E4	TD4	E4L7	TD4	Peritoneal	Utrecht	TD	4	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E5	L1a	E5L1a	LN1a	Peritoneal	Utrecht	L	1	a	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E5	L1b	E5L1b	LN1b	Peritoneal	Utrecht	L	1	b	FALSE	Lymph node	Locoregional	Locoregional	TRUE	FALSE
-E5	Liv1	E5H1	Liv1	Peritoneal	Utrecht	Liv	1	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-E5	Liv2a	E5H2a	Liv2a	Peritoneal	Utrecht	Liv	2	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-E5	Liv2b	E5H2b	Liv2b	Peritoneal	Utrecht	Liv	2	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-E5	Liv2c	E5H2c	Liv2c	Peritoneal	Utrecht	Liv	2	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-E5	Liv3a	E5H3a	Liv3a	Peritoneal	Utrecht	Liv	3	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-E5	Liv3b	E5H3b	Liv3b	Peritoneal	Utrecht	Liv	3	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-E5	Liv3c	E5H3c	Liv3c	Peritoneal	Utrecht	Liv	3	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-E5	Liv3d	E5H3d	Liv3d	Peritoneal	Utrecht	Liv	3	d	FALSE	Liver	Liver	Distant	TRUE	FALSE
-E5	N1	E5N1	Normal1	Peritoneal	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-E5	N2	E5N3	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E5	N3	E5N2	Normal3	Peritoneal	MGH	N	3	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E5	OvH1a	E5OLa	OvH1a	Peritoneal	Utrecht	OvH	1	a	FALSE	Ovary (hematogenous)	Distant (other)	Distant	TRUE	TRUE
-E5	OvH1b	E5OLb	OvH1b	Peritoneal	Utrecht	OvH	1	b	FALSE	Ovary (hematogenous)	Distant (other)	Distant	FALSE	FALSE
-E5	OvH1c	E5OLc	OvH1c	Peritoneal	Utrecht	OvH	1	c	FALSE	Ovary (hematogenous)	Distant (other)	Distant	FALSE	FALSE
-E5	OvH1d	E5OLd	OvH1d	Peritoneal	Utrecht	OvH	1	d	FALSE	Ovary (hematogenous)	Distant (other)	Distant	FALSE	FALSE
-E5	P1	E5P1	PT1	Peritoneal	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E5	P10	E5P2	PT10	Peritoneal	Utrecht	P	10	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E5	P2	E5P3	PT2	Peritoneal	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E5	P3	E5P4	PT3	Peritoneal	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E5	P4	E5P5	PT4	Peritoneal	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E5	P5	E5P6	PT5	Peritoneal	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E5	P6	E5P7	PT6	Peritoneal	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E5	P7	E5P8	PT7	Peritoneal	Utrecht	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E5	P8	E5P9	PT8	Peritoneal	Utrecht	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E5	P9	E5P10	PT9	Peritoneal	Utrecht	P	9	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E5	Per1	E5X1	Per1	Peritoneal	Utrecht	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E5	Per10	E5B8	Per10	Peritoneal	Utrecht	Per	10	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E5	Per13	E5B9	Per13	Peritoneal	MGH	Per	13	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E5	Per16	E5X5	Per16	Peritoneal	MGH	Per	16	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E5	Per2	E5X2	Per2	Peritoneal	Utrecht	Per	2	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E5	Per3	E5X3	Per3	Peritoneal	Utrecht	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E5	Per4	E5X4	Per4	Peritoneal	Utrecht	Per	4	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E5	Per5	E5X6	Per5	Peritoneal	Utrecht	Per	5	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E5	Per6	E5X7	Per6	Peritoneal	Utrecht	Per	6	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E5	Per7	E5X8	Per7	Peritoneal	Utrecht	Per	7	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E5	Per8	E5X9	Per8	Peritoneal	Utrecht	Per	8	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E5	Per9	E5B7	Per9	Peritoneal	Utrecht	Per	9	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E5	PerOv1	E5OR	PerOv1	Peritoneal	Utrecht	PerOv	1	NA	FALSE	Peritoneum (ovary)	Peritoneum	Distant	TRUE	TRUE
-E6	L1	E6L2	LN1	Peritoneal	Utrecht	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E6	Liv1a	E6H1a	Liv1a	Peritoneal	Utrecht	Liv	1	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-E6	Liv1b	E6H1b	Liv1b	Peritoneal	Utrecht	Liv	1	b	FALSE	Liver	Liver	Distant	TRUE	FALSE
-E6	Liv2a	E6H2a	Liv2a	Peritoneal	Utrecht	Liv	2	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-E6	Liv2b	E6H2b	Liv2b	Peritoneal	Utrecht	Liv	2	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-E6	Liv3a	E6H3a	Liv3a	Peritoneal	Utrecht	Liv	3	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-E6	Liv3b	E6H3b	Liv3b	Peritoneal	Utrecht	Liv	3	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-E6	Liv3c	E6H3c	Liv3c	Peritoneal	MGH	Liv	3	c	FALSE	Liver	Liver	Liver	FALSE	FALSE
-E6	N1	E6N2	Normal1	Peritoneal	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-E6	N2	E6N1	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E6	OvH1	E6OL	OvH1	Peritoneal	Utrecht	OvH	1	NA	FALSE	Ovary (hematogenous)	Distant (other)	Distant	TRUE	TRUE
-E6	P1	E6P1	PT1	Peritoneal	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E6	P2	E6P3	PT2	Peritoneal	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E6	P3	E6P4	PT3	Peritoneal	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E6	P4	E6P5	PT4	Peritoneal	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E6	P5	E6P6	PT5	Peritoneal	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E6	P6	E6P7	PT6	Peritoneal	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E6	P7	E6P8	PT7	Peritoneal	Utrecht	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E6	P8	E6P9	PT8	Peritoneal	Utrecht	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E6	P9	E6P2	PT9	Peritoneal	Utrecht	P	9	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E6	Per1	E6B2	Per1	Peritoneal	Utrecht	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E6	Per2	E6B3	Per2	Peritoneal	Utrecht	Per	2	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E6	Per3	E6B4	Per3	Peritoneal	Utrecht	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E6	Per4	E6B5	Per4	Peritoneal	Utrecht	Per	4	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E6	Per5a	E6B7d	Per5a	Peritoneal	Utrecht	Per	5	a	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E6	Per5b	E6B7c	Per5b	Peritoneal	Utrecht	Per	5	b	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E6	Per5c	E6B7a	Per5c	Peritoneal	Utrecht	Per	5	c	FALSE	Peritoneum	Peritoneum	Distant	TRUE	FALSE
-E6	Per5d	E6B7b	Per5d	Peritoneal	MGH	Per	5	d	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E6	Per6	E6B1	Per6	Peritoneal	MGH	Per	6	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E6	TD1	E6L1a	TD1	Peritoneal	Utrecht	TD	1	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-E7	Lun1a	E7A1a	Lun1a	Peritoneal	Utrecht	Lun	1	a	FALSE	Lung	Lung	Distant	FALSE	TRUE
-E7	Lun1b	E7A1b	Lun1b	Peritoneal	Utrecht	Lun	1	b	FALSE	Lung	Lung	Distant	TRUE	FALSE
-E7	N1	E7N1	Normal1	Peritoneal	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-E7	OvH1a	E7B1a	OvH1a	Peritoneal	Utrecht	OvH	1	a	FALSE	Ovary (hematogenous)	Distant (other)	Distant	FALSE	TRUE
-E7	OvH1b	E7B1b	OvH1b	Peritoneal	Utrecht	OvH	1	b	FALSE	Ovary (hematogenous)	Distant (other)	Distant	FALSE	FALSE
-E7	OvH1c	E7B1c	OvH1c	Peritoneal	Utrecht	OvH	1	c	FALSE	Ovary (hematogenous)	Distant (other)	Distant	FALSE	FALSE
-E7	OvH1d	E7B1d	OvH1d	Peritoneal	Utrecht	OvH	1	d	FALSE	Ovary (hematogenous)	Distant (other)	Distant	TRUE	FALSE
-E7	OvH2a	E7B2a	OvH2a	Peritoneal	Utrecht	OvH	2	a	FALSE	Ovary (hematogenous)	Distant (other)	Distant	FALSE	TRUE
-E7	OvH2b	E7B2b	OvH2b	Peritoneal	Utrecht	OvH	2	b	FALSE	Ovary (hematogenous)	Distant (other)	Distant	FALSE	FALSE
-E7	OvH2c	E7B2d	OvH2c	Peritoneal	Utrecht	OvH	2	c	FALSE	Ovary (hematogenous)	Distant (other)	Distant	TRUE	FALSE
-E7	OvH2d	E7B2c	OvH2d	Peritoneal	MGH	OvH	2	d	FALSE	Ovary (hematogenous)	Distant (other)	Distant (other)	FALSE	FALSE
-E7	P1	E7P1a	PT1	Peritoneal	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E7	P2	E7P1f	PT2	Peritoneal	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E7	P3	E7P1b	PT3	Peritoneal	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E7	P4	E7P1c	PT4	Peritoneal	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E7	P5	E7P1e	PT5	Peritoneal	MGH	P	5	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-E7	P6	E7P1d	PT6	Peritoneal	MGH	P	6	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-E7	Per1a	E7B3j	Per1a	Peritoneal	Utrecht	Per	1	a	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E7	Per1b	E7B3b	Per1b	Peritoneal	Utrecht	Per	1	b	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E7	Per1c	E7B3c	Per1c	Peritoneal	Utrecht	Per	1	c	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E7	Per1d	E7B3d	Per1d	Peritoneal	Utrecht	Per	1	d	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E7	Per1e	E7B3e	Per1e	Peritoneal	Utrecht	Per	1	e	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E7	Per1f	E7B3f	Per1f	Peritoneal	Utrecht	Per	1	f	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E7	Per1g	E7B3h	Per1g	Peritoneal	Utrecht	Per	1	g	FALSE	Peritoneum	Peritoneum	Distant	TRUE	FALSE
-E7	Per1h	E7B3i	Per1h	Peritoneal	Utrecht	Per	1	h	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E7	Per1i	E7B3g	Per1i	Peritoneal	Utrecht	Per	1	i	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E7	Per1j	E7B3a	Per1j	Peritoneal	Utrecht	Per	1	j	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E7	Per2	E7X1	Per2	Peritoneal	Utrecht	Per	2	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E7	Per3a	E7P2a	Per3a	Peritoneal	Utrecht	Per	3	a	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E7	Per3b	E7P2d	Per3b	Peritoneal	Utrecht	Per	3	b	FALSE	Peritoneum	Peritoneum	Distant	TRUE	FALSE
-E7	Per3c	E7P2c	Per3c	Peritoneal	Utrecht	Per	3	c	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E7	Per3d	E7P2e	Per3d	Peritoneal	Utrecht	Per	3	d	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E7	Per3e	E7P2h	Per3e	Peritoneal	MGH	Per	3	e	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E7	Per3f	E7P2g	Per3f	Peritoneal	MGH	Per	3	f	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E7	Per3g	E7P2f	Per3g	Peritoneal	MGH	Per	3	g	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E7	Per3h	E7P2b	Per3h	Peritoneal	MGH	Per	3	h	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E8	Liv1	E8H1	Liv1	Peritoneal	Utrecht	Liv	1	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-E8	N1	E8N2	Normal1	Peritoneal	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-E8	N2	E8N3	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E8	N3	E8N1	Normal3	Peritoneal	MGH	N	3	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E8	P1	E8P1	PT1	Peritoneal	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E8	P2	E8P2	PT2	Peritoneal	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E8	P3	E8P9	PT3	Peritoneal	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E8	P4	E8P7	PT4	Peritoneal	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E8	P5	E8P8	PT5	Peritoneal	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E8	P6	E8P3	PT6	Peritoneal	MGH	P	6	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-E8	P9	E8P6	PT9	Peritoneal	MGH	P	9	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-E8	Per1	E8B1	Per1	Peritoneal	Utrecht	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E8	Per2	E8B2	Per2	Peritoneal	Utrecht	Per	2	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E8	Per3	E8B3	Per3	Peritoneal	Utrecht	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E8	Per4	E8B4	Per4	Peritoneal	Utrecht	Per	4	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E8	Per5	E8X1	Per5	Peritoneal	Utrecht	Per	5	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E8	Per6a	E8B8a	Per6a	Peritoneal	Utrecht	Per	6	a	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E8	Per6b	E8B8b	Per6b	Peritoneal	Utrecht	Per	6	b	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E8	Per6c	E8B8c	Per6c	Peritoneal	MGH	Per	6	c	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E8	Per7	E8B6	Per7	Peritoneal	Utrecht	Per	7	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E8	Per8	E8B7	Per8	Peritoneal	MGH	Per	8	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E8	Per9	E8B5	Per9	Peritoneal	MGH	Per	9	NA	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E9	L1	E9L1	LN1	Peritoneal	Utrecht	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E9	L2	E9L2	LN2	Peritoneal	Utrecht	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E9	L3	E9L4	LN3	Peritoneal	Utrecht	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E9	L4	E9L5	LN4	Peritoneal	Utrecht	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E9	L5a	E9X1	LN5a	Peritoneal	Utrecht	L	5	a	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-E9	L5b	E9X2	LN5b	Peritoneal	Utrecht	L	5	b	FALSE	Lymph node	Locoregional	Locoregional	TRUE	FALSE
-E9	L6	E9L6	LN6	Peritoneal	Utrecht	L	6	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-E9	Liv1a	E9H1a	Liv1a	Peritoneal	Utrecht	Liv	1	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-E9	Liv1b	E9H1b	Liv1b	Peritoneal	Utrecht	Liv	1	b	FALSE	Liver	Liver	Distant	TRUE	FALSE
-E9	Liv1c	E9H1c	Liv1c	Peritoneal	Utrecht	Liv	1	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-E9	Liv2	E9H2	Liv2	Peritoneal	Utrecht	Liv	2	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-E9	N1	E9N2	Normal1	Peritoneal	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-E9	N2	E9N3	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E9	N3	E9X3	Normal3	Peritoneal	MGH	N	3	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-E9	P1	E9P1	PT1	Peritoneal	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E9	P10	E9P6	PT10	Peritoneal	Utrecht	P	10	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E9	P11	E9P11	PT11	Peritoneal	MGH	P	11	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-E9	P2	E9P2	PT2	Peritoneal	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E9	P3	E9P5	PT3	Peritoneal	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E9	P4	E9P7	PT4	Peritoneal	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E9	P5	E9P8	PT5	Peritoneal	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E9	P6	E9P9	PT6	Peritoneal	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E9	P7	E9P10	PT7	Peritoneal	Utrecht	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E9	P8	E9P3	PT8	Peritoneal	Utrecht	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E9	P9	E9P4	PT9	Peritoneal	Utrecht	P	9	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-E9	Per1	E9X4	Per1	Peritoneal	Utrecht	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E9	Per10	E9B6	Per10	Peritoneal	Utrecht	Per	10	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E9	Per11	E9B7	Per11	Peritoneal	Utrecht	Per	11	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E9	Per12	E9B8	Per12	Peritoneal	Utrecht	Per	12	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E9	Per13	E9B11	Per13	Peritoneal	Utrecht	Per	13	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E9	Per14a	E9B13c	Per14a	Peritoneal	Utrecht	Per	14	a	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E9	Per14b	E9B13b	Per14b	Peritoneal	Utrecht	Per	14	b	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E9	Per14c	E9B13a	Per14c	Peritoneal	Utrecht	Per	14	c	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E9	Per15a	E9B12a	Per15a	Peritoneal	Utrecht	Per	15	a	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-E9	Per15b	E9B12b	Per15b	Peritoneal	Utrecht	Per	15	b	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E9	Per15c	E9B12c	Per15c	Peritoneal	Utrecht	Per	15	c	FALSE	Peritoneum	Peritoneum	Distant	TRUE	FALSE
-E9	Per16a	E9B14a	Per16a	Peritoneal	Utrecht	Per	16	a	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E9	Per16b	E9B14b	Per16b	Peritoneal	Utrecht	Per	16	b	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E9	Per16c	E9B14c	Per16c	Peritoneal	Utrecht	Per	16	c	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E9	Per2	E9B3	Per2	Peritoneal	Utrecht	Per	2	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E9	Per3	E9B4	Per3	Peritoneal	Utrecht	Per	3	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E9	Per4a	E9B5a	Per4a	Peritoneal	Utrecht	Per	4	a	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E9	Per4b	E9B5b	Per4b	Peritoneal	Utrecht	Per	4	b	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-E9	Per5	E9X5	Per5	Peritoneal	Utrecht	Per	5	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E9	Per6	E9B2	Per6	Peritoneal	Utrecht	Per	6	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E9	Per7	E9B1	Per7	Peritoneal	Utrecht	Per	7	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E9	Per8	E9B9	Per8	Peritoneal	Utrecht	Per	8	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-E9	Per9	E9B10	Per9	Peritoneal	Utrecht	Per	9	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-Ea3	L1	Ea3L1	LN1	Peritoneal	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-Ea3	L2	Ea3L2	LN2	Peritoneal	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-Ea3	N1	Ea3N1	Normal1	Peritoneal	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-Ea3	N2	Ea3N4	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-Ea3	Pa1	Ea3P1a	PTa1	Peritoneal	MGH	Pa	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Ea3	Pa2	Ea3P3a	PTa2	Peritoneal	MGH	Pa	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Ea3	Pa3	Ea3P4a	PTa3	Peritoneal	MGH	Pa	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Ea3	Pa4	Ea3P5a	PTa4	Peritoneal	MGH	Pa	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Ea3	Pa5	Ea3P6a	PTa5	Peritoneal	MGH	Pa	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Ea3	Per1	Ea3B1	Per1	Peritoneal	MGH	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-Ea3	TD1	Ea3L3	TD1	Peritoneal	MGH	TD	1	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-Ea3	TD2	Ea3L4	TD2	Peritoneal	MGH	TD	2	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-Ea3	TD3	Ea3X2	TD3	Peritoneal	MGH	TD	3	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-Eb3	L1	Eb3L1	LN1	Peritoneal	MGH	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-Eb3	L2	Eb3L2	LN2	Peritoneal	MGH	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	FALSE	TRUE
-Eb3	Lun1	Eb3A1	Lun1	Peritoneal	MGH	Lun	1	NA	FALSE	Lung	Lung	Lung	TRUE	TRUE
-Eb3	Lun2a	Eb3A2a	Lun2a	Peritoneal	MGH	Lun	2	a	FALSE	Lung	Lung	Lung	TRUE	TRUE
-Eb3	Lun2b	Eb3A2b	Lun2b	Peritoneal	MGH	Lun	2	b	FALSE	Lung	Lung	Lung	FALSE	FALSE
-Eb3	Lun2c	Eb3A2c	Lun2c	Peritoneal	MGH	Lun	2	c	FALSE	Lung	Lung	Lung	FALSE	FALSE
-Eb3	N1	Eb3N1	Normal1	Peritoneal	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-Eb3	N2	Eb3N4	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-Eb3	Pb1	Eb3P8b	PTb1	Peritoneal	MGH	Pb	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Eb3	Pb2	Eb3P10b	PTb2	Peritoneal	MGH	Pb	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Eb3	Pb3	Eb3P13b	PTb3	Peritoneal	MGH	Pb	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Eb3	Pb4	Eb3P14b	PTb4	Peritoneal	MGH	Pb	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Eb3	Pb5	Eb3P9b	PTb5	Peritoneal	MGH	Pb	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Eb3	Pb6	Eb3P11b	PTb6	Peritoneal	MGH	Pb	6	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-Eb3	Pb7	Eb3P12b	PTb7	Peritoneal	MGH	Pb	7	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-Eb3	TD3	Eb3X2	TD3	Peritoneal	MGH	TD	3	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-Ec3	N1	Ec3N1	Normal1	Peritoneal	MGH	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-Ec3	N2	Ec3N4	Normal2	Peritoneal	MGH	N	2	NA	FALSE	Normal	Normal	Normal	FALSE	TRUE
-Ec3	Pc1	Ec3P15c	PTc1	Peritoneal	MGH	Pc	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Ec3	Pc2	Ec3P16c	PTc2	Peritoneal	MGH	Pc	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Ec3	Pc3	Ec3P17c	PTc3	Peritoneal	MGH	Pc	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Ec3	Pc4	Ec3P18c	PTc4	Peritoneal	MGH	Pc	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Ec3	Pc5	Ec3P19c	PTc5	Peritoneal	MGH	Pc	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Ec3	Pc6	Ec3P20c	PTc6	Peritoneal	MGH	Pc	6	NA	FALSE	Primary	Primary	Primary	FALSE	TRUE
-Ec3	TD3	Ec3X2	TD3	Peritoneal	MGH	TD	3	NA	FALSE	Tumor deposit	Locoregional	Locoregional	FALSE	TRUE
-IU1	L1	IU1L1	L1	Lung	Utrecht	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU1	Liv1a	IU1H1a	Liv1a	Lung	Utrecht	Liv	1	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-IU1	Liv1b	IU1H1b	Liv1b	Lung	Utrecht	Liv	1	b	FALSE	Liver	Liver	Distant	TRUE	FALSE
-IU1	Liv1c	IU1H1c	Liv1c	Lung	Utrecht	Liv	1	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU1	Liv1d	IU1H1e	Liv1d	Lung	Utrecht	Liv	1	d	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU1	Liv1e	IU1H1f	Liv1e	Lung	Utrecht	Liv	1	e	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU1	Liv1f	IU1H1g	Liv1f	Lung	Utrecht	Liv	1	f	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU1	Liv1g	IU1H1i	Liv1g	Lung	Utrecht	Liv	1	g	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU1	Liv1h	IU1H1j	Liv1h	Lung	Utrecht	Liv	1	h	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU1	Lun1a	IU1A1a	Lun1a	Lung	Utrecht	Lun	1	a	FALSE	Lung	Lung	Distant	FALSE	TRUE
-IU1	Lun1b	IU1A1c	Lun1b	Lung	Utrecht	Lun	1	b	FALSE	Lung	Lung	Distant	TRUE	FALSE
-IU1	Lun1c	IU1A1d	Lun1c	Lung	Utrecht	Lun	1	c	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU1	Lun1d	IU1A1e	Lun1d	Lung	Utrecht	Lun	1	d	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU1	Lun1e	IU1A1f	Lun1e	Lung	Utrecht	Lun	1	e	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU1	Lun1f	IU1A1g	Lun1f	Lung	Utrecht	Lun	1	f	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU1	Lun2a	IU1A2a	Lun2a	Lung	Utrecht	Lun	2	a	FALSE	Lung	Lung	Distant	TRUE	TRUE
-IU1	Lun2b	IU1A2b	Lun2b	Lung	Utrecht	Lun	2	b	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU1	N1	IU1N1	Normal1	Lung	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-IU1	P1	IU1P1	P1	Lung	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU1	P10	IU1P10	P10	Lung	Utrecht	P	10	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU1	P11	IU1P11	P11	Lung	Utrecht	P	11	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU1	P2	IU1P2	P2	Lung	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU1	P3	IU1P3	P3	Lung	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU1	P4	IU1P4	P4	Lung	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU1	P5	IU1P5	P5	Lung	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU1	P6	IU1P6	P6	Lung	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU1	P7	IU1P7	P7	Lung	Utrecht	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU1	P8	IU1P8	P8	Lung	Utrecht	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU1	P9	IU1P9	P9	Lung	Utrecht	P	9	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU10	L1	IU10L1	L1	Lung	Utrecht	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU10	L2	IU10L2	L2	Lung	Utrecht	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU10	L3	IU10L3	L3	Lung	Utrecht	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU10	L4	IU10L4	L4	Lung	Utrecht	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU10	L5	IU10L5	L5	Lung	Utrecht	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU10	Lun1a	IU10A1a	Lun1a	Lung	Utrecht	Lun	1	a	FALSE	Lung	Lung	Distant	FALSE	TRUE
-IU10	Lun1b	IU10A1b	Lun1b	Lung	Utrecht	Lun	1	b	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU10	Lun1c	IU10A1c	Lun1c	Lung	Utrecht	Lun	1	c	FALSE	Lung	Lung	Distant	TRUE	FALSE
-IU10	N1	IU10N1	Normal1	Lung	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-IU10	P1	IU10P1	P1	Lung	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU10	P2	IU10P2	P2	Lung	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU10	P3	IU10P3	P3	Lung	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU10	P4	IU10P4	P4	Lung	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU10	P5	IU10P5	P5	Lung	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU11	Lun1a	IU11A1a	Lun1a	Lung	Utrecht	Lun	1	a	FALSE	Lung	Lung	Distant	FALSE	TRUE
-IU11	Lun1b	IU11A1b	Lun1b	Lung	Utrecht	Lun	1	b	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU11	Lun1c	IU11A1d	Lun1c	Lung	Utrecht	Lun	1	c	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU11	Lun1d	IU11A1e	Lun1d	Lung	Utrecht	Lun	1	d	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU11	Lun1e	IU11A1f	Lun1e	Lung	Utrecht	Lun	1	e	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU11	Lun1f	IU11A1g	Lun1f	Lung	Utrecht	Lun	1	f	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU11	Lun1g	IU11A1h	Lun1g	Lung	Utrecht	Lun	1	g	FALSE	Lung	Lung	Distant	TRUE	FALSE
-IU11	Lun1h	IU11A1i	Lun1h	Lung	Utrecht	Lun	1	h	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU11	N1	IU11N3	Normal1	Lung	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-IU11	P1	IU11P3	P1	Lung	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU11	P10	IU11P22	P10	Lung	Utrecht	P	10	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU11	P2	IU11P5	P2	Lung	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU11	P3	IU11P6	P3	Lung	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU11	P4	IU11P16	P4	Lung	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU11	P5	IU11P17	P5	Lung	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU11	P6	IU11P18	P6	Lung	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU11	P7	IU11P19	P7	Lung	Utrecht	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU11	P8	IU11P20	P8	Lung	Utrecht	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU11	P9	IU11P21	P9	Lung	Utrecht	P	9	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU2	Liv1a	IU2H1a	Liv1a	Lung	Utrecht	Liv	1	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-IU2	Liv1b	IU2H1b	Liv1b	Lung	Utrecht	Liv	1	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU2	Liv1c	IU2H1c	Liv1c	Lung	Utrecht	Liv	1	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU2	Liv1d	IU2H1d	Liv1d	Lung	Utrecht	Liv	1	d	FALSE	Liver	Liver	Distant	TRUE	FALSE
-IU2	Liv1e	IU2H1e	Liv1e	Lung	Utrecht	Liv	1	e	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU2	Liv1f	IU2H1f	Liv1f	Lung	Utrecht	Liv	1	f	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU2	Liv2a	IU2H2a	Liv2a	Lung	Utrecht	Liv	2	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-IU2	Liv2b	IU2H2b	Liv2b	Lung	Utrecht	Liv	2	b	FALSE	Liver	Liver	Distant	TRUE	FALSE
-IU2	Liv2c	IU2H2c	Liv2c	Lung	Utrecht	Liv	2	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU2	Liv2d	IU2H2d	Liv2d	Lung	Utrecht	Liv	2	d	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU2	Liv2e	IU2H2e	Liv2e	Lung	Utrecht	Liv	2	e	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU2	Liv2f	IU2H2f	Liv2f	Lung	Utrecht	Liv	2	f	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU2	Lun1a	IU2A1a	Lun1a	Lung	Utrecht	Lun	1	a	FALSE	Lung	Lung	Distant	TRUE	TRUE
-IU2	Lun1b	IU2A1b	Lun1b	Lung	Utrecht	Lun	1	b	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU2	Lun2a	IU2A2a	Lun2a	Lung	Utrecht	Lun	2	a	FALSE	Lung	Lung	Distant	FALSE	TRUE
-IU2	Lun2b	IU2A2b	Lun2b	Lung	Utrecht	Lun	2	b	FALSE	Lung	Lung	Distant	TRUE	FALSE
-IU2	Lun2c	IU2A2c	Lun2c	Lung	Utrecht	Lun	2	c	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU2	N1	IU2N1	Normal1	Lung	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-IU2	P1	IU2P2	P1	Lung	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU2	P2	IU2P3	P2	Lung	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU2	P3	IU2P5	P3	Lung	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU2	P4	IU2P6	P4	Lung	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU2	P5	IU2P7	P5	Lung	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU2	P6	IU2P11	P6	Lung	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU3	L1	IU3L1	L1	Lung	Utrecht	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU3	L2	IU3L2	L2	Lung	Utrecht	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU3	L3	IU3L3	L3	Lung	Utrecht	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU3	L4	IU3L4	L4	Lung	Utrecht	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU3	Lun1a	IU3A1a	Lun1a	Lung	Utrecht	Lun	1	a	FALSE	Lung	Lung	Distant	FALSE	TRUE
-IU3	Lun1b	IU3A1b	Lun1b	Lung	Utrecht	Lun	1	b	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU3	Lun1c	IU3A1c	Lun1c	Lung	Utrecht	Lun	1	c	FALSE	Lung	Lung	Distant	TRUE	FALSE
-IU3	Lun1d	IU3A1d	Lun1d	Lung	Utrecht	Lun	1	d	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU3	N1	IU3N1	Normal1	Lung	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-IU3	P1	IU3P1	P1	Lung	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU3	P2	IU3P2	P2	Lung	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU3	P3	IU3P3	P3	Lung	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU3	P4	IU3P4	P4	Lung	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU3	P5	IU3P5	P5	Lung	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU3	P6	IU3P6	P6	Lung	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU3	P7	IU3P7	P7	Lung	Utrecht	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU3	P8	IU3P8	P8	Lung	Utrecht	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU3	PerOv1a	IU3OvB1a	PerOv1a	Lung	Utrecht	PerOv	1	a	FALSE	Peritoneum (ovary)	Peritoneum	Distant	FALSE	TRUE
-IU3	PerOv1b	IU3OvB1b	PerOv1b	Lung	Utrecht	PerOv	1	b	FALSE	Peritoneum (ovary)	Peritoneum	Distant	FALSE	FALSE
-IU3	PerOv1c	IU3OvB1c	PerOv1c	Lung	Utrecht	PerOv	1	c	FALSE	Peritoneum (ovary)	Peritoneum	Distant	TRUE	FALSE
-IU3	PerOv1d	IU3OvB1d	PerOv1d	Lung	Utrecht	PerOv	1	d	FALSE	Peritoneum (ovary)	Peritoneum	Distant	FALSE	FALSE
-IU3	PerOv1e	IU3OvB1e	PerOv1e	Lung	Utrecht	PerOv	1	e	FALSE	Peritoneum (ovary)	Peritoneum	Distant	FALSE	FALSE
-IU3	PerOv1f	IU3OvB1f	PerOv1f	Lung	Utrecht	PerOv	1	f	FALSE	Peritoneum (ovary)	Peritoneum	Distant	FALSE	FALSE
-IU3	X1	IU3X1	X1	Lung	Utrecht	X	1	NA	FALSE	Unknown or n/a	n/a	n/a	TRUE	TRUE
-IU5	AG1-A	IU5AR1	AG1-A	Lung	Utrecht	AG	1	NA	TRUE	Adrenal gland	Distant (other)	Distant	TRUE	TRUE
-IU5	AG2-A	IU5AR2	AG2-A	Lung	Utrecht	AG	2	NA	TRUE	Adrenal gland	Distant (other)	Distant	TRUE	TRUE
-IU5	AG3-A	IU5AR3	AG3-A	Lung	Utrecht	AG	3	NA	TRUE	Adrenal gland	Distant (other)	Distant	TRUE	TRUE
-IU5	BM1-A	IU5BM1	BM1-A	Lung	Utrecht	BM	1	NA	TRUE	Bone marrow	Distant (other)	Distant	TRUE	TRUE
-IU5	BM2-A	IU5BM2	BM2-A	Lung	Utrecht	BM	2	NA	TRUE	Bone marrow	Distant (other)	Distant	TRUE	TRUE
-IU5	L1	IU5L1	L1	Lung	Utrecht	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU5	L2	IU5L4	L2	Lung	Utrecht	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU5	L3	IU5L5	L3	Lung	Utrecht	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU5	L4	IU5L6	L4	Lung	Utrecht	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU5	L5	IU5L7	L5	Lung	Utrecht	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU5	L6	IU5L9	L6	Lung	Utrecht	L	6	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU5	L7	IU5L11	L7	Lung	Utrecht	L	7	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU5	Liv1a	IU5H1a	Liv1a	Lung	Utrecht	Liv	1	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-IU5	Liv1b	IU5H1b	Liv1b	Lung	Utrecht	Liv	1	b	FALSE	Liver	Liver	Distant	TRUE	FALSE
-IU5	Liv1c	IU5H1f	Liv1c	Lung	Utrecht	Liv	1	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU5	Liv2a-A	IU5H2a	Liv2a-A	Lung	Utrecht	Liv	2	a	TRUE	Liver	Liver	Distant	FALSE	TRUE
-IU5	Liv2b-A	IU5H2b	Liv2b-A	Lung	Utrecht	Liv	2	b	TRUE	Liver	Liver	Distant	TRUE	FALSE
-IU5	Lun1-A	IU5A1a	Lun1-A	Lung	Utrecht	Lun	1	NA	TRUE	Lung	Lung	Distant	TRUE	TRUE
-IU5	Lun2-A	IU5A2a	Lun2-A	Lung	Utrecht	Lun	2	NA	TRUE	Lung	Lung	Distant	TRUE	TRUE
-IU5	Lun3a-A	IU5A3a	Lun3a-A	Lung	Utrecht	Lun	3	a	TRUE	Lung	Lung	Distant	FALSE	TRUE
-IU5	Lun3b-A	IU5A3b	Lun3b-A	Lung	Utrecht	Lun	3	b	TRUE	Lung	Lung	Distant	TRUE	FALSE
-IU5	Lun4a-A	IU5A4a	Lun4a-A	Lung	Utrecht	Lun	4	a	TRUE	Lung	Lung	Distant	FALSE	TRUE
-IU5	Lun4b-A	IU5A4b	Lun4b-A	Lung	Utrecht	Lun	4	b	TRUE	Lung	Lung	Distant	TRUE	FALSE
-IU5	Lun4c-A	IU5A4c	Lun4c-A	Lung	Utrecht	Lun	4	c	TRUE	Lung	Lung	Distant	FALSE	FALSE
-IU5	N1	IU5N2	Normal1	Lung	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-IU5	P1	IU5P1	P1	Lung	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU5	P2	IU5P2	P2	Lung	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU5	P3	IU5P3	P3	Lung	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU5	P4	IU5P4	P4	Lung	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU5	P5	IU5P7	P5	Lung	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU5	P6	IU5P9	P6	Lung	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU5	P7	IU5P10	P7	Lung	Utrecht	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU5	P8	IU5P11	P8	Lung	Utrecht	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU5	T1-A	IU5T1	T1-A	Lung	Utrecht	T	1	NA	TRUE	Thyroid	Distant (other)	Distant	TRUE	TRUE
-IU5	X1-A	IU5X2b	X1-A	Lung	Utrecht	X	1	NA	TRUE	Unknown or n/a	n/a	n/a	TRUE	TRUE
-IU6	Liv1a	IU6H1b	Liv1a	Lung	Utrecht	Liv	1	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-IU6	Liv1b	IU6H1c	Liv1b	Lung	Utrecht	Liv	1	b	FALSE	Liver	Liver	Distant	TRUE	FALSE
-IU6	Liv1c	IU6H1d	Liv1c	Lung	Utrecht	Liv	1	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU6	Lun1a	IU6A1a	Lun1a	Lung	Utrecht	Lun	1	a	FALSE	Lung	Lung	Distant	TRUE	TRUE
-IU6	Lun1b	IU6A1b	Lun1b	Lung	Utrecht	Lun	1	b	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU6	Lun1c	IU6A1c	Lun1c	Lung	Utrecht	Lun	1	c	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU6	Lun2a	IU6A2a	Lun2a	Lung	Utrecht	Lun	2	a	FALSE	Lung	Lung	Distant	TRUE	TRUE
-IU6	Lun2b	IU6A2b	Lun2b	Lung	Utrecht	Lun	2	b	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU6	Lun3a	IU6A3a	Lun3a	Lung	Utrecht	Lun	3	a	FALSE	Lung	Lung	Distant	FALSE	TRUE
-IU6	Lun3b	IU6A3b	Lun3b	Lung	Utrecht	Lun	3	b	FALSE	Lung	Lung	Distant	TRUE	FALSE
-IU6	Lun4a	IU6A4a	Lun4a	Lung	Utrecht	Lun	4	a	FALSE	Lung	Lung	Distant	TRUE	TRUE
-IU6	Lun4b	IU6A4b	Lun4b	Lung	Utrecht	Lun	4	b	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU6	Lun4c	IU6A4c	Lun4c	Lung	Utrecht	Lun	4	c	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU6	Lun4d	IU6A4d	Lun4d	Lung	Utrecht	Lun	4	d	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU6	Lun4e	IU6A4e	Lun4e	Lung	Utrecht	Lun	4	e	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU6	Lun4f	IU6A4f	Lun4f	Lung	Utrecht	Lun	4	f	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU6	N1	IU6N2	Normal1	Lung	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-IU6	P1	IU6P1	P1	Lung	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU6	P2	IU6P2	P2	Lung	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU6	P3	IU6P3	P3	Lung	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU6	P4	IU6P4	P4	Lung	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU6	P5	IU6P7	P5	Lung	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU6	P6	IU6P8	P6	Lung	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU7	L1a	IU7L1a	L1a	Lung	Utrecht	L	1	a	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU7	L1b	IU7L1b	L1b	Lung	Utrecht	L	1	b	FALSE	Lymph node	Locoregional	Locoregional	FALSE	FALSE
-IU7	Liv1a	IU7H1a	Liv1a	Lung	Utrecht	Liv	1	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-IU7	Liv1b	IU7H1b	Liv1b	Lung	Utrecht	Liv	1	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU7	Liv1c	IU7H1c	Liv1c	Lung	Utrecht	Liv	1	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU7	Liv1d	IU7H1d	Liv1d	Lung	Utrecht	Liv	1	d	FALSE	Liver	Liver	Distant	TRUE	FALSE
-IU7	Liv1e	IU7H1e	Liv1e	Lung	Utrecht	Liv	1	e	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU7	Liv1f	IU7H1f	Liv1f	Lung	Utrecht	Liv	1	f	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU7	Liv2a	IU7H2a	Liv2a	Lung	Utrecht	Liv	2	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-IU7	Liv2b	IU7H2b	Liv2b	Lung	Utrecht	Liv	2	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU7	Liv2c	IU7H2c	Liv2c	Lung	Utrecht	Liv	2	c	FALSE	Liver	Liver	Distant	TRUE	FALSE
-IU7	Liv2d	IU7H2d	Liv2d	Lung	Utrecht	Liv	2	d	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU7	Liv3	IU7H4a	Liv3	Lung	Utrecht	Liv	3	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-IU7	Liv4a	IU7H5a	Liv4a	Lung	Utrecht	Liv	4	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-IU7	Liv4b	IU7H5b	Liv4b	Lung	Utrecht	Liv	4	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU7	Liv5a	IU7H6a	Liv5a	Lung	Utrecht	Liv	5	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-IU7	Liv5b	IU7H6b	Liv5b	Lung	Utrecht	Liv	5	b	FALSE	Liver	Liver	Distant	TRUE	FALSE
-IU7	Lun1	IU7A1	Lun1	Lung	Utrecht	Lun	1	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-IU7	N1	IU7N1	Normal1	Lung	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-IU7	P1	IU7P1	P1	Lung	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU7	P2	IU7P2	P2	Lung	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU7	P3	IU7P3	P3	Lung	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU7	P4	IU7P4	P4	Lung	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU7	P5	IU7P5	P5	Lung	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU7	P6	IU7P6	P6	Lung	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU7	P7	IU7P7	P7	Lung	Utrecht	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU8	Ld1	IU8Ld1a	Ld1	Lung	Utrecht	Ld	1	NA	FALSE	Lymph node (distant)	Distant (other)	Distant	TRUE	TRUE
-IU8	Liv1a	IU8H1a	Liv1a	Lung	Utrecht	Liv	1	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-IU8	Liv1b	IU8H1b	Liv1b	Lung	Utrecht	Liv	1	b	FALSE	Liver	Liver	Distant	TRUE	FALSE
-IU8	Liv1c	IU8H1c	Liv1c	Lung	Utrecht	Liv	1	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU8	Liv2a	IU8H2a	Liv2a	Lung	Utrecht	Liv	2	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-IU8	Liv2b	IU8H2b	Liv2b	Lung	Utrecht	Liv	2	b	FALSE	Liver	Liver	Distant	TRUE	FALSE
-IU8	Liv2c	IU8H2c	Liv2c	Lung	Utrecht	Liv	2	c	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU8	Liv2d	IU8H2d	Liv2d	Lung	Utrecht	Liv	2	d	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU8	Liv2e	IU8H2e	Liv2e	Lung	Utrecht	Liv	2	e	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU8	Liv3a	IU8H3a	Liv3a	Lung	Utrecht	Liv	3	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-IU8	Liv3b	IU8H3b	Liv3b	Lung	Utrecht	Liv	3	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU8	Liv4a	IU8H4a	Liv4a	Lung	Utrecht	Liv	4	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-IU8	Liv4b	IU8H4b	Liv4b	Lung	Utrecht	Liv	4	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU8	Liv4c	IU8H4c	Liv4c	Lung	Utrecht	Liv	4	c	FALSE	Liver	Liver	Distant	TRUE	FALSE
-IU8	Lun1a	IU8A1a	Lun1a	Lung	Utrecht	Lun	1	a	FALSE	Lung	Lung	Distant	FALSE	TRUE
-IU8	Lun1b	IU8A1b	Lun1b	Lung	Utrecht	Lun	1	b	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU8	Lun1c	IU8A1c	Lun1c	Lung	Utrecht	Lun	1	c	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU8	Lun1d	IU8A1d	Lun1d	Lung	Utrecht	Lun	1	d	FALSE	Lung	Lung	Distant	TRUE	FALSE
-IU8	Lun1e	IU8A1e	Lun1e	Lung	Utrecht	Lun	1	e	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU8	Lun2a	IU8A2a	Lun2a	Lung	Utrecht	Lun	2	a	FALSE	Lung	Lung	Distant	FALSE	TRUE
-IU8	Lun2b	IU8A2b	Lun2b	Lung	Utrecht	Lun	2	b	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU8	Lun2c	IU8A2c	Lun2c	Lung	Utrecht	Lun	2	c	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU8	Lun2d	IU8A2d	Lun2d	Lung	Utrecht	Lun	2	d	FALSE	Lung	Lung	Distant	TRUE	FALSE
-IU8	N1	IU8N1	Normal1	Lung	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-IU8	P1	IU8P1	P1	Lung	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU8	P10	IU8P11	P10	Lung	Utrecht	P	10	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU8	P11	IU8P12	P11	Lung	Utrecht	P	11	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU8	P12	IU8P13	P12	Lung	Utrecht	P	12	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU8	P2	IU8P3	P2	Lung	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU8	P3	IU8P4	P3	Lung	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU8	P4	IU8P5	P4	Lung	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU8	P5	IU8P6	P5	Lung	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU8	P6	IU8P7	P6	Lung	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU8	P7	IU8P8	P7	Lung	Utrecht	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU8	P8	IU8P9	P8	Lung	Utrecht	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU8	P9	IU8P10	P9	Lung	Utrecht	P	9	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU8	Per1a	IU8B1a	Per1a	Lung	Utrecht	Per	1	a	FALSE	Peritoneum	Peritoneum	Distant	FALSE	TRUE
-IU8	Per1b	IU8B1b	Per1b	Lung	Utrecht	Per	1	b	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-IU8	Per1c	IU8B1c	Per1c	Lung	Utrecht	Per	1	c	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-IU8	Per1d	IU8B1d	Per1d	Lung	Utrecht	Per	1	d	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-IU8	Per1e	IU8B1e	Per1e	Lung	Utrecht	Per	1	e	FALSE	Peritoneum	Peritoneum	Distant	TRUE	FALSE
-IU8	Per1f	IU8B1f	Per1f	Lung	Utrecht	Per	1	f	FALSE	Peritoneum	Peritoneum	Distant	FALSE	FALSE
-IU9	L1	IU9L1	L1	Lung	Utrecht	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU9	L2	IU9L2	L2	Lung	Utrecht	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU9	L3	IU9L3	L3	Lung	Utrecht	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU9	L4	IU9L4	L4	Lung	Utrecht	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-IU9	Liv1a	IU9H1a	Liv1a	Lung	Utrecht	Liv	1	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-IU9	Liv1b	IU9H1b	Liv1b	Lung	Utrecht	Liv	1	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-IU9	Liv1c	IU9H1c	Liv1c	Lung	Utrecht	Liv	1	c	FALSE	Liver	Liver	Distant	TRUE	FALSE
-IU9	Lun1	IU9A1a	Lun1	Lung	Utrecht	Lun	1	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-IU9	Lun2a	IU9A2a	Lun2a	Lung	Utrecht	Lun	2	a	FALSE	Lung	Lung	Distant	FALSE	TRUE
-IU9	Lun2b	IU9A2b	Lun2b	Lung	Utrecht	Lun	2	b	FALSE	Lung	Lung	Distant	TRUE	FALSE
-IU9	Lun2c	IU9A2c	Lun2c	Lung	Utrecht	Lun	2	c	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU9	Lun2d	IU9A2d	Lun2d	Lung	Utrecht	Lun	2	d	FALSE	Lung	Lung	Distant	FALSE	FALSE
-IU9	N1	IU9N1	Normal1	Lung	Utrecht	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-IU9	P1	IU9P1	P1	Lung	Utrecht	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU9	P2	IU9P2	P2	Lung	Utrecht	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU9	P3	IU9P3	P3	Lung	Utrecht	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU9	P4	IU9P4	P4	Lung	Utrecht	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU9	P5	IU9P5	P5	Lung	Utrecht	P	5	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU9	P6	IU9P7	P6	Lung	Utrecht	P	6	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU9	P7	IU9P8	P7	Lung	Utrecht	P	7	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-IU9	P8	IU9P9	P8	Lung	Utrecht	P	8	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA1	L1	MDA1L1	L1	Lung	MD Anderson	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA1	L2	MDA1L2	L2	Lung	MD Anderson	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA1	L3	MDA1L3	L3	Lung	MD Anderson	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA1	Lun1	MDA1A1a	Lun1	Lung	MD Anderson	Lun	1	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-MDA1	Lun2	MDA1A2a	Lun2	Lung	MD Anderson	Lun	2	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-MDA1	Lun3	MDA1A2b	Lun3	Lung	MD Anderson	Lun	3	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-MDA1	N1	MDA1N1	Normal1	Lung	MD Anderson	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-MDA1	P1	MDA1P1	P1	Lung	MD Anderson	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA1	P2	MDA1P2	P2	Lung	MD Anderson	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA1	P3	MDA1P3	P3	Lung	MD Anderson	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA1	P4	MDA1P4	P4	Lung	MD Anderson	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA11	Liv1a	MDA11H1	Liv1a	Lung	MD Anderson	Liv	1	a	FALSE	Liver	Liver	Distant	TRUE	TRUE
-MDA11	Liv1b	MDA11H2	Liv1b	Lung	MD Anderson	Liv	1	b	FALSE	Liver	Liver	Distant	FALSE	FALSE
-MDA11	Lun1	MDA11A1	Lun1	Lung	MD Anderson	Lun	1	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-MDA11	Lun2	MDA11A2	Lun2	Lung	MD Anderson	Lun	2	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-MDA11	Lun3	MDA11A3	Lun3	Lung	MD Anderson	Lun	3	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-MDA11	N1	MDA11N3	Normal1	Lung	MD Anderson	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-MDA11	P1	MDA11P1	P1	Lung	MD Anderson	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA11	P2	MDA11P2	P2	Lung	MD Anderson	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA14	L1	MDA14L1	L1	Lung	MD Anderson	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA14	L2	MDA14L2	L2	Lung	MD Anderson	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA14	L3	MDA14L3	L3	Lung	MD Anderson	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA14	Lun1	MDA14A1	Lun1	Lung	MD Anderson	Lun	1	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-MDA14	Lun2	MDA14A2	Lun2	Lung	MD Anderson	Lun	2	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-MDA14	N1	MDA14N1	Normal1	Lung	MD Anderson	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-MDA14	P1	MDA14P1	P1	Lung	MD Anderson	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA14	P2	MDA14P2	P2	Lung	MD Anderson	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA16	L1	MDA16L1	L1	Lung	MD Anderson	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA16	Liv1	MDA16H1	Liv1	Lung	MD Anderson	Liv	1	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-MDA16	Liv2	MDA16H2	Liv2	Lung	MD Anderson	Liv	2	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-MDA16	Lun1a	MDA16A1a	Lun1a	Lung	MD Anderson	Lun	1	a	FALSE	Lung	Lung	Distant	TRUE	TRUE
-MDA16	Lun1b	MDA16A1b	Lun1b	Lung	MD Anderson	Lun	1	b	FALSE	Lung	Lung	Distant	FALSE	FALSE
-MDA16	N1	MDA16N1	Normal1	Lung	MD Anderson	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-MDA16	P1	MDA16P1	P1	Lung	MD Anderson	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA16	P2	MDA16P2	P2	Lung	MD Anderson	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA16	P3	MDA16P3	P3	Lung	MD Anderson	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA16	P4	MDA16P4	P4	Lung	MD Anderson	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA18	L1	MDA18L1	L1	Lung	MD Anderson	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA18	L2	MDA18L2	L2	Lung	MD Anderson	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA18	L3	MDA18L3	L3	Lung	MD Anderson	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA18	L4	MDA18L4	L4	Lung	MD Anderson	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA18	L5	MDA18L5	L5	Lung	MD Anderson	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA18	Liv1a	MDA18H1a	Liv1a	Lung	MD Anderson	Liv	1	a	FALSE	Liver	Liver	Distant	FALSE	TRUE
-MDA18	Liv1b	MDA18H1b	Liv1b	Lung	MD Anderson	Liv	1	b	FALSE	Liver	Liver	Distant	TRUE	FALSE
-MDA18	Lun1	MDA18A1	Lun1	Lung	MD Anderson	Lun	1	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-MDA18	N1	MDA18N2	Normal1	Lung	MD Anderson	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-MDA18	P1	MDA18P1	P1	Lung	MD Anderson	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA18	P2	MDA18P2	P2	Lung	MD Anderson	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA20	L1	MDA20L2	L1	Lung	MD Anderson	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA20	L2	MDA20L3	L2	Lung	MD Anderson	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA20	L3	MDA20L4	L3	Lung	MD Anderson	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA20	Lun1	MDA20A1	Lun1	Lung	MD Anderson	Lun	1	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-MDA20	N1	MDA20N3	Normal1	Lung	MD Anderson	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-MDA20	P1	MDA20P1	P1	Lung	MD Anderson	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA20	P2	MDA20P2	P2	Lung	MD Anderson	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA20	P3	MDA20P3	P3	Lung	MD Anderson	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA20	Per1	MDA20B1	Per1	Lung	MD Anderson	Per	1	NA	FALSE	Peritoneum	Peritoneum	Distant	TRUE	TRUE
-MDA20	X1	MDA20X1	X1	Lung	MD Anderson	X	1	NA	FALSE	Unknown or n/a	n/a	n/a	TRUE	TRUE
-MDA21	L1	MDA21L2	L1	Lung	MD Anderson	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA21	L2	MDA21L3	L2	Lung	MD Anderson	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA21	Lun1	MDA21A1	Lun1	Lung	MD Anderson	Lun	1	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-MDA21	Lun2	MDA21A2	Lun2	Lung	MD Anderson	Lun	2	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-MDA21	N1	MDA21N1	Normal1	Lung	MD Anderson	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-MDA21	P1	MDA21P1	P1	Lung	MD Anderson	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA21	P2	MDA21P2	P2	Lung	MD Anderson	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA21	P3	MDA21P3	P3	Lung	MD Anderson	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA21	P4	MDA21P4	P4	Lung	MD Anderson	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA22	L1	MDA22L1	L1	Lung	MD Anderson	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA22	L2	MDA22L2	L2	Lung	MD Anderson	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA22	L3	MDA22L3	L3	Lung	MD Anderson	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA22	L4	MDA22L4	L4	Lung	MD Anderson	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-MDA22	Liv1	MDA22H1	Liv1	Lung	MD Anderson	Liv	1	NA	FALSE	Liver	Liver	Distant	TRUE	TRUE
-MDA22	Lun1a	MDA22A1	Lun1a	Lung	MD Anderson	Lun	1	a	FALSE	Lung	Lung	Distant	FALSE	TRUE
-MDA22	Lun1b	MDA22A2	Lun1b	Lung	MD Anderson	Lun	1	b	FALSE	Lung	Lung	Distant	TRUE	FALSE
-MDA22	N1	MDA22N3	Normal1	Lung	MD Anderson	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-MDA22	P1	MDA22P1	P1	Lung	MD Anderson	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA22	P2	MDA22P2	P2	Lung	MD Anderson	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-MDA22	P3	MDA22P3	P3	Lung	MD Anderson	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Tub4	L1	Tub4L1	L1	Lung	Tuebingen	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-Tub4	L2	Tub4L2	L2	Lung	Tuebingen	L	2	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-Tub4	L3	Tub4L3	L3	Lung	Tuebingen	L	3	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-Tub4	L4	Tub4L4	L4	Lung	Tuebingen	L	4	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-Tub4	L5	Tub4L5	L5	Lung	Tuebingen	L	5	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-Tub4	L6	Tub4L6	L6	Lung	Tuebingen	L	6	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-Tub4	L7	Tub4L7	L7	Lung	Tuebingen	L	7	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-Tub4	L8	Tub4L8	L8	Lung	Tuebingen	L	8	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-Tub4	Lun1	Tub4A1	Lun1	Lung	Tuebingen	Lun	1	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-Tub4	Lun2	Tub4A2	Lun2	Lung	Tuebingen	Lun	2	NA	FALSE	Lung	Lung	Distant	TRUE	TRUE
-Tub4	N1	Tub4N1	Normal1	Lung	Tuebingen	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-Tub4	P1	Tub4P1	P1	Lung	Tuebingen	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Tub4	P2	Tub4P2	P2	Lung	Tuebingen	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Tub4	P3	Tub4P3	P3	Lung	Tuebingen	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Tub4	P4	Tub4P4	P4	Lung	Tuebingen	P	4	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Tub4	TD1	Tub4TD1	TD1	Lung	Tuebingen	TD	1	NA	FALSE	Tumor deposit	Locoregional	Locoregional	TRUE	TRUE
-Tub6	L1	Tub6L1	L1	Lung	Tuebingen	L	1	NA	FALSE	Lymph node	Locoregional	Locoregional	TRUE	TRUE
-Tub6	Lun1a	Tub6A1a	Lun1a	Lung	Tuebingen	Lun	1	a	FALSE	Lung	Lung	Distant	TRUE	TRUE
-Tub6	Lun1b	Tub6A1b	Lun1b	Lung	Tuebingen	Lun	1	b	FALSE	Lung	Lung	Distant	FALSE	FALSE
-Tub6	N1	Tub6N1	Normal1	Lung	Tuebingen	N	1	NA	FALSE	Normal	Normal	Normal	TRUE	TRUE
-Tub6	P1	Tub6P1	P1	Lung	Tuebingen	P	1	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Tub6	P2	Tub6P2	P2	Lung	Tuebingen	P	2	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
-Tub6	P3	Tub6P3	P3	Lung	Tuebingen	P	3	NA	FALSE	Primary	Primary	Primary	TRUE	TRUE
+Sample_ID	Real_Sample_ID	Subject	Cohort	barcode
+C159Ad1	AG1a-A	C159	lung	AG1a-A
+C159AR1w	AG1b-A	C159	lung	AG1b-A
+C159Ad2	AG2-A	C159	lung	AG2-A
+C186M3	Brn1a	C186	lung	Brn1a
+C186M5	Brn1b	C186	lung	Brn1b
+C186M6	Brn1c	C186	lung	Brn1c
+C186M7	Brn2a	C186	lung	Brn2a
+C186M10	Brn2b	C186	lung	Brn2b
+C186CA1	Cal1a	C186	lung	Cal1a
+C186CA2	Cal1b	C186	lung	Cal1b
+C159Di1	Di1-A	C159	lung	Di1-A
+C161B1	Di1-A	C161	lung	Di1-A
+C159Di2	Di2-A	C159	lung	Di2-A
+C159Di3	Di3a-A	C159	lung	Di3a-A
+C159B3w	Di3b-A	C159	lung	Di3b-A
+C159LN1	L1	C159	lung	LN1
+C161L1	L1	C161	lung	LN1
+C159LN2	L2	C159	lung	LN2
+C161L2	L2	C161	lung	LN2
+C159LN4	L3	C159	lung	LN3
+C161L3	L3	C161	lung	LN3
+C159LN5	L4	C159	lung	LN4
+C161L4	L4	C161	lung	LN4
+C159LN6	L5	C159	lung	LN5
+C159LN7	L6	C159	lung	LN6
+C159LN13	L7	C159	lung	LN7
+C159LD1	Ld1-A	C159	lung	Ld1-A
+C161Ld1	Ld1-A	C161	lung	Ld1-A
+C159LD2	Ld2-A	C159	lung	Ld2-A
+C161Ld2	Ld2-A	C161	lung	Ld2-A
+C159LD3	Ld3a-A	C159	lung	Ld3a-A
+C159LD1w	Ld3b-A	C159	lung	Ld3b-A
+C159LD4	Ld4a-A	C159	lung	Ld4a-A
+C159LD2w	Ld4b-A	C159	lung	Ld4b-A
+C159LD5	Ld5a-A	C159	lung	Ld5a-A
+C159LD3w	Ld5b-A	C159	lung	Ld5b-A
+E4H1	Liv1	E4	peritoneal	Liv1
+C159H3	Liv1-A	C159	lung	Liv1-A
+C161H1	Liv1-A	C161	lung	Liv1-A
+C159H6b	Liv2-A	C159	lung	Liv2-A
+C159H7a	Liv3a-A	C159	lung	Liv3a-A
+C159H7b	Liv3b-A	C159	lung	Liv3b-A
+C159H8	Liv4a-A	C159	lung	Liv4a-A
+C159H1w	Liv4b-A	C159	lung	Liv4b-A
+C146LN1	LN1	C146	peritoneal	LN1
+C154L14	LN1	C154	peritoneal	LN1
+C157LN4	LN1	C157	peritoneal	LN1
+E4L4	LN1	E4	peritoneal	LN1
+C146LN2	LN2	C146	peritoneal	LN2
+E4L5	LN2	E4	peritoneal	LN2
+C154L2a	LN2a	C154	peritoneal	LN2a
+C157TD2a	LN2a	C157	peritoneal	LN2a
+C154L2b	LN2b	C154	peritoneal	LN2b
+C157TD2b	LN2b	C157	peritoneal	LN2b
+C146LN3	LN3	C146	peritoneal	LN3
+C154L4	LN3	C154	peritoneal	LN3
+E4L8	LN3	E4	peritoneal	LN3
+C146LN4	LN4	C146	peritoneal	LN4
+C154L6	LN4	C154	peritoneal	LN4
+E4L9	LN4	E4	peritoneal	LN4
+C146LN5	LN5	C146	peritoneal	LN5
+C154TD1	LN5	C154	peritoneal	LN5
+E4L10	LN5	E4	peritoneal	LN5
+C146LN6	LN6	C146	peritoneal	LN6
+C154L10	LN6	C154	peritoneal	LN6
+E4L1	LN6	E4	peritoneal	LN6
+C154L12	LN7	C154	peritoneal	LN7
+E4L6	LN7	E4	peritoneal	LN7
+C154L5	LN8	C154	peritoneal	LN8
+C154L8	LN9	C154	peritoneal	LN9
+C161A1	Lun1	C161	lung	Lun1
+C186A1	Lun1	C186	lung	Lun1
+C159A1	Lun1-A	C159	lung	Lun1-A
+C161A2	Lun2	C161	lung	Lun2
+C186A2	Lun2a	C186	lung	Lun2a
+C159A2a	Lun2a-A	C159	lung	Lun2a-A
+C186A3	Lun2b	C186	lung	Lun2b
+C159A2b	Lun2b-A	C159	lung	Lun2b-A
+C159A1w	Lun2c-A	C159	lung	Lun2c-A
+C159A2w	Lun2d-A	C159	lung	Lun2d-A
+C161A5	Lun3-A	C161	lung	Lun3-A
+C186A4	Lun3a	C186	lung	Lun3a
+C186A5	Lun3b	C186	lung	Lun3b
+C159Me1	Me1-A	C159	lung	Me1-A
+C146N1	Normal1	C146	peritoneal	Normal1
+C154N1	Normal1	C154	peritoneal	Normal1
+C157N1	Normal1	C157	peritoneal	Normal1
+C159N1	Normal1	C159	lung	Normal1
+C161N1	Normal1	C161	lung	Normal1
+C186N1	Normal1	C186	lung	Normal1
+E4N1	Normal1	E4	peritoneal	Normal1
+C154N2	Normal2	C154	peritoneal	Normal2
+C159N1w	Normal2	C159	lung	Normal2
+C161N2	Normal2	C161	lung	Normal2
+C186N2	Normal2	C186	lung	Normal2
+E4N3	Normal2	E4	peritoneal	Normal2
+C159N2w	Normal3	C159	lung	Normal3
+C186N3	Normal3	C186	lung	Normal3
+C161O1	Ova1-A	C161	lung	Ova1-A
+C161O2	Ova2-A	C161	lung	Ova2-A
+C159P2	P1	C159	lung	PT1
+C161P9	P1	C161	lung	PT1
+C186P1	P1	C186	lung	PT1
+C159P1w	P10-A	C159	lung	PT10-A
+C159P2w	P11-A	C159	lung	PT11-A
+C159P3w	P12-A	C159	lung	PT12-A
+C159P4w	P13-A	C159	lung	PT13-A
+C159P3	P2	C159	lung	PT2
+C161P2	P2	C161	lung	PT2
+C186P2	P2	C186	lung	PT2
+C159P4	P3	C159	lung	PT3
+C161P3	P3	C161	lung	PT3
+C186P3	P3	C186	lung	PT3
+C159P7	P4	C159	lung	PT4
+C161P4	P4	C161	lung	PT4
+C186P5	P4	C186	lung	PT4
+C159P5	P5	C159	lung	PT5
+C161P5	P5	C161	lung	PT5
+C186P7	P5	C186	lung	PT5
+C159P8	P6	C159	lung	PT6
+C161P6	P6	C161	lung	PT6
+C159P6	P7	C159	lung	PT7
+C161P7	P7	C161	lung	PT7
+C159P9	P8-A	C159	lung	PT8-A
+C161P8	P8-A	C161	lung	PT8-A
+C159P10	P9-A	C159	lung	PT9-A
+C161Pa1	Pa1-A	C161	lung	Pa1-A
+C159Pa1	Pa1a-A	C159	lung	Pa1a-A
+C159D1w	Pa1b-A	C159	lung	Pa1b-A
+C154B1	Per1	C154	peritoneal	Per1
+C157B1	Per1	C157	peritoneal	Per1
+E4B2	Per1	E4	peritoneal	Per1
+C159Ab1	Per1-A	C159	lung	Per1-A
+C161B2	Per1-A	C161	lung	Per1-A
+E4B18	Per10	E4	peritoneal	Per10
+E4B19	Per11	E4	peritoneal	Per11
+E4B20	Per12	E4	peritoneal	Per12
+E4B14	Per13	E4	peritoneal	Per13
+E4B22	Per14	E4	peritoneal	Per14
+E4B7	Per15	E4	peritoneal	Per15
+E4B8	Per16	E4	peritoneal	Per16
+E4B16	Per17	E4	peritoneal	Per17
+E4B15	Per18	E4	peritoneal	Per18
+E4B9	Per19	E4	peritoneal	Per19
+C146B1c	Per1a	C146	peritoneal	Per1a
+C146B1b	Per1b	C146	peritoneal	Per1b
+C146B1a	Per1c	C146	peritoneal	Per1c
+C154B4	Per2	C154	peritoneal	Per2
+C157B2	Per2	C157	peritoneal	Per2
+E4B3	Per2	E4	peritoneal	Per2
+C159Pg1	Per2-A	C159	lung	Per2-A
+C161B6	Per2-A	C161	lung	Per2-A
+E4B13	Per20	E4	peritoneal	Per20
+E4B1	Per21	E4	peritoneal	Per21
+C146TD1	Per3	C146	peritoneal	Per3
+C154B7	Per3	C154	peritoneal	Per3
+C157Di1	Per3	C157	peritoneal	Per3
+E4B5	Per3	E4	peritoneal	Per3
+C159B1	Per3-A	C159	lung	Per3-A
+C161B4	Per3-A	C161	lung	Per3-A
+C154B6	Per4	C154	peritoneal	Per4
+C157Di2	Per4	C157	peritoneal	Per4
+E4B6	Per4	E4	peritoneal	Per4
+C159B3	Per4-A	C159	lung	Per4-A
+C161B7	Per4-A	C161	lung	Per4-A
+C154B8	Per5	C154	peritoneal	Per5
+E4B17	Per5	E4	peritoneal	Per5
+C159B4	Per5-A	C159	lung	Per5-A
+C161B8	Per5-A	C161	lung	Per5-A
+C154B9	Per6	C154	peritoneal	Per6
+E4B21	Per6	E4	peritoneal	Per6
+E4B10	Per7	E4	peritoneal	Per7
+E4B11	Per8	E4	peritoneal	Per8
+E4B12	Per9	E4	peritoneal	Per9
+E4O2	PerOv1	E4	peritoneal	PerOv1
+E4O1	PerOv2	E4	peritoneal	PerOv2
+C161A6	Plu1-A	C161	lung	Plu1-A
+C146P2	PT1	C146	peritoneal	PT1
+C154P1	PT1	C154	peritoneal	PT1
+C157P1	PT1	C157	peritoneal	PT1
+E4P1	PT1	E4	peritoneal	PT1
+C154P6	PT10	C154	peritoneal	PT10
+E4P4	PT10	E4	peritoneal	PT10
+C154P11	PT11	C154	peritoneal	PT11
+C154P12	PT12	C154	peritoneal	PT12
+C146P5	PT2	C146	peritoneal	PT2
+C154P2	PT2	C154	peritoneal	PT2
+C157P2	PT2	C157	peritoneal	PT2
+E4P2	PT2	E4	peritoneal	PT2
+C146P6	PT3	C146	peritoneal	PT3
+C154P3	PT3	C154	peritoneal	PT3
+C157P3	PT3	C157	peritoneal	PT3
+E4P3	PT3	E4	peritoneal	PT3
+C146P7	PT4	C146	peritoneal	PT4
+C154P4	PT4	C154	peritoneal	PT4
+C157P4	PT4	C157	peritoneal	PT4
+E4P7	PT4	E4	peritoneal	PT4
+C146P8	PT5	C146	peritoneal	PT5
+C154P5	PT5	C154	peritoneal	PT5
+C157P6	PT5	C157	peritoneal	PT5
+E4P9	PT5	E4	peritoneal	PT5
+C146P1	PT6	C146	peritoneal	PT6
+C154P10	PT6	C154	peritoneal	PT6
+C157P9	PT6	C157	peritoneal	PT6
+E4P10	PT6	E4	peritoneal	PT6
+C146P9	PT7	C146	peritoneal	PT7
+C154P7	PT7	C154	peritoneal	PT7
+C157P10	PT7	C157	peritoneal	PT7
+E4P11	PT7	E4	peritoneal	PT7
+C146P3	PT8	C146	peritoneal	PT8
+C154P8	PT8	C154	peritoneal	PT8
+C157TD1	PT8	C157	peritoneal	PT8
+E4P14	PT8	E4	peritoneal	PT8
+C146P4	PT9	C146	peritoneal	PT9
+C154P9	PT9	C154	peritoneal	PT9
+E4P5	PT9	E4	peritoneal	PT9
+C159SB1	SB1-A	C159	lung	SB1-A
+C161SB1	SB1-A	C161	lung	SB1-A
+C161SB2	SB2-A	C161	lung	SB2-A
+C161S1	Sp1-A	C161	lung	Sp1-A
+C159Sp1	Sp1a-A	C159	lung	Sp1a-A
+C159S1w	Sp1b-A	C159	lung	Sp1b-A
+C161St1	St1-A	C161	lung	St1-A
+C161St2	St2-A	C161	lung	St2-A
+C146TD2	TD1	C146	peritoneal	TD1
+C154B3	TD1	C154	peritoneal	TD1
+C157TD7	TD1	C157	peritoneal	TD1
+C159TD1	TD1	C159	lung	TD1
+E4L3	TD1	E4	peritoneal	TD1
+C154B5	TD2	C154	peritoneal	TD2
+C157LN3	TD2	C157	peritoneal	TD2
+E4L2	TD2	E4	peritoneal	TD2
+C154L11	TD3	C154	peritoneal	TD3
+C157TD8	TD3	C157	peritoneal	TD3
+E4L11	TD3	E4	peritoneal	TD3
+C154L13	TD4	C154	peritoneal	TD4
+C157TD3	TD4	C157	peritoneal	TD4
+E4L7	TD4	E4	peritoneal	TD4
+C154B10	TD5	C154	peritoneal	TD5
+C154B2	TD6	C154	peritoneal	TD6
+C154L15	TD7	C154	peritoneal	TD7
+C154TD2	TD8	C154	peritoneal	TD8
+C159X1a	X1a-A	C159	lung	X1a-A
+C159X1b	X1b-A	C159	lung	X1b-A
+C159X1c	X1c-A	C159	lung	X1c-A
+C159X2w	X1d-A	C159	lung	X1d-A
