@@ -84,7 +84,7 @@ info <- process_SCNA_data(samples, info, subject)
 
 ## make CNV segment heatmap
 p <- cnv_heatmap(info$mat, info$seg, info$distance_matrix, this.subject=subject)
-ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_heatmap.pdf')),width=11,height=8)
+ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_heatmap.pdf')),width=11,height=5.75)
 
 ## save plots comparing CNV 5+ Mb segment phylogeny to poly-G angular distance phylogeny
 set.seed(42)
@@ -103,6 +103,33 @@ set.seed(42)
 polyg_trees <- get_bootstrapped_trees(subject, type='polyg')
 out <- list(chr=chr_trees, seg=seg_trees, polyg=polyg_trees)
 saveRDS(out,file=here(paste0('output/',subject,'/',subject,'_bootstrapped_trees.rds')))
+
+
+
+## get the unified distance matrices
+tst <- compare_trees(info$distance_matrix,subject, tree_method='nj')
+## define groups for plot
+groups <- group_samples(tst$d_subset,color=T,lun=F,liv=F,per=T)
+
+## CNV tree
+tree1 <- annotated_phylo(tst$d_subset, groups)
+tmp1 <- nj(tst$d_subset)
+tmp1 <- phytools::reroot(tmp1, node.number=which(tmp1$tip.label=='Normal1'))
+tmp1 <- ladderize(tmp1)
+tmp1 <- ape::rotate(tmp1,node=33)
+tmp1 <- ape::rotate(tmp1,node=20)
+tmp1 <- ape::rotate(tmp1,node=22)
+tmp1 <- ape::rotate(tmp1,node=31)
+for(f in names(tmp1)) tree1[[f]] <- tmp1[[f]]
+tree1$title <- paste(subject,'(SCNA)')
+p1 <- plot(tree1)
+
+## PolyG tree
+tree2 <- annotated_phylo(tst$g_subset, groups)
+tree2$title <- paste(subject,'(Poly-G)')
+p2 <- plot(tree2)
+p <- plot_grid(p1,p2,ncol=2)
+ggsave(here(paste0('figures/',subject,'_scna_polyg_trees.pdf')),width=10,height=8)
 
 
 

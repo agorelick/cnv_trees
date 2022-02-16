@@ -773,15 +773,10 @@ cnv_heatmap <- function(mat, seg, distance_matrix, this.subject) {
     names(mat) <- c('sample','segment','seg.mean')
 
     ## annotated CNV calls
-    #seg <- fread(seg_file)
     seg <- seg[,c('sample','segid','sc.call'),with=F]
     mat <- merge(mat, seg, by.x=c('sample','segment'), by.y=c('sample','segid'), all.x=T)
 
-    #mat[is.na(sc.call),sc.call:=F] ## only affects chrX
-    #mat[seg.mean < 0,sc.call:=F]
-    #mat[seg.mean < 0,seg.mean:=0]
     mat$copies <- as.character(mat$seg.mean)
-    #mat[sc.call==F & round(seg.mean) %in% 0:5,copies:=as.character(round(seg.mean))]
     mat[seg.mean >= 5,copies:='5+']
     mat[sc.call==T,copies:=paste0('(',floor(seg.mean),'-',ceiling(seg.mean),')')]
     mat$copies <- factor(mat$copies, levels=c('0','(0-1)','1','(1-2)','2','(2-3)','3','(3-4)','4','(4-5)','5+'))
@@ -825,7 +820,9 @@ cnv_heatmap <- function(mat, seg, distance_matrix, this.subject) {
     mat2$sample <- factor(mat2$sample, levels=dat$label)
 
     ## define color scheme
-    cols <- c(rev(brewer.pal(9,'Blues')[c(2,4,6,8)]),'white','#FEE8DE',brewer.pal(9,'Reds')[c(3,5,7,9)],'#460000')
+    cols <- c(rev(brewer.pal(9,'Blues')[c(2,4,6,8)]),'white','#FEE8DE',brewer.pal(9,'Reds')[c(3,5,7,9)],'#52000a')
+    #cols <- c("#08519C","#4292C6","#9ECAE1","#DEEBF7",'white','#FEE0D2','#FC9272','#EF3B2C','#A50F15','#840c10','#63090c')
+    #cols <- c(rev(brewer.pal(9,'Blues')[c(2,4,6,8)]),'white',brewer.pal(9,'OrRd')[c(2,4,6,8,9)])
     #cols <- c(rev(brewer.pal(9,'Blues')[c(2,2,4,4)]),'white','white',brewer.pal(9,'Reds')[c(3,3,6,6,9)])
     names(cols) <- levels(mat$copies)
 
@@ -873,7 +870,8 @@ cnv_heatmap <- function(mat, seg, distance_matrix, this.subject) {
         scale_x_continuous(breaks=c(0,chr2$chr_end), label=c('',as.character(chr2$chr)), expand=c(0,0)) + 
         scale_y_continuous(breaks=1:length(sample_levels),labels=sample_levels,expand=c(0,0),position='right') + 
         geom_rect(aes(xmin=start,xmax=end,ymin=samplenum-0.5,ymax=samplenum+0.5,fill=copies),size=0.125) + 
-        geom_point(data=tmp2[subclonal==T],aes(x=midpoint,y=samplenum),pch=16,size=0.3)  +
+        geom_point(data=tmp2[subclonal==T],aes(x=midpoint,y=samplenum),pch=16,color='black',size=0.3)  +
+        geom_point(data=tmp2[subclonal==T & copies=='(4-5)'],aes(x=midpoint,y=samplenum),pch=16,color='white',size=0.3)  +
         geom_text(data=chr3,aes(x=midpoint,label=chr),y=0.25,size=3.5) +
         scale_fill_manual(values=cols,name='Copies',na.value='black') + 
         labs(title=paste(this.subject,'SCNA matrix and euclidean distance tree'),x='\nGenomic position',y='Sample') +

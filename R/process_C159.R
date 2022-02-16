@@ -7,7 +7,6 @@ sex <- 'male'
 obj_list <- readRDS(here(paste0('original_data/',subject,'_1000kbp_withXYMT.rds'))) 
 names(obj_list) <- paste0(subject,names(obj_list))
 obj_list <- rename_samples(obj_list, subject)
-#which(is.na(names(obj_list)))
 
 ## remove results from previous run
 purity_file=here(paste0('output/',subject,'/fits/purity_ploidy.txt'))
@@ -235,7 +234,7 @@ info <- process_SCNA_data(samples, info, subject)
 
 ## make CNV segment heatmap
 p <- cnv_heatmap(info$mat, info$seg, info$distance_matrix, this.subject=subject)
-ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_heatmap.pdf')),width=11,height=8)
+ggsave(here(paste0('output/',subject,'/',subject,'_cnv_segment_heatmap.pdf')),width=11,height=9)
 
 ## save plots comparing CNV 5+ Mb segment phylogeny to poly-G angular distance phylogeny
 set.seed(42)
@@ -243,6 +242,27 @@ p2 <- compare_matrices(info$distance_matrix,subject, R=1e4)
 ggsave(here(paste0('output/',subject,'/',subject,'_segment_euclidean_matrix_comparison.pdf')),width=7,height=6)
 tree2.1 <- compare_trees(info$distance_matrix,subject, tree_method='nj')$plot
 ggsave(here(paste0('output/',subject,'/',subject,'_segment_euclidean_nj_tree_comparison.pdf')),width=10,height=8)
+
+
+
+
+## get the unified distance matrices
+tst <- compare_trees(info$distance_matrix,subject, tree_method='nj')
+## define groups for plot
+groups <- group_samples(tst$d_subset,color=T,lun=F,liv=F,per=T)
+
+## CNV tree
+tree1 <- annotated_phylo(tst$d_subset, groups)
+tree1$title <- paste(subject,'(SCNA)')
+p1 <- plot(tree1)
+
+## PolyG tree
+tree2 <- annotated_phylo(tst$g_subset, groups)
+tree2$title <- paste(subject,'(Poly-G)')
+p2 <- plot(tree2)
+p <- plot_grid(p1,p2,ncol=2)
+ggsave(here(paste0('figures/',subject,'_scna_polyg_trees.pdf')),width=10,height=8)
+
 
 
 ## generate bootstrapped trees
